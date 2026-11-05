@@ -1,0 +1,30 @@
+# Python environments and generated files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Secrets and local settings
+.env
+.env.*
+!.env.example
+.DS_Store
+.idea/
+.vscode/
+
+# Downloaded data and ML outputs
+data/raw/
+data/cache/
+data/graphs/
+checkpoints/
+runs/
+*.pt
+*.pth
