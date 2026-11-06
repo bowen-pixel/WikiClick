@@ -6,7 +6,8 @@ import pytest
 
 import api_endpoint
 from graph_demo import build_graph
-from sample_dataset import collect_sample, export_training, freeze_graph
+from sample_dataset import collect_sample, export_training, freeze_graph, write_outputs
+from validate_dataset import validate
 
 
 def article(node, links):
@@ -86,3 +87,18 @@ def test_labels_match_exact_distances_and_destination_splits(tmp_path):
     assert observed[(1, 3, 4)] == 2
     assert observed[(1, 2, 6)] is None
     assert observed[(1, 2, 2)] == 0
+
+
+def test_saved_dataset_validator_detects_corrupted_labels(tmp_path):
+    pages = [article(i, [i+1] if i < 10 else []) for i in range(1, 11)]
+    write_outputs({"pages": pages}, tmp_path, rows_per_destination=5)
+    report = validate(tmp_path)
+    assert report["articles"] == 10 and report["all_labels_match_networkx"]
+    path = tmp_path / "train.jsonl"
+    lines = path.read_text().splitlines()
+    row = json.loads(lines[0])
+    row["label_distance"] = 999
+    lines[0] = json.dumps(row)
+    path.write_text("\n".join(lines)+"\n")
+    with pytest.raises(ValueError, match="Incorrect shortest-distance"):
+        validate(tmp_path)

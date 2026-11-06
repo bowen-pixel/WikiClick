@@ -36,8 +36,8 @@ def collect_sample(fetch, cache_dir, count=100, seeds=SEEDS, random_seed=207):
     Replaying the same frontier from cached records makes interrupted runs resumable.
     This is a topical, linked sample, not uniform sampling of Wikipedia.
     """
-    if not 2 <= count <= 1000:
-        raise ValueError("Article count must be between 2 and 1000.")
+    if not 2 <= count <= 2000:
+        raise ValueError("Article count must be between 2 and 2000.")
     queue = deque(seeds)
     queued = {title_key(title) for title in seeds}
     selected = {}
@@ -97,7 +97,7 @@ def freeze_graph(dataset):
     return graph, frozen
 
 
-def export_training(graph, graph_id, output, random_seed=207):
+def export_training(graph, graph_id, output, random_seed=207, rows_per_destination=None):
     """Split by destination; null means unreachable within the saved graph."""
     destinations = sorted(graph)
     random.Random(random_seed).shuffle(destinations)
@@ -115,38 +115,39 @@ def export_training(graph, graph_id, output, random_seed=207):
         with path.open("w", encoding="utf-8") as stream:
             for destination in goals:
                 distances = nx.single_source_shortest_path_length(graph.reverse(copy=False), destination)
-                for current in sorted(graph):
-                    if current == destination:  # Terminal states do not need a next click.
-                        continue
-                    for candidate in sorted(graph.successors(current)):
-                        distance = distances.get(candidate)
-                        row = {
-                            "graph_id": graph_id, "split": split,
-                            "current_article": {"pageid": current, "title": graph.nodes[current]["title"]},
-                            "destination": {"pageid": destination, "title": graph.nodes[destination]["title"]},
-                            "candidate_next_article": {"pageid": candidate, "title": graph.nodes[candidate]["title"]},
-                            "label_distance": distance,
-                            "reachable_in_graph": distance is not None,
-                        }
-                        stream.write(json.dumps(row, ensure_ascii=False) + "\n")
-                        rows += 1
-                        unreachable += distance is None
-                        if sample is None and distance is not None and candidate != destination:
-                            sample = row
+                candidates = [(a, b) for a, b in sorted(graph.edges) if a != destination]
+                if rows_per_destination is not None and len(candidates) > rows_per_destination:
+                    candidates = random.Random(f"{random_seed}:{destination}").sample(candidates, rows_per_destination)
+                for current, candidate in candidates:
+                    distance = distances.get(candidate)
+                    row = {
+                        "graph_id": graph_id, "split": split,
+                        "current_article": {"pageid": current, "title": graph.nodes[current]["title"]},
+                        "destination": {"pageid": destination, "title": graph.nodes[destination]["title"]},
+                        "candidate_next_article": {"pageid": candidate, "title": graph.nodes[candidate]["title"]},
+                        "label_distance": distance,
+                        "reachable_in_graph": distance is not None,
+                    }
+                    stream.write(json.dumps(row, ensure_ascii=False) + "\n")
+                    rows += 1
+                    unreachable += distance is None
+                    if sample is None and distance is not None and candidate != destination:
+                        sample = row
         counts[split] = {"rows": rows, "unreachable_rows": unreachable, "destination_ids": goals}
     return {"graph_id": graph_id, "random_seed": random_seed,
             "split_rule": "Disjoint destination articles, 80/10/10; shared fixed graph, transductive evaluation.",
             "label_definition": "Minimum edge count from candidate_next_article to destination in this graph; excludes current-to-candidate click.",
             "null_policy": "No route within this graph. Do not train numeric regression directly on null labels.",
+            "rows_per_destination": rows_per_destination,
             "splits": counts, "example": sample}
 
 
-def write_outputs(dataset, output):
+def write_outputs(dataset, output, rows_per_destination=None):
     output.mkdir(parents=True, exist_ok=True)
     graph, frozen = freeze_graph(dataset)
     save_json(output / "articles.json", dataset)
     save_json(output / "graph.json", frozen)
-    training = export_training(graph, frozen["graph_id"], output)
+    training = export_training(graph, frozen["graph_id"], output, rows_per_destination=rows_per_destination)
     stats = {
         "graph_id": frozen["graph_id"], "articles": graph.number_of_nodes(),
         "edges": graph.number_of_edges(), "all_edge_weights_one": all(d["weight"] == 1 for _, _, d in graph.edges(data=True)),
@@ -168,12 +169,15 @@ def main():
     parser.add_argument("--count", type=int, default=100)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--cache", type=Path, default=Path("data/cache/canonical_articles"))
+    parser.add_argument("--rows-per-destination", type=int, help="Cap JSONL rows per destination on larger graphs")
     args = parser.parse_args()
+    if args.rows_per_destination is not None and args.rows_per_destination < 1:
+        parser.error("--rows-per-destination must be positive")
     client = create_client()
     with httpx.Client(headers={"User-Agent": USER_AGENT}, timeout=30) as http:
         dataset = collect_sample(lambda title: get_resolved_page_links(client, http, title),
                                  args.cache, count=args.count)
-    stats = write_outputs(dataset, args.output)
+    stats = write_outputs(dataset, args.output, rows_per_destination=args.rows_per_destination)
     print(json.dumps(stats, indent=2, ensure_ascii=False))
 
 

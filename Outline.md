@@ -2,7 +2,7 @@
 
 Planning date: November 4, 2026. Target demo: December 1, 2026.
 
-This schedule assumes approximately 8–12 hours per week. The tables describe the target architecture. As of November 5, a bounded prototype exists in `api_endpoint.py` and `graph_demo.py`: live link extraction, JSON export, unit-weight graph construction, and shortest-path search work on five selected articles. Persistent caching, complete redirect canonicalization, broader collection, and ML are still pending.
+This schedule assumes approximately 8–12 hours per week. The tables describe the target architecture. As of November 5, the small-domain prototype, resumable canonical-ID sampler, 100-article pilot, and title-feature PyTorch training/search comparison pipeline are implemented. Expansion to 1,100 articles preserves the pilot and creates separate model artifacts. See `TRAINING.md` for reproducible commands and evaluation limitations. Full Wikipedia coverage, richer semantic features, and live-fetch benchmarking remain future work.
 
 ## 1. Minimum deliverable
 

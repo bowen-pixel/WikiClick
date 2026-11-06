@@ -2,7 +2,7 @@
 
 Find a route between two English Wikipedia articles using the fewest hyperlink clicks within a collected graph.
 
-**Status:** working API and graph prototype, plus a cached 100-article pilot and graph-relative training labels. The small-domain prototype remains available. Larger-scale collection and neural-network training remain future work.
+**Status:** working API and graph prototype, a cached 100-article pilot, and a PyTorch title-feature distance model with offline search comparison scripts. Expansion to 1,100 total articles uses the same resumable collector. See the training guide for commands and limitations.
 
 **Target:** a reproducible working demo by December 1, 2026. A small neural-network experiment is a stretch goal.
 
@@ -80,7 +80,7 @@ For this collector, Wikipedia-API supplies source metadata. A public MediaWiki `
 
 Each row has `current_article`, `destination`, `candidate_next_article` (each containing a page ID and title), `label_distance`, `reachable_in_graph`, `split`, and `graph_id`. Every candidate is a real outgoing neighbor of the current article in the graph. The numeric label is the shortest distance **from candidate to destination**, excluding the click from current to candidate. A candidate equal to the destination has label 0; selecting it takes one click from the current article. Terminal current states are omitted. `null` means no route within this saved graph, not unreachable across Wikipedia; handle these separately from numeric regression labels.
 
-Destinations are partitioned 80/10/10 with a fixed random seed before rows are written. All rows for one destination stay in its partition. This is transductive evaluation on a shared fixed graph, not a test on unseen articles or unseen graphs. Do not use shortest-distance labels or held-out destination labels as model input features. No model has been trained yet.
+Destinations are partitioned 80/10/10 with a fixed random seed before rows are written. All rows for one destination stay in its partition. This is transductive evaluation on a shared fixed graph, not a test on unseen articles or unseen graphs. Do not use shortest-distance labels or held-out destination labels as model input features. A small title-feature PyTorch model is now available; see [TRAINING.md](TRAINING.md).
 
 To search this sample interactively:
 
@@ -98,12 +98,14 @@ Start with a modest saved dataset and an offline CLI. Whole-Wikipedia coverage, 
 
 - [Implementation outline and timeline](Outline.md)
 - [AI usage record](ai_usage.md)
+- [PyTorch training and BFS comparison guide](TRAINING.md)
+- [Measured training and search results](TRAINING_RESULTS.md)
 
 ## Development workflow
 
 Use one repository and short feature branches such as `codex/wiki-client`, `codex/graph-storage`, and `codex/shortest-path`. Create an issue for each task, agree on shared interfaces, open a pull request, and merge small working changes regularly. Keep `main` usable. A GitHub Project board can be added later to track Todo, In progress, and Done.
 
-The prototype uses Python, Wikipedia-API, NetworkX, and pytest. Add PyTorch only when the baseline solver and training dataset are ready.
+The core prototype uses Python, Wikipedia-API, NetworkX, and pytest. Install the separate `requirements-ml.txt` dependencies to run PyTorch training and comparisons.
 
 ## Validation goals
 
