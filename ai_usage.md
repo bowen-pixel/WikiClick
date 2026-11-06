@@ -50,3 +50,12 @@ Do not include passwords, tokens, private chat transcripts, or other sensitive i
 - **Contribution:** Added source/target prompts to the graph demo and an optional interactive collection mode with intermediate articles. Kept explicit command-line arguments available. Updated both matching local checkouts and documented usage.
 - **Validation:** Prompt tests and offline CLI smoke checks; no additional live Wikipedia collection was needed.
 - **Limitations:** Interactive input still searches only the saved graph; entering endpoints does not discover routes outside its selected articles. Human review pending.
+
+## 100-article pilot dataset
+
+- **Date:** November 5, 2026 (America/Toronto).
+- **Tool:** OpenAI Codex.
+- **Task:** Collect an initial 100 articles and save clean graph data and candidate-next-article training labels without requiring SQL.
+- **Contribution:** Added a resumable seeded sampler, full canonical outgoing target ID extraction through the public MediaWiki API, a JSON graph snapshot, JSONL training export, destination-disjoint splits, metadata, and four additional tests. Source metadata still uses Wikipedia-API; its title-only link interface is supplemented with a public generator query to resolve target redirects efficiently.
+- **Validation actually performed:** Collected 100 fully fetched sources with 858 unit-weight directed edges and no failed source fetches. Twelve tests passed. Checked all 84,942 exported labels against NetworkX all-pairs shortest distances, verified graph content hash, valid outgoing candidates, no self-loops, and disjoint destination partitions. Saved a local validation report tied to the graph ID.
+- **Limitations:** A topic-biased sample, live responses collected at multiple times, and graph-relative labels; null distances do not imply Wikipedia-wide unreachability. Shared graph and correlated rows mean this is not an unseen-graph benchmark. No model trained, no independent human content audit, and human review pending. Dataset and caches remain local and ignored by Git.

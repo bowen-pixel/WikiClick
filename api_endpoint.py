@@ -3,10 +3,12 @@
 import argparse
 import json
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
 import wikipediaapi
+import httpx
 
 USER_AGENT = "WikiClick/0.1 (https://github.com/bowen-pixel/WikiClick)"
 DEFAULT_TITLES = [
@@ -16,6 +18,75 @@ DEFAULT_TITLES = [
     "Dijkstra's algorithm",
     "Breadth-first search",
 ]
+
+
+def query_api(http, params):
+    """Read MediaWiki JSON, respecting temporary errors and Retry-After."""
+    for attempt in range(4):
+        try:
+            response = http.get("https://en.wikipedia.org/w/api.php", params={
+                "action": "query", "format": "json", "formatversion": 2,
+                "maxlag": 5, **params,
+            })
+            retry_after = response.headers.get("Retry-After", "")
+            if response.status_code in (429, 503):
+                delay = float(retry_after) if retry_after.isdigit() else 2 ** (attempt + 1)
+            else:
+                response.raise_for_status()
+                result = response.json()
+                if "error" not in result:
+                    return result
+                error = result["error"]
+                if error.get("code") not in ("maxlag", "ratelimited"):
+                    raise ValueError(f"MediaWiki API error: {error}")
+                delay = float(retry_after) if retry_after.isdigit() else 2 ** (attempt + 1)
+        except httpx.TransportError:
+            if attempt == 3:
+                raise
+            delay = 2 ** (attempt + 1)
+        if attempt < 3:
+            time.sleep(delay)
+    raise RuntimeError("Wikipedia is temporarily unavailable after four attempts.")
+
+
+def get_resolved_page_links(client, http, title):
+    """Fetch one source with Wikipedia-API; resolve outgoing IDs via a generator.
+
+    The package exposes outgoing titles but not batched redirect resolution.
+    The public MediaWiki generator supplies canonical existing target IDs.
+    Only return a record after all continuation pages have succeeded.
+    """
+    page = client.page(title)
+    if not page.exists() or page.ns != wikipediaapi.Namespace.MAIN:
+        raise ValueError(f"Not an existing article: {title}")
+    targets = {}
+    missing = set()
+    params = {
+        "generator": "links", "pageids": page.pageid,
+        "gplnamespace": 0, "gpllimit": "max", "redirects": 1,
+        "prop": "info", "inprop": "url",
+    }
+    while True:
+        raw = query_api(http, params)
+        for target in raw.get("query", {}).get("pages", []):
+            if "missing" in target or "invalid" in target or "pageid" not in target:
+                missing.add(target["title"])
+            elif target["ns"] == 0:
+                targets[target["pageid"]] = {
+                    "pageid": target["pageid"], "title": target["title"],
+                    "url": target["fullurl"],
+                }
+        if "continue" not in raw:
+            break
+        params.update(raw["continue"])
+    return {
+        "requested_title": title, "title": page.title,
+        "pageid": page.pageid, "url": page.fullurl,
+        "links": sorted(item["title"] for item in targets.values()),
+        "link_targets": sorted(targets.values(), key=lambda item: item["pageid"]),
+        "missing_link_titles": sorted(missing), "links_complete": True,
+        "collected_at": datetime.now(timezone.utc).isoformat(),
+    }
 
 
 def create_client():

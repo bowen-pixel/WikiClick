@@ -28,6 +28,12 @@ def build_graph(dataset):
         aliases[title_key(page["requested_title"])] = node
     for page in dataset["pages"]:
         source = page["pageid"]
+        if "link_targets" in page:
+            for target in page["link_targets"]:
+                node = target["pageid"]
+                if node in graph and source != node:
+                    graph.add_edge(source, node, weight=1)
+            continue
         for title in page["links"]:
             target = aliases.get(title_key(title))
             if target is not None and source != target:
