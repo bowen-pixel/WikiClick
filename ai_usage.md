@@ -14,6 +14,16 @@ This file records AI assistance used in WikiClick. It distinguishes planning and
 
 The initial illustrative NetworkX snippet is a proposed usage example, not evidence of an implemented application. Performance targets and dataset sizes are planning estimates, not measured results.
 
+## API and shortest-path prototype
+
+- **Date:** November 5, 2026 (America/Toronto).
+- **Tool:** OpenAI Codex.
+- **Task:** Use the Wikipedia-API package on a feature branch, extract article links, assign weight 1 to directed edges, and test NetworkX on a small domain.
+- **Files:** `api_endpoint.py`, `graph_demo.py`, dependency files, `tests/test_api_and_graph.py`, and documentation updates.
+- **Contribution:** Drafted the Python implementation, six offline tests, and setup instructions. Used the package's documented page/link interface; inspected installed package behavior for metadata, pagination, configuration, and exceptions.
+- **Validation actually performed:** Installed Wikipedia-API 0.16.0 and NetworkX 3.7 in a local Python 3.13 virtual environment. Six pytest cases passed. Live collection returned five article records; the graph had 13 edges of weight 1. NetworkX found `Graph theory → Shortest path problem → Dijkstra's algorithm` in 2 clicks.
+- **Limitations:** Outgoing redirect aliases are matched only when canonical or explicitly requested titles are known. No persistent HTTP cache, full crawler, ML model, or web service was built. Live data is saved locally outside Git. Human review remains pending.
+
 ## Ongoing logging template
 
 For each material contribution, add:
