@@ -42,3 +42,11 @@ Limitations or unresolved questions:
 Do not invent model versions, human approvals, test results, or claims that generated work was independently written. If this project is submitted for a course, check the course's actual AI-use rules and adapt this record to its required format.
 
 Do not include passwords, tokens, private chat transcripts, or other sensitive information in this public log. A concise task summary is sufficient unless a specific submission policy requires more.
+
+## Interactive article input
+
+- **Date:** November 5, 2026 (America/Toronto).
+- **Tool:** OpenAI Codex.
+- **Contribution:** Added source/target prompts to the graph demo and an optional interactive collection mode with intermediate articles. Kept explicit command-line arguments available. Updated both matching local checkouts and documented usage.
+- **Validation:** Prompt tests and offline CLI smoke checks; no additional live Wikipedia collection was needed.
+- **Limitations:** Interactive input still searches only the saved graph; entering endpoints does not discover routes outside its selected articles. Human review pending.

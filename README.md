@@ -32,6 +32,10 @@ python graph_demo.py
 python -m pytest -q
 ```
 
+Running `python graph_demo.py` now lists the saved graph's articles and prompts for `Enter source:` and `Enter target:`. Invalid titles are rejected and prompted again. Pass both `--source` and `--target` to skip prompts, or pass one to prompt only for the other.
+
+To choose a new graph interactively, run `python api_endpoint.py --interactive`. Enter the source, target, and optional intermediate articles (one per line, then a blank line to finish). Next run `python graph_demo.py` and choose the endpoints from the saved graph. Adding only source and target produces at most a direct route; longer routes need intermediate articles in the dataset. Collection does not automatically discover those intermediates.
+
 `api_endpoint.py` is the Wikipedia **client access module**, not an HTTP server. It uses the package's page objects, metadata, and links methods against `https://en.wikipedia.org/w/api.php`. It fetches only the five selected articles, follows outgoing-link pagination through the library, and saves plain JSON to `data/graphs/small_domain.json` (ignored by Git). It does not recursively crawl outgoing links or fetch article text.
 
 `graph_demo.py` reads that saved JSON without network access, uses page IDs as nodes, and retains only links among the selected articles. Every edge has weight 1. To choose another small domain:

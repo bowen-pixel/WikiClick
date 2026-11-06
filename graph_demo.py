@@ -46,11 +46,20 @@ def find_path(graph, aliases, source, target):
     )
 
 
+def prompt_article(label, aliases):
+    """Keep asking until the user selects an article in the saved graph."""
+    while True:
+        title = input(f"Enter {label}: ").strip()
+        if title_key(title) in aliases:
+            return title
+        print("Choose one of the articles listed above (use its full title).")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--data", type=Path, default=Path("data/graphs/small_domain.json"))
-    parser.add_argument("--source", default="Graph theory")
-    parser.add_argument("--target", default="Dijkstra's algorithm")
+    parser.add_argument("--source", help="Starting article; prompts if omitted")
+    parser.add_argument("--target", help="Destination article; prompts if omitted")
     args = parser.parse_args()
     try:
         data = json.loads(args.data.read_text(encoding="utf-8"))
@@ -60,7 +69,15 @@ def main():
         print("Edges:")
         for source, target in sorted(graph.edges):
             print(f"  {graph.nodes[source]['title']} -> {graph.nodes[target]['title']} (weight=1)")
-        path = find_path(graph, aliases, args.source, args.target)
+        if args.source is None or args.target is None:
+            print("\nAvailable articles:")
+            for title in sorted(nx.get_node_attributes(graph, "title").values()):
+                print(f"  {title}")
+        source = args.source if args.source is not None else prompt_article("source", aliases)
+        target = args.target if args.target is not None else prompt_article("target", aliases)
+        path = find_path(graph, aliases, source, target)
+    except (EOFError, KeyboardInterrupt):
+        parser.exit(1, "\nInput cancelled. Pass --source and --target for non-interactive use.\n")
     except nx.NetworkXNoPath:
         parser.exit(2, "No path in this dataset; a route elsewhere on Wikipedia may exist.\n")
     except (OSError, ValueError, KeyError, TypeError) as error:

@@ -74,13 +74,38 @@ def collect_domain(client, titles):
     }
 
 
+def prompt_domain():
+    """Collect endpoints and optional intermediate articles, not a full crawl."""
+    print("Choose the articles to include in your small graph.")
+    print("Only links between included articles will be used for searching.")
+    titles = []
+    for label in ("source", "target"):
+        title = ""
+        while not title:
+            title = input(f"Enter {label}: ").strip()
+        titles.append(title)
+    print("Add possible intermediate articles, one per line; press Enter to finish.")
+    while len(set(titles)) < 20:
+        title = input("Additional article: ").strip()
+        if not title:
+            break
+        titles.append(title)
+    return list(dict.fromkeys(titles))
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("titles", nargs="*", help="Up to 20 articles; defaults to five graph topics")
     parser.add_argument("--output", type=Path, default=Path("data/graphs/small_domain.json"))
+    parser.add_argument("--interactive", action="store_true", help="Prompt for source, target, and optional intermediate articles")
     args = parser.parse_args()
+    if args.interactive and args.titles:
+        parser.error("Use either --interactive or positional article titles, not both.")
     try:
-        data = collect_domain(create_client(), args.titles or DEFAULT_TITLES)
+        titles = prompt_domain() if args.interactive else args.titles or DEFAULT_TITLES
+        data = collect_domain(create_client(), titles)
+    except (EOFError, KeyboardInterrupt):
+        parser.exit(1, "\nInput cancelled; no dataset written.\n")
     except (ValueError, wikipediaapi.WikiHttpError,
             wikipediaapi.WikiConnectionError, wikipediaapi.WikiHttpTimeoutError,
             wikipediaapi.WikiInvalidJsonError) as error:

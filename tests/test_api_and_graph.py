@@ -3,8 +3,8 @@ from types import SimpleNamespace
 import networkx as nx
 import pytest
 
-from api_endpoint import collect_domain, get_page_links
-from graph_demo import build_graph, find_path
+from api_endpoint import collect_domain, get_page_links, prompt_domain
+from graph_demo import build_graph, find_path, prompt_article
 
 
 def record(node, title, links=(), requested=None):
@@ -70,3 +70,15 @@ def test_api_failure_propagates():
 
     with pytest.raises(RuntimeError, match="Network unavailable"):
         get_page_links(BrokenClient(), "A")
+
+
+def test_search_prompt_retries_invalid_and_empty_titles(monkeypatch):
+    answers = iter(["", "Outside", "b_alias"])
+    monkeypatch.setattr("builtins.input", lambda prompt: next(answers))
+    assert prompt_article("source", {"B alias": 2}) == "b_alias"
+
+
+def test_collection_prompt_keeps_endpoints_and_intermediates(monkeypatch):
+    answers = iter(["", " A ", "D", "B", "B", ""])
+    monkeypatch.setattr("builtins.input", lambda prompt: next(answers))
+    assert prompt_domain() == ["A", "D", "B"]
