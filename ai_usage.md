@@ -68,3 +68,19 @@ Do not include passwords, tokens, private chat transcripts, or other sensitive i
 - **Contribution:** Added pinned ML dependencies, stable title hashing, a small distance-regression network, deduplicated pair loading, validation-based checkpoint selection, and offline BFS/text/neural search comparisons. Expanded the resumable sample to 1,100 total sources and capped larger JSONL exports at 200 rows per destination. Added reusable frozen-dataset validation and meaningful model/search/split tests.
 - **Validation actually performed:** Seventeen tests passed in both local checkouts. All 220,000 larger-graph labels match forward NetworkX BFS; graph has 1,100 nodes and 63,966 unit-weight edges; all original 100 IDs retained. Trained separate 25-epoch CPU runs on 100 and 1,100 articles, selecting epochs 13 and 8 respectively using validation MAE. Test MAEs were 0.593 and 0.414 clicks. Ran 100-query within-graph comparisons for both models and a frozen-model transfer comparison on new expanded-graph destinations. Detailed measured results are in TRAINING_RESULTS.md and local runs reports.
 - **Limitations:** Title-only hashed features; null labels skipped; no optimality guarantee for learned search; biased and overlapping graph samples; offline timings only; no live-fetch speedup claim. Test comparisons across model sizes use different query sets and do not establish a controlled training-size effect. No cloud deployment or model service was created. Human review pending.
+
+## Training and search visualization
+
+- **Date:** November 5, 2026 (America/Toronto).
+- **Tool:** OpenAI Codex.
+- **Contribution:** Added a Matplotlib plotting script and dependency file. Generated PNG/PDF learning curves, the fixed Smooth L1 loss shape, and paired offline search-comparison charts with a CSV summary. Documented operational definitions of useful search guidance and limitations.
+- **Validation:** Generated charts directly from saved metrics and comparison JSON without retraining. Visually inspected plots and corrected annotation/legend placement. Budget curves derive from recorded deterministic stopping counts within the measured 200-expansion budget.
+- **Limitations:** Training Smooth L1 loss and validation MAE are different quantities; separate plots do not measure a numerical train/validation loss gap. No new training runs, uncertainty analysis, or live-fetch benchmark were performed. Human review pending.
+
+## Exhaustive optimal-path analysis
+
+- **Date:** November 5, 2026 (America/Toronto).
+- **Tool:** OpenAI Codex.
+- **Contribution:** Added analyze_all_pairs.py and three directed/unreachable/unit-weight tests. Computed exact distances with one BFS per source and saved every distinct ordered pair as compressed CSV plus summary and per-source statistics.
+- **Validation:** Three new tests passed. Verified all 1,208,900 exported pair identities in order, no self-pairs, complete row coverage, unreachable count, distance histogram, and sum against summary totals. The mean among 1,207,801 reachable pairs is 2.4044739158 clicks; 1,099 pairs have no finite route in the saved graph.
+- **Scope:** Exact reference analysis of the frozen 1,100-node graph, not neural search and not all Wikipedia. Unreachable pairs are excluded from the finite mean. Human review pending.

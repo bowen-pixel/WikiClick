@@ -63,6 +63,21 @@ Keep `model_100` and `model_1100` separate. Each within-graph model uses its own
 
 ## Read the comparison
 
+Generate the recorded training and comparison charts without retraining:
+
+```bash
+python -m pip install -r requirements-plot.txt
+python plot_results.py
+```
+
+PNG and PDF charts are written to `runs/figures/`, with a CSV summary. `training_curves` separates mean training Smooth L1 loss from validation MAE: they are different quantities, so a numerical gap between them is not an overfitting measurement. Training loss is averaged over batches while weights are being updated; validation MAE is evaluated at the end of the epoch. The selected-epoch markers identify the lowest validation MAE. The two model curves describe different graph tasks and held-out sets, so their relative heights do not establish a training-size effect.
+
+`loss_function` plots the fixed Smooth L1 penalty with beta 1; the loss shape is chosen in advance, not learned. For residual e = predicted distance minus true distance, the penalty is 0.5 e² when |e| < 1, and |e| - 0.5 otherwise.
+
+`search_comparison` shows expansion work, optimal/longer/failed routes, offline latency, and success versus expansion budget. The budget curves are derived from each recorded deterministic search's stopping expansion count for budgets up to the original 200; they do not extrapolate beyond measured searches. These plots use the paired held-out queries in `comparison_1100.json` and do not rerun or tune models using test outcomes.
+
+Define a claim about intelligent guidance operationally: higher success under the same work budget, or less work for an agreed route-quality requirement. Also report shortest-route correctness and wall-clock cost. Neither lower training loss nor fewer expansions alone establishes a better search system. For stronger evidence, predefine query sets, include unsuccessful searches, compare with the non-neural heuristic, repeat model training across seeds, and use paired uncertainty intervals. A claim about API fetching additionally requires measuring HTTP calls on equivalent cache states; these offline figures do not provide that evidence.
+
 The comparison methods are ordinary BFS, greedy best-first ordered by title similarity, and greedy best-first ordered by predicted remaining distance. All searches use a frontier and prevent revisiting discovered nodes. Neural and text priorities need not return shortest routes; they are not admissible A* heuristics.
 
 Reference BFS distances select graph-reachable evaluation queries at least two clicks long and measure route quality. They never guide the evaluated neural or text searches. This experiment does not evaluate unreachable-goal detection. Failures under the search budget remain in the success-rate denominator.
@@ -78,6 +93,16 @@ Shared title-feature preparation is timed separately. Checkpoint loading and ref
 **This is offline search: no API requests occur during comparison.** An expansion count is not an HTTP-request count. Live fetching would need equivalent initial caches, page/link access, request budgets, and accounting for pagination and feature fetches. No live-fetch speedup is claimed.
 
 ## Files and storage
+
+To compute the exact reference average over **every ordered pair** in the expanded graph:
+
+```bash
+python analyze_all_pairs.py --save-distances
+```
+
+This runs BFS from each source and excludes source-equals-target pairs. `runs/all_pairs_1100/summary.json` records the weighted average over all reachable pairs, histogram, maximum finite distance, and unreachable count. `per_source.csv` records source-specific statistics. Optional `pair_distances.csv.gz` contains every distinct ordered pair; an empty distance means no route within the saved graph, not zero clicks. Unreachable pairs are excluded from a finite mean and counted separately.
+
+Initial exhaustive result: 1,208,900 distinct ordered pairs, 1,207,801 reachable and 1,099 unreachable. The sum of reachable shortest distances is 2,904,126, giving a mean of **2.4044739158 clicks**, median 2, 95th percentile 3, and maximum finite distance 6. This is different from the earlier 2.47-click average over 100 selected evaluation queries, which excluded direct one-click routes.
 
 Training scripts and dependency pins belong in Git. Collected data remains in `data/graphs/`, resumable source records in `data/cache/`, and models/results in `runs/`; these generated directories are ignored by Git. SQL is not required. Reports identify the graph with its SHA-256 content ID.
 
