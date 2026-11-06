@@ -2,7 +2,7 @@
 
 Find a route between two English Wikipedia articles using the fewest hyperlink clicks within a collected graph.
 
-**Status:** planning and documentation. The Wikipedia client, graph collector, solver, and demo have not been implemented yet.
+**Status:** first working API and graph prototype. Fetch a small selection of Wikipedia articles with `Wikipedia-API`, save their outgoing links, and run NetworkX on links between those selected articles. Larger collection, persistent request caching, and ML remain future work.
 
 **Target:** a reproducible working demo by December 1, 2026. A small neural-network experiment is a stretch goal.
 
@@ -17,7 +17,35 @@ path = nx.shortest_path(graph, source=start, target=destination, weight=None)
 clicks = len(path) - 1
 ```
 
-This is the intended solver interface, not a runnable application yet. No neural-network training is needed for exact shortest-path search.
+The prototype explicitly stores `weight=1` on every edge and calls `nx.shortest_path(..., weight="weight")`. This minimizes clicks just as the unweighted call above does. No neural-network training is needed for exact shortest-path search.
+
+## Run the prototype
+
+Use Python 3.13 (the version used for the initial verification).
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements-dev.txt
+python api_endpoint.py
+python graph_demo.py
+python -m pytest -q
+```
+
+`api_endpoint.py` is the Wikipedia **client access module**, not an HTTP server. It uses the package's page objects, metadata, and links methods against `https://en.wikipedia.org/w/api.php`. It fetches only the five selected articles, follows outgoing-link pagination through the library, and saves plain JSON to `data/graphs/small_domain.json` (ignored by Git). It does not recursively crawl outgoing links or fetch article text.
+
+`graph_demo.py` reads that saved JSON without network access, uses page IDs as nodes, and retains only links among the selected articles. Every edge has weight 1. To choose another small domain:
+
+```bash
+python api_endpoint.py "Graph theory" "Shortest path problem" "Dijkstra's algorithm" --output data/graphs/custom.json
+python graph_demo.py --data data/graphs/custom.json --source "Graph theory" --target "Dijkstra's algorithm"
+```
+
+The collector accepts 1–20 unique article titles. This is a source-page limit, not an HTTP-request limit: pagination and retries may require additional requests. Sources are fetched sequentially with an identifying User-Agent, timeout, limited retries, and `maxlag`. Missing articles fail collection instead of silently producing empty records. Rerunning collection makes fresh requests; running the graph demo reuses the saved data.
+
+**Live result on November 5, 2026:** five articles, 13 directed edges, and the route `Graph theory → Shortest path problem → Dijkstra's algorithm` in 2 clicks. Wikipedia changes, so future collections can differ.
+
+**Prototype limitation:** source redirects are resolved, but outgoing links are matched only against selected canonical titles and explicitly requested aliases. Other redirect aliases can be omitted. This is the shortest path in the constructed graph, not a guarantee that every possible link or redirect between those articles has been captured. Namespace-0 API links may include template-generated links rather than only article body links. Full canonicalization and collection metadata will be expanded in later work.
 
 **Scope of the answer:** shortest paths are guaranteed only within the saved graph. A partial Wikipedia dataset can miss shorter routes. “No path in this dataset” does not establish that no path exists across Wikipedia.
 
@@ -35,14 +63,14 @@ Start with a modest saved dataset and an offline CLI. Whole-Wikipedia coverage, 
 
 ## Project documents
 
-- [Implementation outline and timeline](Outlin.md)
+- [Implementation outline and timeline](Outline.md)
 - [AI usage record](ai_usage.md)
 
 ## Development workflow
 
 Use one repository and short feature branches such as `codex/wiki-client`, `codex/graph-storage`, and `codex/shortest-path`. Create an issue for each task, agree on shared interfaces, open a pull request, and merge small working changes regularly. Keep `main` usable. A GitHub Project board can be added later to track Todo, In progress, and Done.
 
-Python, NetworkX, an HTTP client, and pytest are the planned baseline. Add PyTorch only when the baseline solver and training dataset are ready. Installation and run instructions will be added when executable code exists.
+The prototype uses Python, Wikipedia-API, NetworkX, and pytest. Add PyTorch only when the baseline solver and training dataset are ready.
 
 ## Validation goals
 
@@ -57,5 +85,6 @@ Python, NetworkX, an HTTP client, and pytest are the planned baseline. Add PyTor
 - [NetworkX shortest-path algorithms](https://networkx.org/documentation/stable/reference/algorithms/shortest_paths.html)
 - [MediaWiki links API](https://www.mediawiki.org/wiki/API:Links)
 - [MediaWiki API etiquette](https://www.mediawiki.org/wiki/API:Etiquette)
+- [Wikipedia-API package and usage examples](https://pypi.org/project/Wikipedia-API/)
 
 Wikipedia requests should use an identifying User-Agent, caching, bounded collection, and appropriate retry/backoff behavior. Any redistributed Wikipedia content must retain the applicable attribution and license information.

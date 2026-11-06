@@ -1,0 +1,2 @@
+Wikipedia-API==0.16.0
+networkx==3.7
