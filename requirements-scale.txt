@@ -1,0 +1,2 @@
+-r requirements-plot.txt
+scipy==1.18.1

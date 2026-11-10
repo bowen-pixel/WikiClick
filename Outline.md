@@ -2,6 +2,8 @@
 
 Planning date: November 4, 2026. Target demo: December 1, 2026.
 
+Progress reviewed: **November 9, 2026 (America/Toronto)**. The implementation is ahead of the original milestones, but release readiness and stronger evaluation remain unfinished. The active nested checkout contains the recent collection, training, and plotting commits; 20 tests passed during this review. Treat the schedule below as milestones rather than a claim that every acceptance detail is complete.
+
 This schedule assumes approximately 8–12 hours per week. The tables describe the target architecture. As of November 5, the small-domain prototype, resumable canonical-ID sampler, 100-article pilot, and title-feature PyTorch training/search comparison pipeline are implemented. Expansion to 1,100 articles preserves the pilot and creates separate model artifacts. See `TRAINING.md` for reproducible commands and evaluation limitations. Full Wikipedia coverage, richer semantic features, and live-fetch benchmarking remain future work.
 
 ## 1. Minimum deliverable
@@ -38,14 +40,30 @@ Keep dependency direction simple: the CLI calls the search and storage modules; 
 
 ## 4. Timeline and acceptance criteria
 
-| Dates (2026) | Work | Acceptance criteria |
-| --- | --- | --- |
-| Nov 5–8 | Environment, module contracts, API spike, toy solver | Fetch complete outgoing links for one article; demonstrate a correct shortest path on a hand-built directed graph |
-| Nov 9–15 | Cache, bounded collection, canonicalization, graph persistence | Save and reload a documented dataset; API pagination and failure cases covered by mocked tests |
-| Nov 16–22 | Integrate offline solver and CLI; evaluate | Route and click count displayed; directionality, self paths, unreachable nodes, and missing inputs handled; benchmark pairs recorded |
-| Nov 23–27 | Optional small PyTorch experiment | Reproducible training run and held-out evaluation against exact shortest paths |
-| Nov 28–30 | Integration fixes, documentation, release preparation | A fresh checkout can follow documented setup and reproduce the demo; limitations and results written down |
-| Dec 1 | Demonstration | Working core solver, dataset metadata, example output, and tagged release |
+| Dates (2026) | Original milestone | Status on Nov 9 | Remaining focus |
+| --- | --- | --- | --- |
+| Nov 5–8 | Environment, API spike, toy solver, module contracts | Core prototype complete; formal result contracts remain provisional | Document actual module boundaries without unnecessary rewrites |
+| Nov 9–15 | Cache, bounded collection, canonicalization, graph persistence | Core collection complete ahead of schedule: 100 and 1,100 articles, resumable records, canonical target IDs, validation | Fresh-environment setup check; cover retry/rate-limit behavior; establish CI and a reproducible frozen-data handoff |
+| Nov 16–22 | Offline solver, CLI, evaluation | Core behavior implemented; source/target prompts and benchmark reports work | Polish user output, include per-query runtime in the interactive demo, improve errors, and check integration from a clean checkout |
+| Nov 23–27 | Optional PyTorch experiment | Initial experiment complete: separate models, held-out destinations, transfer test, BFS/text/neural comparisons and plots | Predefine shared held-out queries for a controlled comparison between model sizes; repeat across seeds and quantify uncertainty. Live-fetch evaluation is optional additional scope |
+| Nov 28–30 | Documentation and release preparation | Documentation and measured results exist; release verification pending | Reproduce the demo from a fresh checkout, package/version necessary data and artifacts, finalize limitations and tag a release |
+| Dec 1 | Demonstration | Pending | Demonstrate the exact solver and learned-search trade-off using the frozen dataset |
+
+### Verified results so far
+
+- Frozen expanded graph: **1,100 articles and 63,966 unit-weight directed edges**; original 100 articles retained.
+- Validated 220,000 larger-graph training rows. Separate 100-article and 1,100-article model checkpoints and training histories exist locally.
+- Exhaustive exact analysis covers 1,208,900 distinct ordered pairs: 1,207,801 reachable and 1,099 unreachable. Mean finite shortest distance: **2.4044739158 clicks**. This is reference graph analysis, not an exhaustive neural-search benchmark.
+- On 100 held-out larger-graph queries with a 200-expansion budget, BFS reached 97 goals, returning 97 optimal routes; neural guidance reached all 100, returning 69 optimal routes. Mean expansions were 37.23 versus 8.25, respectively; neural inference was slower in memory. These are initial single-seed offline results.
+- The 100-article and 1,100-article model comparisons currently use different query sets; do not claim a controlled training-size effect. No live API-fetch speedup has been measured.
+
+### Priorities for November 9–15
+
+1. Use the nested checkout with the recent commits as the working repository; avoid accidentally mixing its virtual environment or generated artifacts with the older outer checkout. Preserve both until deliberate cleanup is requested.
+2. Verify installation and a small offline demo from a fresh environment. Decide how another person obtains the exact frozen graph: a versioned artifact or a documented reconstruction plus graph ID, rather than relying on ignored local files.
+3. Add automated CI and targeted API retry/rate-limit tests; the current local suite has 20 passing tests.
+4. Bring the documented module interfaces and CLI behavior into agreement. Full clean-architecture refactoring is not required to meet the project goal.
+5. Specify the next evaluation protocol before further model tuning. Keep a genuinely untouched confirmation set or disclose repeated use of the current test queries.
 
 If time is limited, defer ML first, then interface polish. Preserve the exact solver, reproducible data, and honest reporting.
 
@@ -64,17 +82,17 @@ Research question: can a small model rank outgoing links toward a destination an
 
 Use the repository for code, documents, issues, and pull requests. A GitHub Project is an optional task board, not a replacement for the repository.
 
-Suggested first issues:
+Task status as of November 9:
 
 - [ ] Define page identity, `PageLinks`, and `SearchResult` contracts.
-- [ ] Set up Python dependencies and basic automated checks.
-- [ ] Implement Wikipedia client with continuation and canonicalization.
-- [ ] Implement caching and bounded graph collection with metadata.
+- [x] Set up pinned Python dependencies and local automated tests; hosted CI remains pending.
+- [x] Implement continuation and canonical target IDs in the canonical dataset collector; the original small-domain title-only mode retains its documented limitations.
+- [x] Implement resumable bounded graph collection with metadata.
 - [ ] Implement graph save/load and deterministic test fixture.
-- [ ] Implement exact shortest-path wrapper and meaningful tests.
-- [ ] Integrate CLI and benchmark saved-graph queries.
-- [ ] Document reproducible setup, data scope, and demo results.
-- [ ] Stretch: train and evaluate a small navigation model.
+- [x] Implement exact shortest-path wrapper and meaningful tests.
+- [x] Integrate interactive source/target CLI and benchmark saved-graph queries; user-facing runtime display remains pending.
+- [x] Document setup, data scope, and measured results; clean-checkout reproducibility remains pending.
+- [x] Train and evaluate the initial navigation models; broader evaluation remains pending.
 
 For each issue, create a short branch such as `codex/wiki-client`, keep changes focused, and open a pull request explaining behavior and validation. Review shared-interface changes before merging. Merge into `main` regularly and update dependent branches. Record AI assistance in `ai_usage.md` as work proceeds.
 

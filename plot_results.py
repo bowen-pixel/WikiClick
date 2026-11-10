@@ -81,7 +81,8 @@ def search_plots(report, output):
     success = np.array([summary[m]["success_rate"]*100 for m in methods])
     axes[0, 1].bar(labels, optimal, color="#168577", label="Optimal route")
     axes[0, 1].bar(labels, success-optimal, bottom=optimal, color="#d9a441", label="Longer route")
-    axes[0, 1].bar(labels, 100-success, bottom=success, color="#c85b5b", label="Budget failure")
+    failure_label = "Budget/time failure" if report.get("seconds_per_query") else "Budget failure"
+    axes[0, 1].bar(labels, 100-success, bottom=success, color="#c85b5b", label=failure_label)
     for i, method in enumerate(methods):
         axes[0, 1].text(i, 104, f"{success[i]:.0f}% reached", ha="center", fontsize=9)
     axes[0, 1].set(title="Route quality · all queries", ylabel="Queries (%)", ylim=(0, 112))
@@ -102,7 +103,11 @@ def search_plots(report, output):
         ax.grid(axis="y", alpha=.2)
         ax.set_axisbelow(True)
     n = len(report["results"])
-    fig.suptitle(f"1,100-article graph · {n} matched held-out queries · budget {report['budget_expansions']}", fontsize=14)
+    node_count = report.get("graph_nodes", 1100)
+    caption = f"{node_count:,}-article graph · {n} paired queries · budget {report['budget_expansions']}"
+    if report.get("seconds_per_query"):
+        caption += f"\nFresh snapshot {report.get('snapshot')} · {report['seconds_per_query']:g}s/query · cold feature costs included"
+    fig.suptitle(caption, fontsize=14)
     save(fig, output, "search_comparison")
     with (output / "search_summary.csv").open("w", newline="") as stream:
         writer = csv.DictWriter(stream, fieldnames=["method", *next(iter(summary.values())).keys()])
@@ -115,12 +120,15 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--runs", type=Path, default=Path("runs"))
     parser.add_argument("--output", type=Path, default=Path("runs/figures"))
+    parser.add_argument("--comparison", type=Path, help="Use a different measured comparison report")
+    parser.add_argument("--search-only", action="store_true", help="Plot only search results")
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
     plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 10, "axes.spines.top": False, "axes.spines.right": False})
-    training_curves(args.runs, args.output)
-    loss_shape(args.output)
-    search_plots(read(args.runs / "comparison_1100.json"), args.output)
+    if not args.search_only:
+        training_curves(args.runs, args.output)
+        loss_shape(args.output)
+    search_plots(read(args.comparison or args.runs / "comparison_1100.json"), args.output)
     print(f"Saved PNG/PDF charts and CSV summary to {args.output}")
 
 

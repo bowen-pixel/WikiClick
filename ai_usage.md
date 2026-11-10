@@ -84,3 +84,29 @@ Do not include passwords, tokens, private chat transcripts, or other sensitive i
 - **Contribution:** Added analyze_all_pairs.py and three directed/unreachable/unit-weight tests. Computed exact distances with one BFS per source and saved every distinct ordered pair as compressed CSV plus summary and per-source statistics.
 - **Validation:** Three new tests passed. Verified all 1,208,900 exported pair identities in order, no self-pairs, complete row coverage, unreachable count, distance histogram, and sum against summary totals. The mean among 1,207,801 reachable pairs is 2.4044739158 clicks; 1,099 pairs have no finite route in the saved graph.
 - **Scope:** Exact reference analysis of the frozen 1,100-node graph, not neural search and not all Wikipedia. Unreachable pairs are excluded from the finite mean. Human review pending.
+
+## Timeline progress review
+
+- **Date:** November 9, 2026 (America/Toronto).
+- **Tool:** OpenAI Codex.
+- **Contribution:** Reviewed the active nested checkout, Git history, saved metrics, and original milestones; updated Outline.md with completed work, explicit remaining acceptance details, and November 9–15 priorities.
+- **Validation:** All 20 local tests passed. Confirmed the saved exhaustive-distance summary and initial model/search reports. Did not rerun collection, training, or exhaustive analysis.
+- **Limitations:** Local commits and files establish local progress, not remote GitHub synchronization or release readiness. CI, clean-checkout reproducibility, stronger confirmation evaluation, and live-fetch benchmarking are not claimed complete.
+
+## Fresh million-additional-article job (in progress)
+
+- **Date:** November 9, 2026 (America/Toronto).
+- **Tool:** OpenAI Codex.
+- **User choice:** Fresh Wikipedia data only; no historical SNAP dataset.
+- **Contribution:** Inspected the official November 2026 dump manifest and table schemas. Added resumable checksum-verified downloading, streaming SQL-to-CSR import with canonical redirect handling, preservation of original IDs plus a million extra articles, a sampled sparse-graph transfer benchmark, measured-diagram generation, and a local job/status runner.
+- **Validation performed:** Three new fixture tests and the full 23-test suite passed. Actual fresh dump download and the dependent local workflow were launched; at the time of this entry the job was still downloading.
+- **Not yet claimed:** A completed million-page graph, measured BFS/neural performance, new diagrams, retraining on a million pages, or exhaustive all-pairs evaluation. Final state is recorded in runs/fresh_scale_status.json.
+
+## Fresh dump parser correction
+
+- **Date:** November 9, 2026 (America/Toronto).
+- **Tool:** OpenAI Codex.
+- **Problem:** The numeric parser removed SQL statement semicolons without inserting a delimiter. Multiple INSERT statements in one real dump chunk could concatenate adjacent IDs, triggering a misleading schema error.
+- **Change:** Treat statement-ending semicolons as separators, retain strict three-column/count validation, improve the malformed-row error, and add regression tests for multiple statements and invalid column counts.
+- **Validation:** All 25 tests passed. Parsed 744,680 real dump records across the first three chunks. An independent regex row-by-row parser matched all 247,323 rows in the previously failing chunk.
+- **Execution:** Resumed the local pipeline using existing verified downloads and saved page/target stages. At the progress check it had passed 30 million real hyperlink rows. Import, benchmark, and final diagrams remain pending until the job reports completion.
