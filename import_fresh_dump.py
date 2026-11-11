@@ -73,7 +73,8 @@ def sample_pages(raw, output, original, extra, seed):
         if settings["extra"] != extra or settings["seed"] != seed or settings["original_graph_id"] != original["graph_id"]:
             raise ValueError("Use a different output directory for different sampling settings")
         return settings
-    retained_ids = {node["pageid"] for node in original["nodes"]}
+    retained_ids = (set(map(int, original["page_ids"])) if "page_ids" in original
+                    else {node["pageid"] for node in original["nodes"]})
     retained = {}
     reservoir = []
     redirect_names = {}
@@ -252,7 +253,14 @@ def main():
         if not path.exists() or path.stat().st_size != meta["size"]:
             parser.error(f"Missing/incomplete dump table: {path}; run download_fresh_dump.py first")
     started = time.perf_counter()
-    original = json.loads(args.retain.read_text())
+    if args.retain.is_dir():
+        retained_metadata = json.loads((args.retain / "metadata.json").read_text())
+        if retained_metadata["snapshot"] != SNAPSHOT:
+            parser.error("Retained graph must use the same fresh dump snapshot")
+        original = {"graph_id": retained_metadata["graph_id"],
+                    "page_ids": np.load(args.retain / "page_ids.npy", mmap_mode="r")}
+    else:
+        original = json.loads(args.retain.read_text())
     settings = sample_pages(args.raw, args.output, original, args.extra, 207)
     map_targets(args.raw, args.output)
     graph = build_sparse(args.raw, args.output)

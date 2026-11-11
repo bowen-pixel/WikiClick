@@ -100,6 +100,19 @@ Start with a modest saved dataset and an offline CLI. Whole-Wikipedia coverage, 
 - [AI usage record](ai_usage.md)
 - [PyTorch training and BFS comparison guide](TRAINING.md)
 - [Measured training and search results](TRAINING_RESULTS.md)
+- [1,000-article next-link ranking and correction experiment](NEXT_LINK_1000.md)
+
+### Run the local next-link policy
+
+After the saved 1,000-article experiment has completed, run `python rank_navigate.py`
+to enter source and destination titles. This loads cached features and saved weights;
+it requires no network access and does not change weights during navigation.
+Use `--model raw`, `--model title_rank`, or `--model corrected` to select a checkpoint.
+The correction stage includes validation rollback: in the first measured run it
+retained the preceding semantic ranker in all three seeds rather than deploying
+worse validation checkpoints. See the experiment report for measured results and
+reproduction commands. Category hyperedges provide fixed text context, not new
+clickable edges or guaranteed shortest paths.
 
 ## Development workflow
 

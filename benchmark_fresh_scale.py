@@ -78,6 +78,7 @@ def main():
     parser.add_argument("--checkpoint", type=Path, default=Path("runs/model_1100/best.pt"))
     parser.add_argument("--output", type=Path, default=Path("runs/fresh_million_comparison.json"))
     parser.add_argument("--queries", type=int, default=100)
+    parser.add_argument("--query-file", type=Path, help="Reuse a predeclared graph-specific held-out query set")
     parser.add_argument("--budget", type=int, default=200)
     parser.add_argument("--seconds-per-query", type=float, default=10)
     args = parser.parse_args()
@@ -98,24 +99,56 @@ def main():
     model = DistanceModel(checkpoint["dimensions"], checkpoint["hidden"])
     model.load_state_dict(checkpoint["state_dict"])
     model.eval()
-    known = set(checkpoint["training_graph_node_ids"])
-    eligible = np.flatnonzero(np.array([int(node) not in known for node in ids], dtype=bool))
+    if checkpoint["graph_id"] == metadata["graph_id"]:
+        allowed_ids = set(checkpoint["destination_splits"]["test"])
+        scope = "Trained expanded-graph model on held-out destination articles"
+    else:
+        known = set(checkpoint["training_graph_node_ids"])
+        allowed_ids = {int(node) for node in ids if int(node) not in known}
+        scope = "Frozen model transfer to destination page IDs outside its original graph"
+    eligible = np.flatnonzero(np.array([int(node) in allowed_ids for node in ids], dtype=bool))
     rng = np.random.default_rng(207)
-    goals = rng.choice(eligible, size=min(len(eligible), args.queries*3), replace=False)
     queries = []
     reference_seconds = 0.
-    for goal in goals:
-        started = time.perf_counter()
-        distances = shortest_path(reverse, directed=True, indices=int(goal), unweighted=True)
-        reference_seconds += time.perf_counter()-started
-        sources = np.flatnonzero(np.isfinite(distances) & (distances >= 2))
-        if len(sources):
-            source = int(rng.choice(sources))
-            queries.append({"source": source, "target": int(goal), "optimal_clicks": int(distances[source]),
-                            "source_page_id": int(ids[source]), "target_page_id": int(ids[goal]),
-                            "source_title": titles[source], "target_title": titles[int(goal)]})
-        if len(queries) == args.queries:
-            break
+    if args.query_file:
+        query_data = json.loads(args.query_file.read_text())
+        if query_data["graph_id"] != metadata["graph_id"]:
+            raise ValueError("Query file belongs to another graph")
+        references = {}
+        for row in query_data["queries"][:args.queries]:
+            source, goal = int(row["source"]), int(row["target"])
+            if not (0 <= source < len(ids) and 0 <= goal < len(ids)):
+                raise ValueError("Query index outside graph")
+            if int(ids[goal]) not in allowed_ids:
+                raise ValueError("Query destination is not held out for this checkpoint")
+            if (int(ids[source]), int(ids[goal])) != (row["source_page_id"], row["target_page_id"]):
+                raise ValueError("Query page IDs differ from graph")
+            if goal not in references:
+                started = time.perf_counter()
+                references[goal] = shortest_path(reverse, directed=True, indices=goal, unweighted=True)
+                reference_seconds += time.perf_counter()-started
+            distance = references[goal][source]
+            if not np.isfinite(distance) or distance < 2 or int(distance) != row["optimal_clicks"]:
+                raise ValueError("Query reference label is invalid")
+            queries.append({**row, "source_title": titles[source], "target_title": titles[goal]})
+        del references
+    else:
+        goals = rng.choice(eligible, size=min(len(eligible), args.queries*3), replace=False)
+        per_goal = max(1, (args.queries+len(goals)-1)//len(goals)) if len(goals) else 0
+        for goal in goals:
+            started = time.perf_counter()
+            distances = shortest_path(reverse, directed=True, indices=int(goal), unweighted=True)
+            reference_seconds += time.perf_counter()-started
+            sources = np.flatnonzero(np.isfinite(distances) & (distances >= 2))
+            for source in rng.choice(sources, size=min(per_goal, len(sources)), replace=False):
+                source = int(source)
+                queries.append({"source": source, "target": int(goal), "optimal_clicks": int(distances[source]),
+                                "source_page_id": int(ids[source]), "target_page_id": int(ids[goal]),
+                                "source_title": titles[source], "target_title": titles[int(goal)]})
+                if len(queries) == args.queries:
+                    break
+            if len(queries) == args.queries:
+                break
     if len(queries) != args.queries:
         raise ValueError("Not enough eligible graph-reachable queries")
 
@@ -170,7 +203,7 @@ def main():
                          "median_seconds_all_queries": statistics.median(v["seconds"] for v in values)}
     report = {"graph_id": metadata["graph_id"], "graph_nodes": graph.shape[0], "graph_edges": int(graph.nnz),
               "snapshot": metadata["snapshot"], "checkpoint_graph_id": checkpoint["graph_id"],
-              "scope": "Frozen 1,100-article model, fresh dump sample, unseen destination page IDs; no model retraining",
+              "scope": scope, "query_file": str(args.query_file) if args.query_file else None,
               "budget_expansions": args.budget, "seconds_per_query": args.seconds_per_query,
               "reference_seconds": reference_seconds, "summary": summary, "results": results,
               "notes": ["Exact reference distances only for sampled queries, not all pairs.",

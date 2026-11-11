@@ -110,3 +110,44 @@ Do not include passwords, tokens, private chat transcripts, or other sensitive i
 - **Change:** Treat statement-ending semicolons as separators, retain strict three-column/count validation, improve the malformed-row error, and add regression tests for multiple statements and invalid column counts.
 - **Validation:** All 25 tests passed. Parsed 744,680 real dump records across the first three chunks. An independent regex row-by-row parser matched all 247,323 rows in the previously failing chunk.
 - **Execution:** Resumed the local pipeline using existing verified downloads and saved page/target stages. At the progress check it had passed 30 million real hyperlink rows. Import, benchmark, and final diagrams remain pending until the job reports completion.
+
+## Rescaled diagrams and frozen-model interpretation
+
+- **Date:** November 10, 2026 (America/Toronto).
+- **Tool:** OpenAI Codex.
+- **Contribution:** Increased chart resolution and typography, exported individual search panels, changed latency to a logarithmic axis, and autoscaled success axes without altering measurements. Updated the fresh-million guide with completed graph counts and interpretation.
+- **Verification:** Regenerated both pilot and fresh-million figures and visually inspected the new combined chart. Read the reports: the frozen neural model reached 7/100 goals versus title similarity 15/100 and BFS 3/100; all failures exhausted the 200-expansion budget. Mean reference query distances differed (2.47 versus 5.67), and caching protocols differed.
+- **Scope:** Plotting and explanation only; no new model training, weight updates, or search experiments were performed. Internal neural parameters are distinct from the graph's fixed unit edge costs.
+
+## Second million expansion and supervised weight training (running)
+
+- **Date:** November 10, 2026 (America/Toronto).
+- **User intent:** Add another million articles and train on the resulting data, rather than only test frozen weights.
+- **Contribution:** Expanded retention to accept a sparse source graph, started a 2,001,100-node import preserving the previous 1,001,100 page IDs, and added exact sampled-label generation, destination-disjoint splits, equivalent faster fixed title hashing, actual Adam fine-tuning, optimizer/parameter-change reporting, shared-query frozen-versus-trained evaluation, and dedicated large-model training plots. Reused the already-downloaded fresh snapshot; no new network download required.
+- **Validation:** All 30 tests passed, including a small end-to-end test of exact labels, training parameter changes, and identical held-out queries across both checkpoints. Custom training-history plot generation was exercised successfully.
+- **Execution status:** The real expansion and dependent supervised-training workflow were launched. At this entry the real job was still importing; large-graph model updates and performance are not yet claimed. Status: runs/large_training_status.json.
+- **Scope:** The plan samples up to 512,000 exact distance pairs from the expanded graph. It does not train on every possible pair or article full text. The existing 1,100-article model initializes a separately saved fine-tuned checkpoint and remains unchanged as control. Human review pending.
+
+## Supervised expanded-graph training completed
+
+- **Date:** November 10, 2026 (America/Toronto).
+- **Execution:** Completed a graph of 2,001,100 articles and 56,350,501 edges, then generated sampled exact labels on newly added destination articles. Fine-tuning completed 25 epochs and 39,625 optimizer updates; selected-weight L2 change was 7.25848, with epoch 1 selected by validation MAE.
+- **Actual data and metrics:** 405,522 training pairs, 51,200 validation pairs, and 49,158 test pairs. Initial validation MAE 2.76868, selected validation MAE 1.06644, test MAE 0.90289; constant-distance test MAE 0.57463. Thus training does not establish superiority to the constant baseline or better routing.
+- **Artifacts:** Saved separate best.pt, last.pt, progress and metrics; generated actual large-graph learning curves. The original checkpoint remains untouched. Paired routing evaluation was still running at this entry; no final routing result is claimed yet.
+
+## Experiment audit and readable failure diagrams
+
+- **Date:** November 10, 2026 (America/Toronto).
+- **Contribution:** Audited saved experiments, distinguished graph size from labelled training-pair count, and added `plot_training_audit.py` plus `TRAINING_AUDIT.md`. No training exists at exactly 10 or 1,000 articles; the 1,001,100 graph used frozen transfer. Re-scored both checkpoints on the identical 49,158 held-out distance pairs without updating weights or choosing a new checkpoint.
+- **Measured result:** Frozen MAE 2.502322, fine-tuned MAE 0.902893, constant train-mean MAE 0.574634 clicks. The matched two-million routing reports are complete: BFS, title similarity, frozen neural and fine-tuned neural all reached 0/100 goals at 200 expansions; every failure exhausted that budget. These results do not establish better routing or superiority to the constant distance baseline.
+- **Plots:** Replaced overlapping all-zero success curves with count tables and failure-reason bars. Added matched error, matched routing outcome and fine-tuning learning-curve PNG/PDF outputs. Visually checked the generated charts. Cross-size runs use different test queries and are not a controlled scaling study. No test-time training has been implemented.
+
+## 1,000-article next-link ranking and correction pilot
+
+- **Date:** November 11, 2026 (America/Toronto).
+- **User request:** Run a 1,000-article supervised next-link ranking model with a correction round and compare it against the raw neural model.
+- **Implementation:** Added `next_link_experiment.py`, `rank_navigate.py`, `plot_next_link.py`, algorithm tests, and `NEXT_LINK_1000.md`. Used a separate deterministic 1,000-node, 54,404-edge induced subset of the earlier 1,100-article graph. Downloaded current public introductions and visible category memberships; cached source/revision information. Found 999 introductions and 833 retained category hyperedges covering 860 articles.
+- **Model scope:** Retained the original title-only distance architecture as a freshly trained baseline. Added grouped optimal-next-link training and a residual context head using fixed intro hashes and category-hypergraph pooling. No pretrained language encoder, free-form relationship extraction, learned hypergraph encoder, RL, Coconut or inference-time weight updates are claimed.
+- **Correction and evaluation:** Used 800/100/100 disjoint destination partitions, 8,000/1,000/1,000 decisions, and three seeds. Mined training mistakes only, resampled them at weight 4, and compared with equal-update ordinary continuation. Checkpoints selected by validation loss before test labels were evaluated. All three correction and continuation stages selected epoch 0: proposed updates were rejected, and the previous semantic ranker was retained.
+- **Measured results:** Mean route success across seeds: raw 91.53%, title ranker 98.50%, text/category ranker 98.57%. Optimal-route rates: 51.17%, 66.17%, 68.13%. Correction provided zero additional gain. The semantic-versus-title route-success difference was only +0.067 percentage points, with conditional destination-clustered 95% interval [-0.933, +1.067]; no added semantic success gain is established. Raw versus the full pipeline differs in training duration, available features, and parameter count and is not an isolated causal test of the objective.
+- **Validation:** All 34 tests passed. Visually inspected charts and exercised local inference: the corrected (rolled-back) policy reached ENIAC from Distributed artificial intelligence in 3 clicks; the raw policy exhausted its 20-click limit on that illustrative test query. Aggregates include all 1,000 matched queries, not just that example. Local training and evaluation completed in about 191 seconds, excluding collection and plotting. Existing large-graph artifacts were preserved.
