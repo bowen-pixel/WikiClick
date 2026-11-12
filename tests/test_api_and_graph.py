@@ -3,8 +3,8 @@ from types import SimpleNamespace
 import networkx as nx
 import pytest
 
-from api_endpoint import collect_domain, get_page_links, prompt_domain
-from graph_demo import build_graph, find_path, prompt_article
+from codes.api.api_endpoint import collect_domain, get_page_links, prompt_domain
+from codes.search.graph_demo import build_graph, find_path, prompt_article
 
 
 def record(node, title, links=(), requested=None):

@@ -1,0 +1,4367 @@
+{
+  "graph_id": "sha256:c1e952de422d26c5ee4f34313ed8def15923008aae9bfa4e77e957fc0b4eefab",
+  "checkpoint_graph_id": "sha256:c1e952de422d26c5ee4f34313ed8def15923008aae9bfa4e77e957fc0b4eefab",
+  "scope": "Held-out test destinations on the model's shared graph",
+  "budget_expansions": 200,
+  "feature_preprocessing_seconds": 0.023648208007216454,
+  "summary": {
+    "bfs": {
+      "queries": 100,
+      "successes": 100,
+      "success_rate": 1.0,
+      "optimal_route_rate_all_queries": 1.0,
+      "mean_extra_clicks_successes_only": 0,
+      "mean_expanded_all_queries": 13.62,
+      "median_seconds_all_queries": 1.4833174645900726e-05
+    },
+    "text": {
+      "queries": 100,
+      "successes": 100,
+      "success_rate": 1.0,
+      "optimal_route_rate_all_queries": 0.75,
+      "mean_extra_clicks_successes_only": 0.42,
+      "mean_expanded_all_queries": 30.01,
+      "median_seconds_all_queries": 0.00017760414630174637
+    },
+    "neural": {
+      "queries": 100,
+      "successes": 100,
+      "success_rate": 1.0,
+      "optimal_route_rate_all_queries": 0.96,
+      "mean_extra_clicks_successes_only": 0.05,
+      "mean_expanded_all_queries": 5.26,
+      "median_seconds_all_queries": 0.0001676245592534542
+    }
+  },
+  "results": [
+    {
+      "source": 5180,
+      "target": 21464146,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            5180,
+            18831,
+            12401,
+            21464146
+          ],
+          "expanded": 15,
+          "seconds": 3.2667070627212524e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            5180,
+            22939,
+            33139,
+            16920,
+            14773,
+            12401,
+            21464146
+          ],
+          "expanded": 17,
+          "seconds": 0.00048516783863306046,
+          "clicks": 6,
+          "extra_clicks": 3
+        },
+        "neural": {
+          "path": [
+            5180,
+            18831,
+            12401,
+            21464146
+          ],
+          "expanded": 3,
+          "seconds": 0.0006063347682356834,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 22782409,
+      "target": 21464146,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            22782409,
+            12401,
+            21464146
+          ],
+          "expanded": 2,
+          "seconds": 9.041279554367065e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            22782409,
+            12401,
+            21464146
+          ],
+          "expanded": 2,
+          "seconds": 2.516619861125946e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            22782409,
+            12401,
+            21464146
+          ],
+          "expanded": 2,
+          "seconds": 0.0001527499407529831,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 1449083,
+      "target": 21464146,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            1449083,
+            12401,
+            21464146
+          ],
+          "expanded": 2,
+          "seconds": 6.292015314102173e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            1449083,
+            12401,
+            21464146
+          ],
+          "expanded": 2,
+          "seconds": 1.9291415810585022e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            1449083,
+            12401,
+            21464146
+          ],
+          "expanded": 2,
+          "seconds": 0.0001459158957004547,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 21123339,
+      "target": 21464146,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            21123339,
+            12401,
+            21464146
+          ],
+          "expanded": 3,
+          "seconds": 1.1625699698925018e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            21123339,
+            12401,
+            21464146
+          ],
+          "expanded": 2,
+          "seconds": 2.4957582354545593e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            21123339,
+            12401,
+            21464146
+          ],
+          "expanded": 2,
+          "seconds": 7.800012826919556e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 48455863,
+      "target": 21464146,
+      "optimal_clicks": 4,
+      "methods": {
+        "bfs": {
+          "path": [
+            48455863,
+            5323,
+            7039,
+            12401,
+            21464146
+          ],
+          "expanded": 29,
+          "seconds": 3.4333206713199615e-05,
+          "clicks": 4,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            48455863,
+            5323,
+            14773,
+            12401,
+            21464146
+          ],
+          "expanded": 12,
+          "seconds": 0.00012545939534902573,
+          "clicks": 4,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            48455863,
+            5323,
+            23659805,
+            12401,
+            21464146
+          ],
+          "expanded": 4,
+          "seconds": 0.0003113746643066406,
+          "clicks": 4,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 5993,
+      "target": 21464146,
+      "optimal_clicks": 4,
+      "methods": {
+        "bfs": {
+          "path": [
+            5993,
+            5180,
+            18831,
+            12401,
+            21464146
+          ],
+          "expanded": 16,
+          "seconds": 2.024974673986435e-05,
+          "clicks": 4,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            5993,
+            5180,
+            22939,
+            33139,
+            16920,
+            14773,
+            12401,
+            21464146
+          ],
+          "expanded": 17,
+          "seconds": 0.00015841610729694366,
+          "clicks": 7,
+          "extra_clicks": 3
+        },
+        "neural": {
+          "path": [
+            5993,
+            5180,
+            18831,
+            12401,
+            21464146
+          ],
+          "expanded": 4,
+          "seconds": 0.0002321675419807434,
+          "clicks": 4,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 39781,
+      "target": 21464146,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            39781,
+            5170,
+            12401,
+            21464146
+          ],
+          "expanded": 14,
+          "seconds": 1.816730946302414e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            39781,
+            85816,
+            12401,
+            21464146
+          ],
+          "expanded": 3,
+          "seconds": 3.866571933031082e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            39781,
+            5170,
+            12401,
+            21464146
+          ],
+          "expanded": 3,
+          "seconds": 0.0002510417252779007,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 902,
+      "target": 21464146,
+      "optimal_clicks": 4,
+      "methods": {
+        "bfs": {
+          "path": [
+            902,
+            5180,
+            18831,
+            12401,
+            21464146
+          ],
+          "expanded": 16,
+          "seconds": 1.93743035197258e-05,
+          "clicks": 4,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            902,
+            5180,
+            22939,
+            33139,
+            16920,
+            14773,
+            12401,
+            21464146
+          ],
+          "expanded": 18,
+          "seconds": 0.00014120806008577347,
+          "clicks": 7,
+          "extra_clicks": 3
+        },
+        "neural": {
+          "path": [
+            902,
+            5180,
+            18831,
+            12401,
+            21464146
+          ],
+          "expanded": 4,
+          "seconds": 0.00022679287940263748,
+          "clicks": 4,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 62469111,
+      "target": 21464146,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            62469111,
+            18831,
+            12401,
+            21464146
+          ],
+          "expanded": 12,
+          "seconds": 1.7624348402023315e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            62469111,
+            85816,
+            12401,
+            21464146
+          ],
+          "expanded": 3,
+          "seconds": 3.520771861076355e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            62469111,
+            85816,
+            12401,
+            21464146
+          ],
+          "expanded": 3,
+          "seconds": 0.00011983420699834824,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 23418323,
+      "target": 21464146,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            23418323,
+            5170,
+            12401,
+            21464146
+          ],
+          "expanded": 10,
+          "seconds": 1.7791055142879486e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            23418323,
+            5170,
+            12401,
+            21464146
+          ],
+          "expanded": 14,
+          "seconds": 0.00013262499123811722,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            23418323,
+            5170,
+            12401,
+            21464146
+          ],
+          "expanded": 3,
+          "seconds": 0.00023645814508199692,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 5323,
+      "target": 43176911,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            5323,
+            7039,
+            12401,
+            43176911
+          ],
+          "expanded": 29,
+          "seconds": 2.9916875064373016e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            5323,
+            18831,
+            12401,
+            43176911
+          ],
+          "expanded": 42,
+          "seconds": 0.00021687522530555725,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            5323,
+            18831,
+            12401,
+            43176911
+          ],
+          "expanded": 3,
+          "seconds": 0.00023829098790884018,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 21464146,
+      "target": 43176911,
+      "optimal_clicks": 5,
+      "methods": {
+        "bfs": {
+          "path": [
+            21464146,
+            48455863,
+            5323,
+            7039,
+            12401,
+            43176911
+          ],
+          "expanded": 31,
+          "seconds": 3.12095507979393e-05,
+          "clicks": 5,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            21464146,
+            48455863,
+            5323,
+            18831,
+            12401,
+            43176911
+          ],
+          "expanded": 45,
+          "seconds": 0.0002194587141275406,
+          "clicks": 5,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            21464146,
+            48455863,
+            5323,
+            18831,
+            12401,
+            43176911
+          ],
+          "expanded": 6,
+          "seconds": 0.00031779147684574127,
+          "clicks": 5,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 5921,
+      "target": 43176911,
+      "optimal_clicks": 5,
+      "methods": {
+        "bfs": {
+          "path": [
+            5921,
+            48455863,
+            5323,
+            7039,
+            12401,
+            43176911
+          ],
+          "expanded": 30,
+          "seconds": 2.987496554851532e-05,
+          "clicks": 5,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            5921,
+            48455863,
+            5323,
+            18831,
+            12401,
+            43176911
+          ],
+          "expanded": 44,
+          "seconds": 0.0002117091789841652,
+          "clicks": 5,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            5921,
+            48455863,
+            5323,
+            18831,
+            12401,
+            43176911
+          ],
+          "expanded": 5,
+          "seconds": 0.0003009159117937088,
+          "clicks": 5,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 2777098,
+      "target": 43176911,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            2777098,
+            18831,
+            12401,
+            43176911
+          ],
+          "expanded": 33,
+          "seconds": 3.3583492040634155e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            2777098,
+            18831,
+            12401,
+            43176911
+          ],
+          "expanded": 42,
+          "seconds": 0.00021204166114330292,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            2777098,
+            18831,
+            12401,
+            43176911
+          ],
+          "expanded": 3,
+          "seconds": 0.00019845925271511078,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 49547,
+      "target": 43176911,
+      "optimal_clicks": 5,
+      "methods": {
+        "bfs": {
+          "path": [
+            49547,
+            33139,
+            16920,
+            7039,
+            12401,
+            43176911
+          ],
+          "expanded": 32,
+          "seconds": 3.550015389919281e-05,
+          "clicks": 5,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            49547,
+            33139,
+            16920,
+            14773,
+            12401,
+            43176911
+          ],
+          "expanded": 42,
+          "seconds": 0.00021245796233415604,
+          "clicks": 5,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            49547,
+            33139,
+            16920,
+            14773,
+            12401,
+            43176911
+          ],
+          "expanded": 5,
+          "seconds": 0.00030470825731754303,
+          "clicks": 5,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 9127632,
+      "target": 43176911,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            9127632,
+            662088,
+            12401,
+            43176911
+          ],
+          "expanded": 13,
+          "seconds": 1.8042512238025665e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            9127632,
+            662088,
+            12401,
+            43176911
+          ],
+          "expanded": 43,
+          "seconds": 0.0002131657674908638,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            9127632,
+            662088,
+            12401,
+            43176911
+          ],
+          "expanded": 3,
+          "seconds": 0.0001593325287103653,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 6233334,
+      "target": 43176911,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            6233334,
+            52021,
+            12401,
+            43176911
+          ],
+          "expanded": 8,
+          "seconds": 1.6541220247745514e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            6233334,
+            198822,
+            18831,
+            12401,
+            43176911
+          ],
+          "expanded": 43,
+          "seconds": 0.00022066570818424225,
+          "clicks": 4,
+          "extra_clicks": 1
+        },
+        "neural": {
+          "path": [
+            6233334,
+            1731731,
+            12401,
+            43176911
+          ],
+          "expanded": 3,
+          "seconds": 0.00010545831173658371,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 902,
+      "target": 43176911,
+      "optimal_clicks": 4,
+      "methods": {
+        "bfs": {
+          "path": [
+            902,
+            5180,
+            18831,
+            12401,
+            43176911
+          ],
+          "expanded": 16,
+          "seconds": 2.3832544684410095e-05,
+          "clicks": 4,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            902,
+            5180,
+            18831,
+            12401,
+            43176911
+          ],
+          "expanded": 43,
+          "seconds": 0.0002104165032505989,
+          "clicks": 4,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            902,
+            5180,
+            18831,
+            12401,
+            43176911
+          ],
+          "expanded": 4,
+          "seconds": 0.0002215839922428131,
+          "clicks": 4,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 1688759,
+      "target": 43176911,
+      "optimal_clicks": 4,
+      "methods": {
+        "bfs": {
+          "path": [
+            1688759,
+            5323,
+            7039,
+            12401,
+            43176911
+          ],
+          "expanded": 29,
+          "seconds": 3.041699528694153e-05,
+          "clicks": 4,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            1688759,
+            15305,
+            14773,
+            12401,
+            43176911
+          ],
+          "expanded": 43,
+          "seconds": 0.0002199159935116768,
+          "clicks": 4,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            1688759,
+            223325,
+            14773,
+            12401,
+            43176911
+          ],
+          "expanded": 4,
+          "seconds": 0.0002598334103822708,
+          "clicks": 4,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 23418323,
+      "target": 43176911,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            23418323,
+            5170,
+            12401,
+            43176911
+          ],
+          "expanded": 10,
+          "seconds": 1.550000160932541e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            23418323,
+            5170,
+            12401,
+            43176911
+          ],
+          "expanded": 43,
+          "seconds": 0.0002281656488776207,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            23418323,
+            5170,
+            12401,
+            43176911
+          ],
+          "expanded": 3,
+          "seconds": 0.0002282494679093361,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 7364630,
+      "target": 1688759,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            7364630,
+            33835593,
+            12401,
+            1688759
+          ],
+          "expanded": 3,
+          "seconds": 5.791895091533661e-06,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            7364630,
+            33835593,
+            12401,
+            1688759
+          ],
+          "expanded": 3,
+          "seconds": 1.3709068298339844e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            7364630,
+            33835593,
+            12401,
+            1688759
+          ],
+          "expanded": 3,
+          "seconds": 8.212495595216751e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 40077102,
+      "target": 1688759,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            40077102,
+            5323,
+            1688759
+          ],
+          "expanded": 2,
+          "seconds": 2.582557499408722e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            40077102,
+            5323,
+            1688759
+          ],
+          "expanded": 2,
+          "seconds": 9.125098586082458e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            40077102,
+            5323,
+            1688759
+          ],
+          "expanded": 2,
+          "seconds": 4.1540712118148804e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 1449083,
+      "target": 1688759,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            1449083,
+            12401,
+            1688759
+          ],
+          "expanded": 2,
+          "seconds": 6.708316504955292e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            1449083,
+            12401,
+            1688759
+          ],
+          "expanded": 5,
+          "seconds": 3.291573375463486e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            1449083,
+            12401,
+            1688759
+          ],
+          "expanded": 2,
+          "seconds": 6.0500577092170715e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 2958015,
+      "target": 1688759,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            2958015,
+            16920,
+            1688759
+          ],
+          "expanded": 2,
+          "seconds": 2.750195562839508e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            2958015,
+            16920,
+            1688759
+          ],
+          "expanded": 2,
+          "seconds": 1.5208497643470764e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            2958015,
+            1563306,
+            1688759
+          ],
+          "expanded": 2,
+          "seconds": 6.070826202630997e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 26446,
+      "target": 1688759,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            26446,
+            5170,
+            1688759
+          ],
+          "expanded": 2,
+          "seconds": 5.249865353107452e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            26446,
+            23659805,
+            1688759
+          ],
+          "expanded": 12,
+          "seconds": 9.962543845176697e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            26446,
+            12401,
+            1688759
+          ],
+          "expanded": 2,
+          "seconds": 0.00011670775711536407,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 7309251,
+      "target": 1688759,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            7309251,
+            12401,
+            1688759
+          ],
+          "expanded": 2,
+          "seconds": 6.332993507385254e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            7309251,
+            12401,
+            1688759
+          ],
+          "expanded": 6,
+          "seconds": 3.333389759063721e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            7309251,
+            12401,
+            1688759
+          ],
+          "expanded": 2,
+          "seconds": 7.020868360996246e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 198822,
+      "target": 1688759,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            198822,
+            18831,
+            5170,
+            1688759
+          ],
+          "expanded": 4,
+          "seconds": 7.458031177520752e-06,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            198822,
+            18831,
+            23659805,
+            1688759
+          ],
+          "expanded": 14,
+          "seconds": 0.00010320823639631271,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            198822,
+            18831,
+            12401,
+            1688759
+          ],
+          "expanded": 3,
+          "seconds": 0.0001744171604514122,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 192753,
+      "target": 1688759,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            192753,
+            5170,
+            1688759
+          ],
+          "expanded": 2,
+          "seconds": 3.625638782978058e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            192753,
+            5170,
+            1688759
+          ],
+          "expanded": 2,
+          "seconds": 1.6625039279460907e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            192753,
+            12401,
+            1688759
+          ],
+          "expanded": 2,
+          "seconds": 5.7874247431755066e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 10939,
+      "target": 1688759,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            10939,
+            5323,
+            1688759
+          ],
+          "expanded": 2,
+          "seconds": 3.1245872378349304e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            10939,
+            78756037,
+            23659805,
+            1688759
+          ],
+          "expanded": 12,
+          "seconds": 0.00011187512427568436,
+          "clicks": 3,
+          "extra_clicks": 1
+        },
+        "neural": {
+          "path": [
+            10939,
+            5323,
+            1688759
+          ],
+          "expanded": 2,
+          "seconds": 5.441717803478241e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 3133115,
+      "target": 1688759,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            3133115,
+            12401,
+            1688759
+          ],
+          "expanded": 2,
+          "seconds": 6.709247827529907e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            3133115,
+            12401,
+            1688759
+          ],
+          "expanded": 6,
+          "seconds": 3.7167221307754517e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            3133115,
+            12401,
+            1688759
+          ],
+          "expanded": 2,
+          "seconds": 5.3542666137218475e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 33898,
+      "target": 18831,
+      "optimal_clicks": 4,
+      "methods": {
+        "bfs": {
+          "path": [
+            33898,
+            33139,
+            16920,
+            5323,
+            18831
+          ],
+          "expanded": 8,
+          "seconds": 9.041279554367065e-06,
+          "clicks": 4,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            33898,
+            33139,
+            16920,
+            14773,
+            18831
+          ],
+          "expanded": 4,
+          "seconds": 7.199961692094803e-05,
+          "clicks": 4,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            33898,
+            33139,
+            16920,
+            14773,
+            18831
+          ],
+          "expanded": 4,
+          "seconds": 0.00020279083400964737,
+          "clicks": 4,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 48455863,
+      "target": 18831,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            48455863,
+            5323,
+            18831
+          ],
+          "expanded": 2,
+          "seconds": 2.582557499408722e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            48455863,
+            5323,
+            18831
+          ],
+          "expanded": 3,
+          "seconds": 9.292736649513245e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            48455863,
+            5323,
+            18831
+          ],
+          "expanded": 2,
+          "seconds": 4.179216921329498e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 18839,
+      "target": 18831,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            18839,
+            48455863,
+            5323,
+            18831
+          ],
+          "expanded": 4,
+          "seconds": 3.917142748832703e-06,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            18839,
+            48455863,
+            5323,
+            18831
+          ],
+          "expanded": 4,
+          "seconds": 1.3208016753196716e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            18839,
+            48455863,
+            5323,
+            18831
+          ],
+          "expanded": 3,
+          "seconds": 7.358379662036896e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 691803,
+      "target": 18831,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            691803,
+            5170,
+            18831
+          ],
+          "expanded": 2,
+          "seconds": 2.874992787837982e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            691803,
+            85816,
+            18831
+          ],
+          "expanded": 2,
+          "seconds": 1.5290454030036926e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            691803,
+            12401,
+            18831
+          ],
+          "expanded": 2,
+          "seconds": 7.42906704545021e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 21464146,
+      "target": 18831,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            21464146,
+            48455863,
+            5323,
+            18831
+          ],
+          "expanded": 4,
+          "seconds": 3.916211426258087e-06,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            21464146,
+            48455863,
+            5323,
+            18831
+          ],
+          "expanded": 5,
+          "seconds": 1.491699367761612e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            21464146,
+            48455863,
+            5323,
+            18831
+          ],
+          "expanded": 4,
+          "seconds": 8.820928633213043e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 39781,
+      "target": 18831,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            39781,
+            5170,
+            18831
+          ],
+          "expanded": 2,
+          "seconds": 3.5408884286880493e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            39781,
+            85816,
+            18831
+          ],
+          "expanded": 2,
+          "seconds": 1.7083249986171722e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            39781,
+            5170,
+            18831
+          ],
+          "expanded": 2,
+          "seconds": 5.470775067806244e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 11617,
+      "target": 18831,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            11617,
+            48455863,
+            5323,
+            18831
+          ],
+          "expanded": 3,
+          "seconds": 3.1245872378349304e-06,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            11617,
+            48455863,
+            5323,
+            18831
+          ],
+          "expanded": 4,
+          "seconds": 1.3249926269054413e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            11617,
+            48455863,
+            5323,
+            18831
+          ],
+          "expanded": 3,
+          "seconds": 7.683411240577698e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 2958015,
+      "target": 18831,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            2958015,
+            16920,
+            5323,
+            18831
+          ],
+          "expanded": 7,
+          "seconds": 9.791925549507141e-06,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            2958015,
+            16920,
+            14773,
+            18831
+          ],
+          "expanded": 3,
+          "seconds": 5.516689270734787e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            2958015,
+            16920,
+            14773,
+            18831
+          ],
+          "expanded": 3,
+          "seconds": 0.0001509580761194229,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 902,
+      "target": 18831,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            902,
+            5180,
+            18831
+          ],
+          "expanded": 2,
+          "seconds": 2.1671876311302185e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            902,
+            9127632,
+            662088,
+            18831
+          ],
+          "expanded": 3,
+          "seconds": 1.983344554901123e-05,
+          "clicks": 3,
+          "extra_clicks": 1
+        },
+        "neural": {
+          "path": [
+            902,
+            9127632,
+            662088,
+            18831
+          ],
+          "expanded": 3,
+          "seconds": 0.00016541685909032822,
+          "clicks": 3,
+          "extra_clicks": 1
+        }
+      }
+    },
+    {
+      "source": 25173885,
+      "target": 18831,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            25173885,
+            5323,
+            18831
+          ],
+          "expanded": 2,
+          "seconds": 6.4587220549583435e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            25173885,
+            14773,
+            18831
+          ],
+          "expanded": 2,
+          "seconds": 7.225014269351959e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            25173885,
+            14773,
+            18831
+          ],
+          "expanded": 2,
+          "seconds": 0.00016387458890676498,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 18967255,
+      "target": 22782409,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            18967255,
+            12401,
+            22782409
+          ],
+          "expanded": 7,
+          "seconds": 1.941714435815811e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            18967255,
+            12401,
+            22782409
+          ],
+          "expanded": 11,
+          "seconds": 0.00017183367162942886,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            18967255,
+            12401,
+            22782409
+          ],
+          "expanded": 2,
+          "seconds": 0.0001982497051358223,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 174080,
+      "target": 22782409,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            174080,
+            12401,
+            22782409
+          ],
+          "expanded": 2,
+          "seconds": 6.875023245811462e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            174080,
+            12401,
+            22782409
+          ],
+          "expanded": 2,
+          "seconds": 1.200009137392044e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            174080,
+            12401,
+            22782409
+          ],
+          "expanded": 2,
+          "seconds": 4.8333778977394104e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 3987703,
+      "target": 22782409,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            3987703,
+            12401,
+            22782409
+          ],
+          "expanded": 2,
+          "seconds": 7.958151400089264e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            3987703,
+            12401,
+            22782409
+          ],
+          "expanded": 5,
+          "seconds": 7.900036871433258e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            3987703,
+            12401,
+            22782409
+          ],
+          "expanded": 2,
+          "seconds": 9.379163384437561e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 7364630,
+      "target": 22782409,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            7364630,
+            33835593,
+            12401,
+            22782409
+          ],
+          "expanded": 3,
+          "seconds": 7.375143468379974e-06,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            7364630,
+            33835593,
+            12401,
+            22782409
+          ],
+          "expanded": 3,
+          "seconds": 1.791585236787796e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            7364630,
+            33835593,
+            12401,
+            22782409
+          ],
+          "expanded": 3,
+          "seconds": 9.066704660654068e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 11617,
+      "target": 22782409,
+      "optimal_clicks": 5,
+      "methods": {
+        "bfs": {
+          "path": [
+            11617,
+            48455863,
+            5323,
+            7039,
+            12401,
+            22782409
+          ],
+          "expanded": 30,
+          "seconds": 3.8458965718746185e-05,
+          "clicks": 5,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            11617,
+            48455863,
+            5323,
+            14773,
+            12401,
+            22782409
+          ],
+          "expanded": 13,
+          "seconds": 0.00017445813864469528,
+          "clicks": 5,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            11617,
+            48455863,
+            5323,
+            14773,
+            12401,
+            22782409
+          ],
+          "expanded": 5,
+          "seconds": 0.0003610420972108841,
+          "clicks": 5,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 87352,
+      "target": 22782409,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            87352,
+            5759,
+            12401,
+            22782409
+          ],
+          "expanded": 9,
+          "seconds": 1.9166618585586548e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            87352,
+            5759,
+            12401,
+            22782409
+          ],
+          "expanded": 11,
+          "seconds": 0.00014424975961446762,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            87352,
+            5759,
+            12401,
+            22782409
+          ],
+          "expanded": 3,
+          "seconds": 0.0001698322594165802,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 647297,
+      "target": 22782409,
+      "optimal_clicks": 4,
+      "methods": {
+        "bfs": {
+          "path": [
+            647297,
+            9697,
+            18831,
+            12401,
+            22782409
+          ],
+          "expanded": 13,
+          "seconds": 2.1792016923427582e-05,
+          "clicks": 4,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            647297,
+            883885,
+            48455863,
+            5323,
+            14773,
+            12401,
+            22782409
+          ],
+          "expanded": 14,
+          "seconds": 0.00018895789980888367,
+          "clicks": 6,
+          "extra_clicks": 2
+        },
+        "neural": {
+          "path": [
+            647297,
+            9697,
+            18831,
+            12401,
+            22782409
+          ],
+          "expanded": 4,
+          "seconds": 0.00031850021332502365,
+          "clicks": 4,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 33898,
+      "target": 22782409,
+      "optimal_clicks": 5,
+      "methods": {
+        "bfs": {
+          "path": [
+            33898,
+            33139,
+            16920,
+            7039,
+            12401,
+            22782409
+          ],
+          "expanded": 32,
+          "seconds": 4.250090569257736e-05,
+          "clicks": 5,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            33898,
+            33139,
+            16920,
+            14773,
+            12401,
+            22782409
+          ],
+          "expanded": 13,
+          "seconds": 0.00015845801681280136,
+          "clicks": 5,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            33898,
+            33139,
+            16920,
+            14773,
+            12401,
+            22782409
+          ],
+          "expanded": 5,
+          "seconds": 0.00036895833909511566,
+          "clicks": 5,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 1809181,
+      "target": 22782409,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            1809181,
+            12401,
+            22782409
+          ],
+          "expanded": 3,
+          "seconds": 8.624978363513947e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            1809181,
+            12401,
+            22782409
+          ],
+          "expanded": 11,
+          "seconds": 0.0001405002549290657,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            1809181,
+            12401,
+            22782409
+          ],
+          "expanded": 2,
+          "seconds": 6.933324038982391e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 23659805,
+      "target": 22782409,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            23659805,
+            12401,
+            22782409
+          ],
+          "expanded": 10,
+          "seconds": 2.041645348072052e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            23659805,
+            12401,
+            22782409
+          ],
+          "expanded": 11,
+          "seconds": 0.00014108233153820038,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            23659805,
+            12401,
+            22782409
+          ],
+          "expanded": 2,
+          "seconds": 0.00023283343762159348,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 15305,
+      "target": 10772350,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            15305,
+            7039,
+            18967255,
+            10772350
+          ],
+          "expanded": 36,
+          "seconds": 4.858430474996567e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            15305,
+            7039,
+            18967255,
+            10772350
+          ],
+          "expanded": 86,
+          "seconds": 0.00040012504905462265,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            15305,
+            14773,
+            18967255,
+            10772350
+          ],
+          "expanded": 25,
+          "seconds": 0.0006616674363613129,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 1487249,
+      "target": 10772350,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            1487249,
+            18717981,
+            10772350
+          ],
+          "expanded": 3,
+          "seconds": 6.167218089103699e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            1487249,
+            5323,
+            7039,
+            18967255,
+            10772350
+          ],
+          "expanded": 86,
+          "seconds": 0.0003847917541861534,
+          "clicks": 4,
+          "extra_clicks": 2
+        },
+        "neural": {
+          "path": [
+            1487249,
+            5323,
+            23659805,
+            18967255,
+            10772350
+          ],
+          "expanded": 27,
+          "seconds": 0.0007001245394349098,
+          "clicks": 4,
+          "extra_clicks": 2
+        }
+      }
+    },
+    {
+      "source": 31087478,
+      "target": 10772350,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            31087478,
+            12401,
+            18717981,
+            10772350
+          ],
+          "expanded": 80,
+          "seconds": 5.841720849275589e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            31087478,
+            12401,
+            18967255,
+            10772350
+          ],
+          "expanded": 86,
+          "seconds": 0.00031687505543231964,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            31087478,
+            12401,
+            18967255,
+            10772350
+          ],
+          "expanded": 26,
+          "seconds": 0.0012986250221729279,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 38991948,
+      "target": 10772350,
+      "optimal_clicks": 5,
+      "methods": {
+        "bfs": {
+          "path": [
+            38991948,
+            48455863,
+            5323,
+            7039,
+            18967255,
+            10772350
+          ],
+          "expanded": 37,
+          "seconds": 4.7666020691394806e-05,
+          "clicks": 5,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            38991948,
+            48455863,
+            5323,
+            7039,
+            18967255,
+            10772350
+          ],
+          "expanded": 86,
+          "seconds": 0.0003710426390171051,
+          "clicks": 5,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            38991948,
+            48455863,
+            5323,
+            23659805,
+            18967255,
+            10772350
+          ],
+          "expanded": 28,
+          "seconds": 0.0006525842472910881,
+          "clicks": 5,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 11617,
+      "target": 10772350,
+      "optimal_clicks": 5,
+      "methods": {
+        "bfs": {
+          "path": [
+            11617,
+            48455863,
+            5323,
+            7039,
+            18967255,
+            10772350
+          ],
+          "expanded": 37,
+          "seconds": 3.8582831621170044e-05,
+          "clicks": 5,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            11617,
+            48455863,
+            5323,
+            7039,
+            18967255,
+            10772350
+          ],
+          "expanded": 86,
+          "seconds": 0.0003120424225926399,
+          "clicks": 5,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            11617,
+            48455863,
+            5323,
+            23659805,
+            18967255,
+            10772350
+          ],
+          "expanded": 28,
+          "seconds": 0.0006432076916098595,
+          "clicks": 5,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 752,
+      "target": 10772350,
+      "optimal_clicks": 5,
+      "methods": {
+        "bfs": {
+          "path": [
+            752,
+            5363,
+            5323,
+            7039,
+            18967255,
+            10772350
+          ],
+          "expanded": 38,
+          "seconds": 4.266761243343353e-05,
+          "clicks": 5,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            752,
+            5363,
+            32353,
+            7039,
+            18967255,
+            10772350
+          ],
+          "expanded": 86,
+          "seconds": 0.0003148745745420456,
+          "clicks": 5,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            752,
+            5363,
+            32353,
+            14773,
+            18967255,
+            10772350
+          ],
+          "expanded": 27,
+          "seconds": 0.0005810409784317017,
+          "clicks": 5,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 23659805,
+      "target": 10772350,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            23659805,
+            18967255,
+            10772350
+          ],
+          "expanded": 32,
+          "seconds": 3.479141741991043e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            23659805,
+            18967255,
+            10772350
+          ],
+          "expanded": 86,
+          "seconds": 0.0003025829792022705,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            23659805,
+            18967255,
+            10772350
+          ],
+          "expanded": 25,
+          "seconds": 0.0005007917061448097,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 32353,
+      "target": 10772350,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            32353,
+            7039,
+            18967255,
+            10772350
+          ],
+          "expanded": 36,
+          "seconds": 3.737490624189377e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            32353,
+            7039,
+            18967255,
+            10772350
+          ],
+          "expanded": 86,
+          "seconds": 0.00030408427119255066,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            32353,
+            14773,
+            18967255,
+            10772350
+          ],
+          "expanded": 25,
+          "seconds": 0.000501624308526516,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 1563306,
+      "target": 10772350,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            1563306,
+            7039,
+            18967255,
+            10772350
+          ],
+          "expanded": 37,
+          "seconds": 3.766641020774841e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            1563306,
+            7039,
+            18967255,
+            10772350
+          ],
+          "expanded": 86,
+          "seconds": 0.00030020903795957565,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            1563306,
+            14773,
+            18967255,
+            10772350
+          ],
+          "expanded": 26,
+          "seconds": 0.0005137501284480095,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 174080,
+      "target": 10772350,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            174080,
+            12401,
+            18717981,
+            10772350
+          ],
+          "expanded": 77,
+          "seconds": 5.2167102694511414e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            174080,
+            12401,
+            18967255,
+            10772350
+          ],
+          "expanded": 86,
+          "seconds": 0.00030295830219984055,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            174080,
+            12401,
+            18967255,
+            10772350
+          ],
+          "expanded": 25,
+          "seconds": 0.0005432907491922379,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 1449083,
+      "target": 5170,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            1449083,
+            12401,
+            5170
+          ],
+          "expanded": 2,
+          "seconds": 5.166977643966675e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            1449083,
+            12401,
+            5170
+          ],
+          "expanded": 2,
+          "seconds": 1.5708617866039276e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            1449083,
+            12401,
+            5170
+          ],
+          "expanded": 2,
+          "seconds": 5.283299833536148e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 62469111,
+      "target": 5170,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            62469111,
+            18831,
+            5170
+          ],
+          "expanded": 2,
+          "seconds": 3.041699528694153e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            62469111,
+            85816,
+            12401,
+            5170
+          ],
+          "expanded": 4,
+          "seconds": 3.929156810045242e-05,
+          "clicks": 3,
+          "extra_clicks": 1
+        },
+        "neural": {
+          "path": [
+            62469111,
+            18831,
+            5170
+          ],
+          "expanded": 2,
+          "seconds": 4.987511783838272e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 495383,
+      "target": 5170,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            495383,
+            12401,
+            5170
+          ],
+          "expanded": 2,
+          "seconds": 5.957670509815216e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            495383,
+            12401,
+            5170
+          ],
+          "expanded": 2,
+          "seconds": 1.875031739473343e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            495383,
+            12401,
+            5170
+          ],
+          "expanded": 2,
+          "seconds": 5.745794624090195e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 25173885,
+      "target": 5170,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            25173885,
+            7039,
+            5170
+          ],
+          "expanded": 4,
+          "seconds": 6.875023245811462e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            25173885,
+            14773,
+            5170
+          ],
+          "expanded": 16,
+          "seconds": 9.962450712919235e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            25173885,
+            14773,
+            5170
+          ],
+          "expanded": 2,
+          "seconds": 0.00012029148638248444,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 377202,
+      "target": 5170,
+      "optimal_clicks": 4,
+      "methods": {
+        "bfs": {
+          "path": [
+            377202,
+            48455863,
+            5323,
+            7039,
+            5170
+          ],
+          "expanded": 6,
+          "seconds": 7.791444659233093e-06,
+          "clicks": 4,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            377202,
+            48455863,
+            5323,
+            14773,
+            5170
+          ],
+          "expanded": 17,
+          "seconds": 0.00011008325964212418,
+          "clicks": 4,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            377202,
+            48455863,
+            5323,
+            23659805,
+            5170
+          ],
+          "expanded": 4,
+          "seconds": 0.00021474994719028473,
+          "clicks": 4,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 7364630,
+      "target": 5170,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            7364630,
+            33835593,
+            12401,
+            5170
+          ],
+          "expanded": 3,
+          "seconds": 6.95791095495224e-06,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            7364630,
+            33835593,
+            12401,
+            5170
+          ],
+          "expanded": 3,
+          "seconds": 1.862458884716034e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            7364630,
+            33835593,
+            12401,
+            5170
+          ],
+          "expanded": 3,
+          "seconds": 8.045881986618042e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 5323,
+      "target": 5170,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            5323,
+            7039,
+            5170
+          ],
+          "expanded": 3,
+          "seconds": 6.250105798244476e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            5323,
+            14773,
+            5170
+          ],
+          "expanded": 16,
+          "seconds": 0.00010941550135612488,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            5323,
+            23659805,
+            5170
+          ],
+          "expanded": 2,
+          "seconds": 0.00013308320194482803,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 10939,
+      "target": 5170,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            10939,
+            14773,
+            5170
+          ],
+          "expanded": 3,
+          "seconds": 7.125549018383026e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            10939,
+            14773,
+            5170
+          ],
+          "expanded": 16,
+          "seconds": 0.00010850001126527786,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            10939,
+            14773,
+            5170
+          ],
+          "expanded": 2,
+          "seconds": 5.791708827018738e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 87352,
+      "target": 5170,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            87352,
+            5759,
+            5170
+          ],
+          "expanded": 2,
+          "seconds": 2.582557499408722e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            87352,
+            18831,
+            5170
+          ],
+          "expanded": 2,
+          "seconds": 1.3833865523338318e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            87352,
+            18831,
+            5170
+          ],
+          "expanded": 2,
+          "seconds": 5.200039595365524e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 3133115,
+      "target": 5170,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            3133115,
+            12401,
+            5170
+          ],
+          "expanded": 2,
+          "seconds": 6.708316504955292e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            3133115,
+            12401,
+            5170
+          ],
+          "expanded": 2,
+          "seconds": 2.008303999900818e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            3133115,
+            12401,
+            5170
+          ],
+          "expanded": 2,
+          "seconds": 6.350036710500717e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 691803,
+      "target": 49547,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            691803,
+            12401,
+            49547
+          ],
+          "expanded": 3,
+          "seconds": 1.1791475117206573e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            691803,
+            5170,
+            33139,
+            49547
+          ],
+          "expanded": 54,
+          "seconds": 0.0002416251227259636,
+          "clicks": 3,
+          "extra_clicks": 1
+        },
+        "neural": {
+          "path": [
+            691803,
+            12401,
+            49547
+          ],
+          "expanded": 2,
+          "seconds": 5.7999975979328156e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 87352,
+      "target": 49547,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            87352,
+            5759,
+            12401,
+            49547
+          ],
+          "expanded": 9,
+          "seconds": 1.71661376953125e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            87352,
+            5759,
+            5170,
+            33139,
+            49547
+          ],
+          "expanded": 50,
+          "seconds": 0.00021525006741285324,
+          "clicks": 4,
+          "extra_clicks": 1
+        },
+        "neural": {
+          "path": [
+            87352,
+            18831,
+            12401,
+            49547
+          ],
+          "expanded": 3,
+          "seconds": 0.00018754228949546814,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 15305,
+      "target": 49547,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            15305,
+            33139,
+            49547
+          ],
+          "expanded": 9,
+          "seconds": 1.4292076230049133e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            15305,
+            33139,
+            49547
+          ],
+          "expanded": 49,
+          "seconds": 0.00022666621953248978,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            15305,
+            14773,
+            12401,
+            49547
+          ],
+          "expanded": 3,
+          "seconds": 0.00024204235523939133,
+          "clicks": 3,
+          "extra_clicks": 1
+        }
+      }
+    },
+    {
+      "source": 557931,
+      "target": 49547,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            557931,
+            12401,
+            49547
+          ],
+          "expanded": 3,
+          "seconds": 9.4585120677948e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            557931,
+            18831,
+            5170,
+            33139,
+            49547
+          ],
+          "expanded": 49,
+          "seconds": 0.0002082493156194687,
+          "clicks": 4,
+          "extra_clicks": 2
+        },
+        "neural": {
+          "path": [
+            557931,
+            12401,
+            49547
+          ],
+          "expanded": 2,
+          "seconds": 6.266683340072632e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 7364630,
+      "target": 49547,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            7364630,
+            33835593,
+            12401,
+            49547
+          ],
+          "expanded": 3,
+          "seconds": 6.292015314102173e-06,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            7364630,
+            33835593,
+            557931,
+            18831,
+            5170,
+            33139,
+            49547
+          ],
+          "expanded": 51,
+          "seconds": 0.00023941602557897568,
+          "clicks": 6,
+          "extra_clicks": 3
+        },
+        "neural": {
+          "path": [
+            7364630,
+            33835593,
+            12401,
+            49547
+          ],
+          "expanded": 3,
+          "seconds": 0.00012070871889591217,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 56553444,
+      "target": 49547,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            56553444,
+            12401,
+            49547
+          ],
+          "expanded": 2,
+          "seconds": 7.082708179950714e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            56553444,
+            198822,
+            18831,
+            5170,
+            33139,
+            49547
+          ],
+          "expanded": 50,
+          "seconds": 0.0002781255170702934,
+          "clicks": 5,
+          "extra_clicks": 3
+        },
+        "neural": {
+          "path": [
+            56553444,
+            12401,
+            49547
+          ],
+          "expanded": 2,
+          "seconds": 6.66668638586998e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 33835593,
+      "target": 49547,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            33835593,
+            12401,
+            49547
+          ],
+          "expanded": 2,
+          "seconds": 5.791895091533661e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            33835593,
+            557931,
+            18831,
+            5170,
+            33139,
+            49547
+          ],
+          "expanded": 51,
+          "seconds": 0.0002732919529080391,
+          "clicks": 5,
+          "extra_clicks": 3
+        },
+        "neural": {
+          "path": [
+            33835593,
+            12401,
+            49547
+          ],
+          "expanded": 2,
+          "seconds": 5.7999975979328156e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 198822,
+      "target": 49547,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            198822,
+            18831,
+            12401,
+            49547
+          ],
+          "expanded": 10,
+          "seconds": 2.0083971321582794e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            198822,
+            18831,
+            5170,
+            33139,
+            49547
+          ],
+          "expanded": 49,
+          "seconds": 0.0002599582076072693,
+          "clicks": 4,
+          "extra_clicks": 1
+        },
+        "neural": {
+          "path": [
+            198822,
+            18831,
+            12401,
+            49547
+          ],
+          "expanded": 3,
+          "seconds": 0.0002032918855547905,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 1731731,
+      "target": 49547,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            1731731,
+            12401,
+            49547
+          ],
+          "expanded": 3,
+          "seconds": 1.2042000889778137e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            1731731,
+            5170,
+            33139,
+            49547
+          ],
+          "expanded": 50,
+          "seconds": 0.000263790600001812,
+          "clicks": 3,
+          "extra_clicks": 1
+        },
+        "neural": {
+          "path": [
+            1731731,
+            12401,
+            49547
+          ],
+          "expanded": 2,
+          "seconds": 6.949994713068008e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 752,
+      "target": 49547,
+      "optimal_clicks": 4,
+      "methods": {
+        "bfs": {
+          "path": [
+            752,
+            5363,
+            5323,
+            33139,
+            49547
+          ],
+          "expanded": 15,
+          "seconds": 2.1333806216716766e-05,
+          "clicks": 4,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            752,
+            5363,
+            32353,
+            33139,
+            49547
+          ],
+          "expanded": 49,
+          "seconds": 0.00026412494480609894,
+          "clicks": 4,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            752,
+            48455863,
+            5323,
+            18831,
+            12401,
+            49547
+          ],
+          "expanded": 5,
+          "seconds": 0.00041016750037670135,
+          "clicks": 5,
+          "extra_clicks": 1
+        }
+      }
+    },
+    {
+      "source": 7039,
+      "target": 377202,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            7039,
+            12401,
+            377202
+          ],
+          "expanded": 6,
+          "seconds": 1.4374963939189911e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            7039,
+            12401,
+            377202
+          ],
+          "expanded": 36,
+          "seconds": 0.0001903744414448738,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            7039,
+            12401,
+            377202
+          ],
+          "expanded": 2,
+          "seconds": 0.00011070910841226578,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 1487249,
+      "target": 377202,
+      "optimal_clicks": 4,
+      "methods": {
+        "bfs": {
+          "path": [
+            1487249,
+            5323,
+            7039,
+            12401,
+            377202
+          ],
+          "expanded": 33,
+          "seconds": 3.408454358577728e-05,
+          "clicks": 4,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            1487249,
+            18717981,
+            22939,
+            9127632,
+            662088,
+            12401,
+            377202
+          ],
+          "expanded": 40,
+          "seconds": 0.00019379239529371262,
+          "clicks": 6,
+          "extra_clicks": 2
+        },
+        "neural": {
+          "path": [
+            1487249,
+            5323,
+            23659805,
+            12401,
+            377202
+          ],
+          "expanded": 4,
+          "seconds": 0.00027300044894218445,
+          "clicks": 4,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 23418323,
+      "target": 377202,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            23418323,
+            5170,
+            12401,
+            377202
+          ],
+          "expanded": 10,
+          "seconds": 1.9292347133159637e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            23418323,
+            5170,
+            12401,
+            377202
+          ],
+          "expanded": 40,
+          "seconds": 0.00020462460815906525,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            23418323,
+            5170,
+            12401,
+            377202
+          ],
+          "expanded": 3,
+          "seconds": 0.00023758318275213242,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 955164,
+      "target": 377202,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            955164,
+            18831,
+            12401,
+            377202
+          ],
+          "expanded": 11,
+          "seconds": 1.5832483768463135e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            955164,
+            18831,
+            12401,
+            377202
+          ],
+          "expanded": 36,
+          "seconds": 0.00017466582357883453,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            955164,
+            18831,
+            12401,
+            377202
+          ],
+          "expanded": 3,
+          "seconds": 0.0001816246658563614,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 691803,
+      "target": 377202,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            691803,
+            12401,
+            377202
+          ],
+          "expanded": 3,
+          "seconds": 1.154281198978424e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            691803,
+            12401,
+            377202
+          ],
+          "expanded": 4,
+          "seconds": 2.5999732315540314e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            691803,
+            12401,
+            377202
+          ],
+          "expanded": 2,
+          "seconds": 5.9584155678749084e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 929709,
+      "target": 377202,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            929709,
+            12401,
+            377202
+          ],
+          "expanded": 7,
+          "seconds": 1.6291625797748566e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            929709,
+            12401,
+            377202
+          ],
+          "expanded": 36,
+          "seconds": 0.00020124949514865875,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            929709,
+            12401,
+            377202
+          ],
+          "expanded": 2,
+          "seconds": 0.00010829232633113861,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 223325,
+      "target": 377202,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            223325,
+            7039,
+            12401,
+            377202
+          ],
+          "expanded": 29,
+          "seconds": 3.141723573207855e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            223325,
+            7039,
+            12401,
+            377202
+          ],
+          "expanded": 37,
+          "seconds": 0.00018679257482290268,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            223325,
+            14773,
+            12401,
+            377202
+          ],
+          "expanded": 3,
+          "seconds": 0.0002316255122423172,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 647297,
+      "target": 377202,
+      "optimal_clicks": 4,
+      "methods": {
+        "bfs": {
+          "path": [
+            647297,
+            9697,
+            18831,
+            12401,
+            377202
+          ],
+          "expanded": 13,
+          "seconds": 1.7208978533744812e-05,
+          "clicks": 4,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            647297,
+            9697,
+            18831,
+            12401,
+            377202
+          ],
+          "expanded": 37,
+          "seconds": 0.0001805424690246582,
+          "clicks": 4,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            647297,
+            9697,
+            18831,
+            12401,
+            377202
+          ],
+          "expanded": 4,
+          "seconds": 0.0002455422654747963,
+          "clicks": 4,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 78130,
+      "target": 377202,
+      "optimal_clicks": 4,
+      "methods": {
+        "bfs": {
+          "path": [
+            78130,
+            5323,
+            7039,
+            12401,
+            377202
+          ],
+          "expanded": 30,
+          "seconds": 3.5041943192481995e-05,
+          "clicks": 4,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            78130,
+            5323,
+            9127632,
+            662088,
+            12401,
+            377202
+          ],
+          "expanded": 39,
+          "seconds": 0.00018412526696920395,
+          "clicks": 5,
+          "extra_clicks": 1
+        },
+        "neural": {
+          "path": [
+            78130,
+            5323,
+            23659805,
+            12401,
+            377202
+          ],
+          "expanded": 4,
+          "seconds": 0.0002684174105525017,
+          "clicks": 4,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 18967255,
+      "target": 377202,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            18967255,
+            12401,
+            377202
+          ],
+          "expanded": 7,
+          "seconds": 1.5291385352611542e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            18967255,
+            12401,
+            377202
+          ],
+          "expanded": 38,
+          "seconds": 0.0001832079142332077,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            18967255,
+            12401,
+            377202
+          ],
+          "expanded": 2,
+          "seconds": 0.0001821247860789299,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 21464146,
+      "target": 23418323,
+      "optimal_clicks": 5,
+      "methods": {
+        "bfs": {
+          "path": [
+            21464146,
+            48455863,
+            5323,
+            7039,
+            12401,
+            23418323
+          ],
+          "expanded": 31,
+          "seconds": 3.245845437049866e-05,
+          "clicks": 5,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            21464146,
+            48455863,
+            5323,
+            9127632,
+            662088,
+            12401,
+            23418323
+          ],
+          "expanded": 52,
+          "seconds": 0.0002110833302140236,
+          "clicks": 6,
+          "extra_clicks": 1
+        },
+        "neural": {
+          "path": [
+            21464146,
+            48455863,
+            5323,
+            18831,
+            12401,
+            23418323
+          ],
+          "expanded": 6,
+          "seconds": 0.000325249508023262,
+          "clicks": 5,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 32353,
+      "target": 23418323,
+      "optimal_clicks": 3,
+      "methods": {
+        "bfs": {
+          "path": [
+            32353,
+            7039,
+            12401,
+            23418323
+          ],
+          "expanded": 29,
+          "seconds": 3.1082890927791595e-05,
+          "clicks": 3,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            32353,
+            5323,
+            9127632,
+            662088,
+            12401,
+            23418323
+          ],
+          "expanded": 50,
+          "seconds": 0.00020308233797550201,
+          "clicks": 5,
+          "extra_clicks": 2
+        },
+        "neural": {
+          "path": [
+            32353,
+            7039,
+            12401,
+            23418323
+          ],
+          "expanded": 3,
+          "seconds": 0.00020783301442861557,
+          "clicks": 3,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 752,
+      "target": 23418323,
+      "optimal_clicks": 5,
+      "methods": {
+        "bfs": {
+          "path": [
+            752,
+            5363,
+            5323,
+            7039,
+            12401,
+            23418323
+          ],
+          "expanded": 31,
+          "seconds": 3.145914524793625e-05,
+          "clicks": 5,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            752,
+            48455863,
+            5323,
+            9127632,
+            662088,
+            12401,
+            23418323
+          ],
+          "expanded": 52,
+          "seconds": 0.0002064993605017662,
+          "clicks": 6,
+          "extra_clicks": 1
+        },
+        "neural": {
+          "path": [
+            752,
+            5363,
+            5323,
+            18831,
+            12401,
+            23418323
+          ],
+          "expanded": 5,
+          "seconds": 0.0003238748759031296,
+          "clicks": 5,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 1809181,
+      "target": 23418323,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            1809181,
+            12401,
+            23418323
+          ],
+          "expanded": 3,
+          "seconds": 7.625669240951538e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            1809181,
+            12401,
+            23418323
+          ],
+          "expanded": 50,
+          "seconds": 0.00020170863717794418,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            1809181,
+            12401,
+            23418323
+          ],
+          "expanded": 2,
+          "seconds": 5.920790135860443e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 173525,
+      "target": 23418323,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            173525,
+            12401,
+            23418323
+          ],
+          "expanded": 4,
+          "seconds": 1.9416213035583496e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            173525,
+            12401,
+            23418323
+          ],
+          "expanded": 50,
+          "seconds": 0.00021287519484758377,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            173525,
+            12401,
+            23418323
+          ],
+          "expanded": 2,
+          "seconds": 7.333420217037201e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 5363,
+      "target": 23418323,
+      "optimal_clicks": 4,
+      "methods": {
+        "bfs": {
+          "path": [
+            5363,
+            5323,
+            7039,
+            12401,
+            23418323
+          ],
+          "expanded": 29,
+          "seconds": 3.1791627407073975e-05,
+          "clicks": 4,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            5363,
+            5323,
+            9127632,
+            662088,
+            12401,
+            23418323
+          ],
+          "expanded": 50,
+          "seconds": 0.0002016676589846611,
+          "clicks": 5,
+          "extra_clicks": 1
+        },
+        "neural": {
+          "path": [
+            5363,
+            5323,
+            18831,
+            12401,
+            23418323
+          ],
+          "expanded": 4,
+          "seconds": 0.0002870000898838043,
+          "clicks": 4,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 21123339,
+      "target": 23418323,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            21123339,
+            12401,
+            23418323
+          ],
+          "expanded": 3,
+          "seconds": 1.1582858860492706e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            21123339,
+            12401,
+            23418323
+          ],
+          "expanded": 51,
+          "seconds": 0.00020904187113046646,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            21123339,
+            12401,
+            23418323
+          ],
+          "expanded": 2,
+          "seconds": 6.408430635929108e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 377202,
+      "target": 23418323,
+      "optimal_clicks": 5,
+      "methods": {
+        "bfs": {
+          "path": [
+            377202,
+            48455863,
+            5323,
+            7039,
+            12401,
+            23418323
+          ],
+          "expanded": 30,
+          "seconds": 3.208313137292862e-05,
+          "clicks": 5,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            377202,
+            48455863,
+            5323,
+            9127632,
+            662088,
+            12401,
+            23418323
+          ],
+          "expanded": 51,
+          "seconds": 0.00020749960094690323,
+          "clicks": 6,
+          "extra_clicks": 1
+        },
+        "neural": {
+          "path": [
+            377202,
+            48455863,
+            5323,
+            18831,
+            12401,
+            23418323
+          ],
+          "expanded": 5,
+          "seconds": 0.00030724983662366867,
+          "clicks": 5,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 11617,
+      "target": 23418323,
+      "optimal_clicks": 5,
+      "methods": {
+        "bfs": {
+          "path": [
+            11617,
+            48455863,
+            5323,
+            7039,
+            12401,
+            23418323
+          ],
+          "expanded": 30,
+          "seconds": 2.9709190130233765e-05,
+          "clicks": 5,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            11617,
+            48455863,
+            5323,
+            9127632,
+            662088,
+            12401,
+            23418323
+          ],
+          "expanded": 50,
+          "seconds": 0.0002687498927116394,
+          "clicks": 6,
+          "extra_clicks": 1
+        },
+        "neural": {
+          "path": [
+            11617,
+            48455863,
+            5323,
+            18831,
+            12401,
+            23418323
+          ],
+          "expanded": 5,
+          "seconds": 0.0003399169072508812,
+          "clicks": 5,
+          "extra_clicks": 0
+        }
+      }
+    },
+    {
+      "source": 13547826,
+      "target": 23418323,
+      "optimal_clicks": 2,
+      "methods": {
+        "bfs": {
+          "path": [
+            13547826,
+            12401,
+            23418323
+          ],
+          "expanded": 2,
+          "seconds": 6.625428795814514e-06,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "text": {
+          "path": [
+            13547826,
+            12401,
+            23418323
+          ],
+          "expanded": 50,
+          "seconds": 0.00021020881831645966,
+          "clicks": 2,
+          "extra_clicks": 0
+        },
+        "neural": {
+          "path": [
+            13547826,
+            12401,
+            23418323
+          ],
+          "expanded": 2,
+          "seconds": 5.070772022008896e-05,
+          "clicks": 2,
+          "extra_clicks": 0
+        }
+      }
+    }
+  ],
+  "notes": [
+    "Offline searches: zero API calls; no live fetching speed claim.",
+    "Only graph-reachable queries of at least two clicks; failures under the budget are retained.",
+    "Shared title preprocessing reported separately; per-query neural inference is timed.",
+    "Greedy best-first scores do not guarantee minimum clicks."
+  ]
+}

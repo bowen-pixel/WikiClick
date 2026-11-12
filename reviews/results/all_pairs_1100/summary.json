@@ -1,0 +1,30 @@
+{
+  "articles": 1100,
+  "edges": 63966,
+  "pair_definition": "Ordered source-to-target pairs; distinct endpoints only",
+  "total_ordered_pairs": 1208900,
+  "reachable_pairs": 1207801,
+  "unreachable_pairs": 1099,
+  "reachable_fraction": 0.9990909090909091,
+  "sum_optimal_clicks_reachable": 2904126,
+  "mean_optimal_clicks_reachable": 2.404473915818914,
+  "median_optimal_clicks_reachable": 2.0,
+  "p95_optimal_clicks_reachable": 3,
+  "maximum_finite_distance": 6,
+  "distance_histogram": {
+    "1": 63966,
+    "2": 632824,
+    "3": 472629,
+    "4": 35443,
+    "5": 2781,
+    "6": 158
+  },
+  "self_pairs_excluded": 1100,
+  "unreachable_policy": "No finite shortest distance; excluded from mean, not assigned zero",
+  "method": "Exact NetworkX unweighted BFS from every source; no neural predictions",
+  "scope": "Distances apply only to the saved directed graph, not all Wikipedia",
+  "graph_id": "sha256:1247d68432e26cd97b8bbded6d7e9a1e7b3207f1f93b993af05bcc3bb80ca712",
+  "analysis_seconds": 5.643466957844794,
+  "pair_distances_file": "pair_distances.csv.gz",
+  "empty_csv_distance_means": "No route in this saved graph"
+}

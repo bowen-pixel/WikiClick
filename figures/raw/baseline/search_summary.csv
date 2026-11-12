@@ -1,0 +1,4 @@
+method,queries,successes,success_rate,optimal_route_rate_all_queries,mean_extra_clicks_successes_only,mean_expanded_all_queries,median_seconds_all_queries
+bfs,100,97,0.97,0.97,0,37.23,7.118750363588333e-05
+text,100,96,0.96,0.35,1.5833333333333333,23.66,0.0006318124942481518
+neural,100,100,1.0,0.69,0.37,8.25,0.0010585831478238106

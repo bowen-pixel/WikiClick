@@ -1,0 +1,9 @@
+{
+  "state": "complete",
+  "pid": 18639,
+  "snapshot": "20261101",
+  "started_at": "2026-11-10T00:35:00.068006+00:00",
+  "finished_at": "2026-11-10T00:46:22.731239+00:00",
+  "comparison": "reviews/results/fresh_million_comparison.json",
+  "diagrams": "figures/raw/fresh_million"
+}

@@ -1,0 +1,2 @@
+-r plots.txt
+scipy==1.18.1

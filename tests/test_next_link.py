@@ -1,8 +1,8 @@
 import networkx as nx
 import torch
 
-from next_link_experiment import decisions, ranking_loss, Ranker, navigate
-from ml_model import DistanceModel
+from codes.models.next_link.next_link_experiment import decisions, ranking_loss, Ranker, navigate
+from codes.models.raw.ml_model import DistanceModel
 
 
 def test_multiple_optimal_links_and_unreachable_negative():

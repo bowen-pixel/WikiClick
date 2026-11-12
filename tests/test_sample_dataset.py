@@ -4,10 +4,10 @@ from types import SimpleNamespace
 import networkx as nx
 import pytest
 
-import api_endpoint
-from graph_demo import build_graph
-from sample_dataset import collect_sample, export_training, freeze_graph, write_outputs
-from validate_dataset import validate
+import codes.api.api_endpoint as api_endpoint
+from codes.search.graph_demo import build_graph
+from codes.api.sample_dataset import collect_sample, export_training, freeze_graph, write_outputs
+from codes.api.validate_dataset import validate
 
 
 def article(node, links):

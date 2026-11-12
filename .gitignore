@@ -26,5 +26,11 @@ data/cache/
 data/graphs/
 checkpoints/
 runs/
+models/**
+!models/README.md
+logs/**
+!logs/README.md
+archive/repository_history/
+archive/previous_outer/
 *.pt
 *.pth

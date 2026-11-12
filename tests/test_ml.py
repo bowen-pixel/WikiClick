@@ -5,10 +5,10 @@ import pytest
 
 torch = pytest.importorskip("torch")
 
-from compare_search import choose_queries, search
-from ml_model import DistanceModel, pair_features, title_features
-from sample_dataset import export_training
-from train_model import load_pairs
+from codes.search.compare_search import choose_queries, search
+from codes.models.raw.ml_model import DistanceModel, pair_features, title_features
+from codes.api.sample_dataset import export_training
+from codes.models.raw.train_model import load_pairs
 
 
 def test_unseen_title_features_and_model_gradients():

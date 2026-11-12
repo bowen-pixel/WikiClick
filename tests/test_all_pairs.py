@@ -4,7 +4,7 @@ import io
 import networkx as nx
 import pytest
 
-from analyze_all_pairs import analyze
+from codes.search.analyze_all_pairs import analyze
 
 
 def test_directed_distances_exclude_self_and_unreachable_pairs():

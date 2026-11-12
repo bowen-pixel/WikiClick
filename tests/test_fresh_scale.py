@@ -7,8 +7,8 @@ import pytest
 scipy = pytest.importorskip("scipy")
 from scipy import sparse
 
-from benchmark_fresh_scale import search_csr
-from import_fresh_dump import SNAPSHOT, blocks, build_sparse, lookup, map_targets, numeric_rows, resolve_alias, sample_pages, unescape
+from codes.search.benchmark_fresh_scale import search_csr
+from codes.api.import_fresh_dump import SNAPSHOT, blocks, build_sparse, lookup, map_targets, numeric_rows, resolve_alias, sample_pages, unescape
 
 
 def test_numeric_parser_and_mysql_titles():

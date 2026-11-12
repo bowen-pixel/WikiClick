@@ -12,8 +12,8 @@ torch = pytest.importorskip("torch")
 from scipy import sparse
 from scipy.sparse.csgraph import shortest_path
 
-from large_training import fast_title_features, fine_tune, generate_labels, prepare_features
-from ml_model import DistanceModel, FEATURE_VERSION, title_features
+from codes.models.raw.large_training import fast_title_features, fine_tune, generate_labels, prepare_features
+from codes.models.raw.ml_model import DistanceModel, FEATURE_VERSION, title_features
 
 
 @pytest.mark.parametrize("title", ["Graph theory", "Dijkstra's algorithm", "", "Québec and 数学"])
@@ -55,11 +55,10 @@ def test_new_graph_labels_training_updates_and_shared_query_evaluation(tmp_path)
     assert metrics["optimizer_updates"] == 2
     assert metrics["selected_parameter_change_l2"] > 0
     assert (model_dir/"last.pt").is_file()
-    script = Path(__file__).resolve().parents[1]/"benchmark_fresh_scale.py"
     reports = []
     for checkpoint, name in ((initial, "frozen"), (model_dir/"best.pt", "trained")):
         output = tmp_path/f"{name}.json"
-        subprocess.run([sys.executable, str(script), "--data", str(data), "--checkpoint", str(checkpoint),
+        subprocess.run([sys.executable, "-m", "codes.search.benchmark_fresh_scale", "--data", str(data), "--checkpoint", str(checkpoint),
                         "--query-file", str(labels/"evaluation_queries.json"), "--queries", "4", "--budget", "40",
                         "--seconds-per-query", "5", "--output", str(output)], check=True, capture_output=True, text=True)
         reports.append(json.loads(output.read_text()))
