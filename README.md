@@ -4,6 +4,8 @@ Find hyperlink routes between Wikipedia articles. BFS provides the exact shortes
 
 The project is consolidated here. There is no longer a second `WikiClick/` project inside this folder. Start with this page and the [comparison overview](reviews/README.md).
 
+Latest inspection: [Model structure and next learning experiments](reviews/planning/LEARNING_IMPROVEMENT_PLAN.md), covering semantic title features, checkpoint selection, hidden layers, epoch budgets, and grouped splits.
+
 ## Where things live
 
 | Folder | Contents |

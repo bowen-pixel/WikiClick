@@ -1,5 +1,14 @@
 # AI usage record
 
+## Current model inspection and learning-improvement plan
+
+- **Date:** November 12, 2026 (America/Toronto).
+- **Request:** Inspect the changed distance model/trainer and existing results; explain the structure and propose improvements to title features, epoch selection, hidden layers, training budget, and splits.
+- **Review:** Read the current modified files, matched feature-comparison results, existing next-link trainer, comparator, split generation, and user function notes. Preserved source edits and existing experiments. Confirmed validation checkpoint restoration already exists, ReLU makes the 64/32-unit head nonlinear, and semantic title features have not automatically propagated to the existing next-link inference path.
+- **Evidence:** Semantic titles reduce recorded mean distance MAE from 0.4320 to 0.4102 on the 1,000-article comparison; hashed validation minima occur at epochs 11/10/9 while semantic minima occur at 23/24/25. Routing metrics show tradeoffs, not universal improvement. Read-only label/median-baseline audits identified a training distribution dominated by distances 2/3 and a stronger constant-MAE reference. Existing test outcomes are treated as development evidence when planning further tuning.
+- **Deliverable:** Added reviews/planning/LEARNING_IMPROVEMENT_PLAN.md and linked it from project/review indexes. The plan distinguishes observed results from proposed hyperparameters and prioritizes reproducibility, common metrics, fixed example identities, a controlled learning-rate/stopping comparison, and eventual semantic-feature integration with grouped next-link training. No training, checkpoint replacement, dependency installation, or cosmetic curve smoothing was performed.
+- **Verification:** All 55 existing tests passed. External technical references were checked against the encoder's model card and primary PyTorch/grouped-validation documentation.
+
 ## Consolidated project organization
 
 - **Request:** Consolidate the nested WikiClick project, remove unused/duplicate files, and group API/input code, JSON data, BFS, raw/next-link PyTorch models, comparisons, and figures.

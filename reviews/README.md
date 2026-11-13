@@ -2,6 +2,8 @@
 
 Use this as the reading order instead of opening every historical file.
 
+Current code inspection and prioritized next experiments: [Model structure and learning-improvement plan](planning/LEARNING_IMPROVEMENT_PLAN.md). This includes the new semantic-title comparison and the five proposed areas: features, checkpoint selection, hidden layers, epoch budgets, and splits.
+
 | Question | Review | Figures |
 |---|---|---|
 | How do BFS and the original distance model compare? | [Initial results](comparisons/TRAINING_RESULTS.md) | [Raw baseline](../figures/raw/baseline/) |
@@ -9,6 +11,7 @@ Use this as the reading order instead of opening every historical file.
 | Does next-link ranking help on the small graph? | [1,000-article experiment](comparisons/NEXT_LINK_1000.md) | [Ranking charts](../figures/next_link/ranking_1000/) |
 | What happened at million-article scale? | [Completed million-scale results](comparisons/MILLION_RANKING_RESULTS.md) | [Million-scale charts](../figures/next_link/ranking_million/) |
 | Did evolutionary search improve our ranker? | [100-journey pilot](comparisons/EVOLUTION_100.md) | [Search dashboard and animation](../figures/evolution/evolution_100/) |
+| Do semantic title features help the distance model? | [Current inspection and plan](planning/LEARNING_IMPROVEMENT_PLAN.md) | [Matched title-feature curves](../figures/raw/title_feature_comparison/learning_curves_1000.png) |
 
 The 1,000-article next-link ranking pipeline improved on the raw-distance baseline in its recorded experiment. Added semantic context had no clear completion gain there, and mistake-focused correction retained the previous checkpoint. At million scale, semantic-guided branching reached more goals under the tested budgets, while BFS retained its shortest-path guarantee; those results are a separate experiment. The evolutionary pilot did not establish a further improvement. Consult each review for its controls and limitations.
 
