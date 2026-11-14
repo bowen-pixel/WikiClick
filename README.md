@@ -1,8 +1,13 @@
 # WikiClick
 
-Find a short hyperlink route between two English Wikipedia articles. Live navigation resolves page URLs through the API, checks short routes, then uses frozen semantic vectors to guide best-first search. Returned links are observed in Wikipedia; global shortest-path optimality is not guaranteed.
+## Goal
+Find the optimal hyperlink path between two English Wikipedia articles. Live navigation resolves page URLs through the API, checks short paths, then uses fixed-parameter semantic vectors to guide best-first search. Returned links are observed in Wikipedia; global shortest-path optimality is not guaranteed.
 
-[Run it yourself](Deploy.md) · [Mathematics and papers](Foundation%20of%20Models.md) · [Timeline](TIMELINE.md) · [AI contributions](AI_USAGE.md) · [Figure catalogue](figures/README.md)
+[Deploy Locally](Deploy.md)<br>
+[Mathematics Approach](Foundation%20of%20Models.md) <br>
+[Timeline](TIMELINE.md)<br>
+[AI contributions](AI_USAGE.md) <br>
+[Figures](figures/README.md)
 
 ```bash
 python3.13 -m venv .venv
@@ -13,7 +18,11 @@ python3.13 -m venv .venv
 
 Paste valid Wikipedia article URLs at the `Source:` and `Target:` prompts. The result shows a candidate shortest path, click count, and each page URL. See **Deploy** for a BFS demo without encoder weights, training commands, and exact download requirements.
 
-## Public layout
+````
+Up to now, the algorithm fails if the fetching for next-link at every step exceeds 1,500; which exceeds the CPU capacity at every depth
+````
+
+## Layout
 
 ```text
 training_data/training_data.json    consolidated recoverable supervision and provenance
