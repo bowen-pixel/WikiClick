@@ -1,6 +1,6 @@
 # AI usage
 
-WikiClick is a user-directed project developed with OpenAI Codex assistance. This file distinguishes recorded human requests from AI proposals and implementation. It is not a claim of independent human authorship or human review of every generated line. The longer historical AI-use record remains local in `reviews/AI_USAGE.md`.
+This file distinguishes recorded human requests from AI proposals and implementation. It is not a claim of independent human authorship or human review of every generated line. The longer historical AI-use record remains local in `reviews/AI_USAGE.md`.
 
 | Area | Recorded user contribution | AI contribution | Verification / limitation |
 |---|---|---|---|
@@ -16,10 +16,6 @@ WikiClick is a user-directed project developed with OpenAI Codex assistance. Thi
 | Barcelona latency | User reported slow fetching for FC Barcelona → Gao Qiu | Inspected the pipeline and measured outgoing links/initial fetch time; proposed preselection, caching and phase progress | Proposals are not presented as implemented optimizations |
 | Public refactor, 2026-11-14 | User specified the public folders, all recoverable training data, named docs, and keeping tests/experiments local | Extracted/refactored the public core, consolidated records with provenance, mapped figures to model/dataset, drafted these docs, and prepared Git exclusions | No new training or metric improvement claimed; exact missing optimizer histories are disclosed |
 
-AI generated substantial portions of the Python implementation, tests, plotting/reporting code, experiment protocols and Markdown prose. The user supplied the product direction, constraints, failure reports and requested changes listed above. Saved checkpoints/results arose from actual local runs recorded by the project; AI-generated prose must not be taken as substitute evidence for a run.
 
 The public refactor preserves historical source locally, copies figure pixels unchanged, and documents available training pools separately from confirmed optimizer use. Research claims and paper links are checked against primary sources in [Foundation of Models](Foundation%20of%20Models.md). No model version, human approval, independent audit, successful new benchmark or first-proposer attribution has been invented.
 
-## Verification of the public refactor
-
-Imported all 41 public Python modules, checked mathematical primitive parity with the historical implementation, and checked public Markdown links. An isolated public-only snapshot restored the 100-article graph, completed a one-click BFS route and a one-epoch/32-pair training smoke test in temporary storage. All 13 live-navigation regression cases passed against that isolated public implementation. The smoke checkpoint is temporary; no historical model was retrained or replaced. Original-file checksums for all 32 embedded source corpora were verified. Tests and experiment files were removed from the next Git index snapshot while verified to remain on disk. The standard local regression files (`tests/test_*.py`) passed all 68 tests. Collecting every file under `tests/` also encounters the pre-existing standalone `navigation_test.py` reference to the absent `codes.models.raw.layer_dropout_experiment` module; that historical evaluation-script issue remains local and is not a dependency of the public snapshot.
