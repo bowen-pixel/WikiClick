@@ -1,0 +1,1622 @@
+{
+  "local_source": "codes/models/navigation/experiments/navigation_scaling_10a/comparison.json",
+  "source_sha256": "85215a801dc4d2b6cea895be6384feb895e20df6de27ac5d07f222ffd9c2210c",
+  "results": {
+    "test_queries": 400,
+    "test_destinations": 100,
+    "selected_dataset": "D1",
+    "baseline": {
+      "decisions": {
+        "decisions": 2000,
+        "destinations": 100,
+        "optimal_link_accuracy": 0.2785,
+        "ranking_loss": 1.7213450954556466,
+        "recall_at_k": {
+          "1": 0.2785,
+          "4": 0.658,
+          "8": 0.8265,
+          "16": 0.939,
+          "32": 0.98
+        },
+        "hard_negative_accuracy": 0.2785,
+        "hard_comparisons": 2000,
+        "progress_mse": null,
+        "progress_mse_reachable_only": null
+      },
+      "tests": {
+        "best_first": {
+          "summary": {
+            "25": {
+              "queries": 400,
+              "success_rate": 0.3,
+              "shortest_rate": 0.0925,
+              "extra_clicks_successes_only": 2.475,
+              "mean_expanded": 21.2325,
+              "mean_unique_expanded": 21.095,
+              "mean_candidates_scored": 431.8475,
+              "median_ms": 0.8133752271533012,
+              "p95_ms": 1.4840187970548864,
+              "max_peak_frontier_size": 611,
+              "mean_peak_frontier_size": 207.7475,
+              "route_stretch_successes_only": 1.6168849206349207,
+              "route_clicks_successes_only": 6.433333333333334
+            },
+            "50": {
+              "queries": 400,
+              "success_rate": 0.5075,
+              "shortest_rate": 0.095,
+              "extra_clicks_successes_only": 3.8817733990147785,
+              "mean_expanded": 35.6975,
+              "mean_unique_expanded": 34.8025,
+              "mean_candidates_scored": 752.095,
+              "median_ms": 1.445916946977377,
+              "p95_ms": 2.7036168146878476,
+              "max_peak_frontier_size": 807,
+              "mean_peak_frontier_size": 316.6425,
+              "route_stretch_successes_only": 1.9072366877785596,
+              "route_clicks_successes_only": 8.19704433497537
+            },
+            "100": {
+              "queries": 400,
+              "success_rate": 0.6475,
+              "shortest_rate": 0.095,
+              "extra_clicks_successes_only": 4.613899613899614,
+              "mean_expanded": 56.305,
+              "mean_unique_expanded": 52.8925,
+              "mean_candidates_scored": 1213.0675,
+              "median_ms": 1.9472925923764706,
+              "p95_ms": 5.151431728154419,
+              "max_peak_frontier_size": 1320,
+              "mean_peak_frontier_size": 444.53,
+              "route_stretch_successes_only": 2.0446129803272663,
+              "route_clicks_successes_only": 9.077220077220078
+            },
+            "200": {
+              "queries": 400,
+              "success_rate": 0.705,
+              "shortest_rate": 0.0975,
+              "extra_clicks_successes_only": 4.968085106382978,
+              "mean_expanded": 88.175,
+              "mean_unique_expanded": 76.0525,
+              "mean_candidates_scored": 1941.5375,
+              "median_ms": 1.9472925923764706,
+              "p95_ms": 9.943147515878074,
+              "max_peak_frontier_size": 2149,
+              "mean_peak_frontier_size": 608.8375,
+              "route_stretch_successes_only": 2.10434819317798,
+              "route_clicks_successes_only": 9.47517730496454
+            },
+            "500": {
+              "queries": 400,
+              "success_rate": 0.785,
+              "shortest_rate": 0.0975,
+              "extra_clicks_successes_only": 5.13375796178344,
+              "mean_expanded": 162.67,
+              "mean_unique_expanded": 120.41,
+              "mean_candidates_scored": 3577.5225,
+              "median_ms": 1.9472925923764706,
+              "p95_ms": 23.324583610519753,
+              "max_peak_frontier_size": 4017,
+              "mean_peak_frontier_size": 900.95,
+              "route_stretch_successes_only": 2.1276235972095847,
+              "route_clicks_successes_only": 9.697452229299364
+            }
+          },
+          "fitness": {
+            "success": 0.48499999999999993,
+            "shortest": 0.09416666666666666,
+            "expanded": 37.745
+          },
+          "wall_seconds_including_verification": 2.621956584043801,
+          "score_preparation_seconds": 0.0,
+          "neural_node_goal_scores": 0,
+          "peak_process_rss_mib": 329.15625,
+          "memory_scope": "Cumulative process RSS, not isolated model tensors or per-budget memory. Final evaluations run in a fresh process after training.",
+          "strategy": "best_first",
+          "cached_score_bytes": 0
+        },
+        "greedy": {
+          "summary": {
+            "25": {
+              "queries": 400,
+              "success_rate": 0.2175,
+              "shortest_rate": 0.0425,
+              "extra_clicks_successes_only": 5.218390804597701,
+              "mean_expanded": 13.3175,
+              "mean_unique_expanded": 13.3175,
+              "mean_candidates_scored": 260.825,
+              "median_ms": 0.4168120212852955,
+              "p95_ms": 0.995017448440194,
+              "max_peak_frontier_size": 1,
+              "mean_peak_frontier_size": 1.0,
+              "route_stretch_successes_only": 2.4718117131910233,
+              "route_clicks_successes_only": 8.827586206896552
+            },
+            "50": {
+              "queries": 400,
+              "success_rate": 0.2175,
+              "shortest_rate": 0.0425,
+              "extra_clicks_successes_only": 5.218390804597701,
+              "mean_expanded": 13.3175,
+              "mean_unique_expanded": 13.3175,
+              "mean_candidates_scored": 260.825,
+              "median_ms": 0.4168120212852955,
+              "p95_ms": 0.995017448440194,
+              "max_peak_frontier_size": 1,
+              "mean_peak_frontier_size": 1.0,
+              "route_stretch_successes_only": 2.4718117131910233,
+              "route_clicks_successes_only": 8.827586206896552
+            },
+            "100": {
+              "queries": 400,
+              "success_rate": 0.2175,
+              "shortest_rate": 0.0425,
+              "extra_clicks_successes_only": 5.218390804597701,
+              "mean_expanded": 13.3175,
+              "mean_unique_expanded": 13.3175,
+              "mean_candidates_scored": 260.825,
+              "median_ms": 0.4168120212852955,
+              "p95_ms": 0.995017448440194,
+              "max_peak_frontier_size": 1,
+              "mean_peak_frontier_size": 1.0,
+              "route_stretch_successes_only": 2.4718117131910233,
+              "route_clicks_successes_only": 8.827586206896552
+            },
+            "200": {
+              "queries": 400,
+              "success_rate": 0.2175,
+              "shortest_rate": 0.0425,
+              "extra_clicks_successes_only": 5.218390804597701,
+              "mean_expanded": 13.3175,
+              "mean_unique_expanded": 13.3175,
+              "mean_candidates_scored": 260.825,
+              "median_ms": 0.4168120212852955,
+              "p95_ms": 0.995017448440194,
+              "max_peak_frontier_size": 1,
+              "mean_peak_frontier_size": 1.0,
+              "route_stretch_successes_only": 2.4718117131910233,
+              "route_clicks_successes_only": 8.827586206896552
+            },
+            "500": {
+              "queries": 400,
+              "success_rate": 0.2175,
+              "shortest_rate": 0.0425,
+              "extra_clicks_successes_only": 5.218390804597701,
+              "mean_expanded": 13.3175,
+              "mean_unique_expanded": 13.3175,
+              "mean_candidates_scored": 260.825,
+              "median_ms": 0.4168120212852955,
+              "p95_ms": 0.995017448440194,
+              "max_peak_frontier_size": 1,
+              "mean_peak_frontier_size": 1.0,
+              "route_stretch_successes_only": 2.4718117131910233,
+              "route_clicks_successes_only": 8.827586206896552
+            }
+          },
+          "fitness": {
+            "success": 0.2175,
+            "shortest": 0.0425,
+            "expanded": 13.3175
+          },
+          "wall_seconds_including_verification": 0.1843392914161086,
+          "score_preparation_seconds": 0.0,
+          "neural_node_goal_scores": 0,
+          "peak_process_rss_mib": 329.15625,
+          "memory_scope": "Cumulative process RSS, not isolated model tensors or per-budget memory. Final evaluations run in a fresh process after training.",
+          "strategy": "greedy",
+          "cached_score_bytes": 0
+        },
+        "beam_32": {
+          "summary": {
+            "25": {
+              "queries": 400,
+              "success_rate": 0.1325,
+              "shortest_rate": 0.1325,
+              "extra_clicks_successes_only": 0.0,
+              "mean_expanded": 23.3525,
+              "mean_unique_expanded": 22.3375,
+              "mean_candidates_scored": 522.095,
+              "median_ms": 0.8267085067927837,
+              "p95_ms": 1.7838733736425636,
+              "max_peak_frontier_size": 592,
+              "mean_peak_frontier_size": 213.63,
+              "route_stretch_successes_only": 1.0,
+              "route_clicks_successes_only": 2.6792452830188678
+            },
+            "50": {
+              "queries": 400,
+              "success_rate": 0.215,
+              "shortest_rate": 0.2125,
+              "extra_clicks_successes_only": 0.011627906976744186,
+              "mean_expanded": 44.07,
+              "mean_unique_expanded": 40.86,
+              "mean_candidates_scored": 965.77,
+              "median_ms": 1.6980827786028385,
+              "p95_ms": 3.2132334075868116,
+              "max_peak_frontier_size": 747,
+              "mean_peak_frontier_size": 311.4625,
+              "route_stretch_successes_only": 1.003875968992248,
+              "route_clicks_successes_only": 2.953488372093023
+            },
+            "100": {
+              "queries": 400,
+              "success_rate": 0.395,
+              "shortest_rate": 0.3425,
+              "extra_clicks_successes_only": 0.14556962025316456,
+              "mean_expanded": 78.9325,
+              "mean_unique_expanded": 66.9225,
+              "mean_candidates_scored": 1686.02,
+              "median_ms": 3.243125509470701,
+              "p95_ms": 5.7298305910080645,
+              "max_peak_frontier_size": 795,
+              "mean_peak_frontier_size": 374.4775,
+              "route_stretch_successes_only": 1.0420886075949365,
+              "route_clicks_successes_only": 3.7531645569620253
+            },
+            "200": {
+              "queries": 400,
+              "success_rate": 0.6275,
+              "shortest_rate": 0.405,
+              "extra_clicks_successes_only": 0.5577689243027888,
+              "mean_expanded": 125.1125,
+              "mean_unique_expanded": 85.4675,
+              "mean_candidates_scored": 2754.345,
+              "median_ms": 4.760416224598885,
+              "p95_ms": 10.768904071301222,
+              "max_peak_frontier_size": 795,
+              "mean_peak_frontier_size": 398.01,
+              "route_stretch_successes_only": 1.1211345095807248,
+              "route_clicks_successes_only": 4.864541832669323
+            },
+            "500": {
+              "queries": 400,
+              "success_rate": 0.6975,
+              "shortest_rate": 0.405,
+              "extra_clicks_successes_only": 1.1756272401433692,
+              "mean_expanded": 223.8875,
+              "mean_unique_expanded": 96.94,
+              "mean_candidates_scored": 5062.9725,
+              "median_ms": 4.872166085988283,
+              "p95_ms": 26.775226602330804,
+              "max_peak_frontier_size": 795,
+              "mean_peak_frontier_size": 405.075,
+              "route_stretch_successes_only": 1.240552995391705,
+              "route_clicks_successes_only": 5.587813620071684
+            }
+          },
+          "fitness": {
+            "success": 0.24750000000000003,
+            "shortest": 0.22916666666666666,
+            "expanded": 48.785000000000004
+          },
+          "wall_seconds_including_verification": 3.8081189999356866,
+          "score_preparation_seconds": 0.0,
+          "neural_node_goal_scores": 0,
+          "peak_process_rss_mib": 329.28125,
+          "memory_scope": "Cumulative process RSS, not isolated model tensors or per-budget memory. Final evaluations run in a fresh process after training.",
+          "strategy": "beam_32",
+          "cached_score_bytes": 0
+        }
+      },
+      "peak_process_rss_mib": 329.28125
+    },
+    "scales": {
+      "10000": {
+        "M1": {
+          "seeds": [
+            1601,
+            1602,
+            1603
+          ],
+          "test_objective": 0.42250000000000004,
+          "success100": 0.5158333333333333,
+          "optimal_link_accuracy": 0.4098333333333333,
+          "mean_peak_worker_rss_mib": 362.875,
+          "versus_cosine": {
+            "mean_budget_success": {
+              "difference": -0.062499999999999986,
+              "ci95": [
+                -0.1163888888888889,
+                -0.009166666666666667
+              ]
+            },
+            "success_at_100": {
+              "difference": -0.13166666666666665,
+              "ci95": [
+                -0.19416666666666665,
+                -0.0675
+              ]
+            }
+          },
+          "strategies": {
+            "best_first": {
+              "25": {
+                "success_rate": 0.315,
+                "shortest_rate": 0.07083333333333333,
+                "mean_expanded": 20.901666666666667,
+                "mean_candidates_scored": 672.1041666666666,
+                "median_ms": 0.5461179340879122,
+                "p95_ms": 0.7774390745908019
+              },
+              "50": {
+                "success_rate": 0.4366666666666667,
+                "shortest_rate": 0.08,
+                "mean_expanded": 36.343333333333334,
+                "mean_candidates_scored": 1175.0275000000001,
+                "median_ms": 1.0350762555996578,
+                "p95_ms": 1.471285009756684
+              },
+              "100": {
+                "success_rate": 0.5158333333333333,
+                "shortest_rate": 0.0825,
+                "mean_expanded": 62.28916666666667,
+                "mean_candidates_scored": 1993.7891666666667,
+                "median_ms": 1.7634863033890724,
+                "p95_ms": 2.848453167825936
+              },
+              "200": {
+                "success_rate": 0.5775,
+                "shortest_rate": 0.08750000000000001,
+                "mean_expanded": 107.40499999999999,
+                "mean_candidates_scored": 3319.0208333333335,
+                "median_ms": 2.075909481694301,
+                "p95_ms": 5.332513029376666
+              },
+              "500": {
+                "success_rate": 0.7174999999999999,
+                "shortest_rate": 0.10166666666666668,
+                "mean_expanded": 208.36166666666668,
+                "mean_candidates_scored": 6112.825833333333,
+                "median_ms": 2.075909481694301,
+                "p95_ms": 12.222770741209388
+              }
+            },
+            "greedy": {
+              "25": {
+                "success_rate": 0.23666666666666666,
+                "shortest_rate": 0.02916666666666667,
+                "mean_expanded": 15.811666666666667,
+                "mean_candidates_scored": 486.74333333333334,
+                "median_ms": 0.33218739554286003,
+                "p95_ms": 0.47798020144303616
+              },
+              "50": {
+                "success_rate": 0.23666666666666666,
+                "shortest_rate": 0.02916666666666667,
+                "mean_expanded": 15.811666666666667,
+                "mean_candidates_scored": 486.74333333333334,
+                "median_ms": 0.33218739554286003,
+                "p95_ms": 0.47798020144303616
+              },
+              "100": {
+                "success_rate": 0.23666666666666666,
+                "shortest_rate": 0.02916666666666667,
+                "mean_expanded": 15.811666666666667,
+                "mean_candidates_scored": 486.74333333333334,
+                "median_ms": 0.33218739554286003,
+                "p95_ms": 0.47798020144303616
+              },
+              "200": {
+                "success_rate": 0.23666666666666666,
+                "shortest_rate": 0.02916666666666667,
+                "mean_expanded": 15.811666666666667,
+                "mean_candidates_scored": 486.74333333333334,
+                "median_ms": 0.33218739554286003,
+                "p95_ms": 0.47798020144303616
+              },
+              "500": {
+                "success_rate": 0.23666666666666666,
+                "shortest_rate": 0.02916666666666667,
+                "mean_expanded": 15.811666666666667,
+                "mean_candidates_scored": 486.74333333333334,
+                "median_ms": 0.33218739554286003,
+                "p95_ms": 0.47798020144303616
+              }
+            },
+            "beam_32": {
+              "25": {
+                "success_rate": 0.11583333333333333,
+                "shortest_rate": 0.11583333333333333,
+                "mean_expanded": 23.710833333333337,
+                "mean_candidates_scored": 605.9383333333334,
+                "median_ms": 0.4194793291389942,
+                "p95_ms": 0.7027569692581889
+              },
+              "50": {
+                "success_rate": 0.22083333333333333,
+                "shortest_rate": 0.21916666666666665,
+                "mean_expanded": 44.5425,
+                "mean_candidates_scored": 1193.0641666666668,
+                "median_ms": 0.8795207055906454,
+                "p95_ms": 1.4029286025712882
+              },
+              "100": {
+                "success_rate": 0.37666666666666665,
+                "shortest_rate": 0.35083333333333333,
+                "mean_expanded": 79.85666666666667,
+                "mean_candidates_scored": 2324.9666666666667,
+                "median_ms": 1.8755551427602768,
+                "p95_ms": 2.8306131406376758
+              },
+              "200": {
+                "success_rate": 0.5591666666666666,
+                "shortest_rate": 0.4175,
+                "mean_expanded": 129.79,
+                "mean_candidates_scored": 4032.700833333334,
+                "median_ms": 3.122548417498668,
+                "p95_ms": 5.558883600557844
+              },
+              "500": {
+                "success_rate": 0.5766666666666667,
+                "shortest_rate": 0.4175,
+                "mean_expanded": 258.5441666666667,
+                "mean_candidates_scored": 8290.227499999999,
+                "median_ms": 3.122548417498668,
+                "p95_ms": 14.369483028228084
+              }
+            }
+          }
+        },
+        "M2": {
+          "seeds": [
+            1601,
+            1602,
+            1603
+          ],
+          "test_objective": 0.5283333333333333,
+          "success100": 0.6216666666666667,
+          "optimal_link_accuracy": 0.35433333333333333,
+          "mean_peak_worker_rss_mib": 360.390625,
+          "versus_cosine": {
+            "mean_budget_success": {
+              "difference": 0.043333333333333335,
+              "ci95": [
+                0.005548611111111112,
+                0.08306250000000004
+              ]
+            },
+            "success_at_100": {
+              "difference": -0.025833333333333333,
+              "ci95": [
+                -0.0725,
+                0.018333333333333333
+              ]
+            }
+          },
+          "strategies": {
+            "best_first": {
+              "25": {
+                "success_rate": 0.4066666666666667,
+                "shortest_rate": 0.09416666666666668,
+                "mean_expanded": 20.170833333333334,
+                "mean_candidates_scored": 523.655,
+                "median_ms": 1.211902592331171,
+                "p95_ms": 1.8506488452355063
+              },
+              "50": {
+                "success_rate": 0.5566666666666668,
+                "shortest_rate": 0.10000000000000002,
+                "mean_expanded": 32.91916666666667,
+                "mean_candidates_scored": 874.5633333333334,
+                "median_ms": 1.9552848922709625,
+                "p95_ms": 3.5421609102437888
+              },
+              "100": {
+                "success_rate": 0.6216666666666667,
+                "shortest_rate": 0.10000000000000002,
+                "mean_expanded": 53.14166666666667,
+                "mean_candidates_scored": 1417.5233333333335,
+                "median_ms": 2.1621044725179672,
+                "p95_ms": 6.887833184252181
+              },
+              "200": {
+                "success_rate": 0.6883333333333334,
+                "shortest_rate": 0.10416666666666667,
+                "mean_expanded": 87.42666666666666,
+                "mean_candidates_scored": 2303.763333333334,
+                "median_ms": 2.1621044725179672,
+                "p95_ms": 13.150498022635778
+              },
+              "500": {
+                "success_rate": 0.8008333333333333,
+                "shortest_rate": 0.10833333333333332,
+                "mean_expanded": 160.57750000000001,
+                "mean_candidates_scored": 4136.575833333333,
+                "median_ms": 2.1621044725179672,
+                "p95_ms": 31.340578105300654
+              }
+            },
+            "greedy": {
+              "25": {
+                "success_rate": 0.23666666666666666,
+                "shortest_rate": 0.04083333333333333,
+                "mean_expanded": 14.346666666666666,
+                "mean_candidates_scored": 345.30999999999995,
+                "median_ms": 0.7103746756911278,
+                "p95_ms": 1.2915627875675757
+              },
+              "50": {
+                "success_rate": 0.23666666666666666,
+                "shortest_rate": 0.04083333333333333,
+                "mean_expanded": 14.346666666666666,
+                "mean_candidates_scored": 345.30999999999995,
+                "median_ms": 0.7103746756911278,
+                "p95_ms": 1.2915627875675757
+              },
+              "100": {
+                "success_rate": 0.23666666666666666,
+                "shortest_rate": 0.04083333333333333,
+                "mean_expanded": 14.346666666666666,
+                "mean_candidates_scored": 345.30999999999995,
+                "median_ms": 0.7103746756911278,
+                "p95_ms": 1.2915627875675757
+              },
+              "200": {
+                "success_rate": 0.23666666666666666,
+                "shortest_rate": 0.04083333333333333,
+                "mean_expanded": 14.346666666666666,
+                "mean_candidates_scored": 345.30999999999995,
+                "median_ms": 0.7103746756911278,
+                "p95_ms": 1.2915627875675757
+              },
+              "500": {
+                "success_rate": 0.23666666666666666,
+                "shortest_rate": 0.04083333333333333,
+                "mean_expanded": 14.346666666666666,
+                "mean_candidates_scored": 345.30999999999995,
+                "median_ms": 0.7103746756911278,
+                "p95_ms": 1.2915627875675757
+              }
+            },
+            "beam_32": {
+              "25": {
+                "success_rate": 0.13,
+                "shortest_rate": 0.13,
+                "mean_expanded": 23.451666666666668,
+                "mean_candidates_scored": 563.495,
+                "median_ms": 1.1156527325510979,
+                "p95_ms": 2.1082234724114333
+              },
+              "50": {
+                "success_rate": 0.23,
+                "shortest_rate": 0.23,
+                "mean_expanded": 44.01583333333334,
+                "mean_candidates_scored": 1073.5266666666666,
+                "median_ms": 2.2785762945810952,
+                "p95_ms": 3.9060939258585368
+              },
+              "100": {
+                "success_rate": 0.4291666666666667,
+                "shortest_rate": 0.395,
+                "mean_expanded": 78.07666666666667,
+                "mean_candidates_scored": 1955.8125,
+                "median_ms": 4.568715424587329,
+                "p95_ms": 7.207293855026362
+              },
+              "200": {
+                "success_rate": 0.655,
+                "shortest_rate": 0.4741666666666666,
+                "mean_expanded": 119.73416666666667,
+                "mean_candidates_scored": 3117.5716666666667,
+                "median_ms": 6.032492965459824,
+                "p95_ms": 13.553725276142359
+              },
+              "500": {
+                "success_rate": 0.6841666666666667,
+                "shortest_rate": 0.4741666666666666,
+                "mean_expanded": 217.36916666666664,
+                "mean_candidates_scored": 5743.429166666666,
+                "median_ms": 6.032492965459824,
+                "p95_ms": 34.790152901162706
+              }
+            }
+          }
+        },
+        "M2_minus_M1": {
+          "mean_budget_success": {
+            "difference": 0.10583333333333333,
+            "ci95": [
+              0.061666666666666675,
+              0.1527777777777778
+            ]
+          },
+          "success_at_100": {
+            "difference": 0.10583333333333333,
+            "ci95": [
+              0.055,
+              0.15833333333333333
+            ]
+          }
+        }
+      },
+      "30000": {
+        "M1": {
+          "seeds": [
+            1601,
+            1602,
+            1603
+          ],
+          "test_objective": 0.49166666666666664,
+          "success100": 0.5858333333333333,
+          "optimal_link_accuracy": 0.4126666666666667,
+          "mean_peak_worker_rss_mib": 362.5677083333333,
+          "versus_cosine": {
+            "mean_budget_success": {
+              "difference": 0.006666666666666676,
+              "ci95": [
+                -0.043354166666666666,
+                0.05805555555555557
+              ]
+            },
+            "success_at_100": {
+              "difference": -0.06166666666666667,
+              "ci95": [
+                -0.1225,
+                -0.0025
+              ]
+            }
+          },
+          "strategies": {
+            "best_first": {
+              "25": {
+                "success_rate": 0.3741666666666667,
+                "shortest_rate": 0.07583333333333332,
+                "mean_expanded": 20.1575,
+                "mean_candidates_scored": 646.7716666666666,
+                "median_ms": 0.5493541248142719,
+                "p95_ms": 0.8127392424891391
+              },
+              "50": {
+                "success_rate": 0.515,
+                "shortest_rate": 0.0825,
+                "mean_expanded": 33.973333333333336,
+                "mean_candidates_scored": 1080.4566666666667,
+                "median_ms": 0.9826941726108392,
+                "p95_ms": 1.494995675360163
+              },
+              "100": {
+                "success_rate": 0.5858333333333333,
+                "shortest_rate": 0.09166666666666667,
+                "mean_expanded": 56.04416666666666,
+                "mean_candidates_scored": 1765.1583333333335,
+                "median_ms": 1.1420766822993755,
+                "p95_ms": 2.850817438835898
+              },
+              "200": {
+                "success_rate": 0.6533333333333333,
+                "shortest_rate": 0.09749999999999999,
+                "mean_expanded": 93.8875,
+                "mean_candidates_scored": 2917.4541666666664,
+                "median_ms": 1.1420766822993755,
+                "p95_ms": 5.491344677284359
+              },
+              "500": {
+                "success_rate": 0.7166666666666668,
+                "shortest_rate": 0.1075,
+                "mean_expanded": 186.87833333333333,
+                "mean_candidates_scored": 5478.7425,
+                "median_ms": 1.1420766822993755,
+                "p95_ms": 12.729796736190714
+              }
+            },
+            "greedy": {
+              "25": {
+                "success_rate": 0.26583333333333337,
+                "shortest_rate": 0.030833333333333334,
+                "mean_expanded": 15.551666666666668,
+                "mean_candidates_scored": 460.76833333333326,
+                "median_ms": 0.3196871839463711,
+                "p95_ms": 0.4769257425020137
+              },
+              "50": {
+                "success_rate": 0.26583333333333337,
+                "shortest_rate": 0.030833333333333334,
+                "mean_expanded": 15.551666666666668,
+                "mean_candidates_scored": 460.76833333333326,
+                "median_ms": 0.3196871839463711,
+                "p95_ms": 0.4769257425020137
+              },
+              "100": {
+                "success_rate": 0.26583333333333337,
+                "shortest_rate": 0.030833333333333334,
+                "mean_expanded": 15.551666666666668,
+                "mean_candidates_scored": 460.76833333333326,
+                "median_ms": 0.3196871839463711,
+                "p95_ms": 0.4769257425020137
+              },
+              "200": {
+                "success_rate": 0.26583333333333337,
+                "shortest_rate": 0.030833333333333334,
+                "mean_expanded": 15.551666666666668,
+                "mean_candidates_scored": 460.76833333333326,
+                "median_ms": 0.3196871839463711,
+                "p95_ms": 0.4769257425020137
+              },
+              "500": {
+                "success_rate": 0.26583333333333337,
+                "shortest_rate": 0.030833333333333334,
+                "mean_expanded": 15.551666666666668,
+                "mean_candidates_scored": 460.76833333333326,
+                "median_ms": 0.3196871839463711,
+                "p95_ms": 0.4769257425020137
+              }
+            },
+            "beam_32": {
+              "25": {
+                "success_rate": 0.1125,
+                "shortest_rate": 0.1125,
+                "mean_expanded": 23.68166666666667,
+                "mean_candidates_scored": 611.3075,
+                "median_ms": 0.4270416684448719,
+                "p95_ms": 0.7274717868616181
+              },
+              "50": {
+                "success_rate": 0.21333333333333335,
+                "shortest_rate": 0.21333333333333335,
+                "mean_expanded": 44.541666666666664,
+                "mean_candidates_scored": 1199.5541666666668,
+                "median_ms": 0.8980209628740946,
+                "p95_ms": 1.4209729619324205
+              },
+              "100": {
+                "success_rate": 0.3725,
+                "shortest_rate": 0.33,
+                "mean_expanded": 80.06,
+                "mean_candidates_scored": 2330.623333333333,
+                "median_ms": 1.9302984389166038,
+                "p95_ms": 2.847836973766485
+              },
+              "200": {
+                "success_rate": 0.5741666666666666,
+                "shortest_rate": 0.4066666666666667,
+                "mean_expanded": 128.56083333333333,
+                "mean_candidates_scored": 3943.2316666666666,
+                "median_ms": 2.937902696430683,
+                "p95_ms": 5.530884660159547
+              },
+              "500": {
+                "success_rate": 0.6158333333333333,
+                "shortest_rate": 0.4066666666666667,
+                "mean_expanded": 247.96166666666667,
+                "mean_candidates_scored": 7771.373333333333,
+                "median_ms": 2.937902696430683,
+                "p95_ms": 14.78014071471989
+              }
+            }
+          }
+        },
+        "M2": {
+          "seeds": [
+            1601,
+            1602,
+            1603
+          ],
+          "test_objective": 0.46194444444444444,
+          "success100": 0.5533333333333333,
+          "optimal_link_accuracy": 0.4166666666666667,
+          "mean_peak_worker_rss_mib": 365.859375,
+          "versus_cosine": {
+            "mean_budget_success": {
+              "difference": -0.023055555555555555,
+              "ci95": [
+                -0.07444444444444444,
+                0.030006944444444468
+              ]
+            },
+            "success_at_100": {
+              "difference": -0.09416666666666666,
+              "ci95": [
+                -0.15583333333333332,
+                -0.03333333333333333
+              ]
+            }
+          },
+          "strategies": {
+            "best_first": {
+              "25": {
+                "success_rate": 0.3558333333333333,
+                "shortest_rate": 0.0675,
+                "mean_expanded": 20.39,
+                "mean_candidates_scored": 662.485,
+                "median_ms": 1.5253534850974877,
+                "p95_ms": 2.0712252395848423
+              },
+              "50": {
+                "success_rate": 0.4766666666666666,
+                "shortest_rate": 0.07166666666666667,
+                "mean_expanded": 34.88666666666666,
+                "mean_candidates_scored": 1127.12,
+                "median_ms": 2.746916376054287,
+                "p95_ms": 3.970213451733192
+              },
+              "100": {
+                "success_rate": 0.5533333333333333,
+                "shortest_rate": 0.0775,
+                "mean_expanded": 58.41583333333333,
+                "mean_candidates_scored": 1858.3141666666668,
+                "median_ms": 3.483111194024483,
+                "p95_ms": 7.6861891585091735
+              },
+              "200": {
+                "success_rate": 0.65,
+                "shortest_rate": 0.08666666666666667,
+                "mean_expanded": 98.7075,
+                "mean_candidates_scored": 3088.2333333333336,
+                "median_ms": 3.483111194024483,
+                "p95_ms": 14.422528119757766
+              },
+              "500": {
+                "success_rate": 0.7200000000000001,
+                "shortest_rate": 0.10083333333333333,
+                "mean_expanded": 190.80499999999998,
+                "mean_candidates_scored": 5626.375833333334,
+                "median_ms": 3.483111194024483,
+                "p95_ms": 33.58165752142668
+              }
+            },
+            "greedy": {
+              "25": {
+                "success_rate": 0.2833333333333333,
+                "shortest_rate": 0.028333333333333332,
+                "mean_expanded": 15.663333333333334,
+                "mean_candidates_scored": 470.1075,
+                "median_ms": 0.9716736773649851,
+                "p95_ms": 1.4008363864074145
+              },
+              "50": {
+                "success_rate": 0.2833333333333333,
+                "shortest_rate": 0.028333333333333332,
+                "mean_expanded": 15.663333333333334,
+                "mean_candidates_scored": 470.1075,
+                "median_ms": 0.9716736773649851,
+                "p95_ms": 1.4008363864074145
+              },
+              "100": {
+                "success_rate": 0.2833333333333333,
+                "shortest_rate": 0.028333333333333332,
+                "mean_expanded": 15.663333333333334,
+                "mean_candidates_scored": 470.1075,
+                "median_ms": 0.9716736773649851,
+                "p95_ms": 1.4008363864074145
+              },
+              "200": {
+                "success_rate": 0.2833333333333333,
+                "shortest_rate": 0.028333333333333332,
+                "mean_expanded": 15.663333333333334,
+                "mean_candidates_scored": 470.1075,
+                "median_ms": 0.9716736773649851,
+                "p95_ms": 1.4008363864074145
+              },
+              "500": {
+                "success_rate": 0.2833333333333333,
+                "shortest_rate": 0.028333333333333332,
+                "mean_expanded": 15.663333333333334,
+                "mean_candidates_scored": 470.1075,
+                "median_ms": 0.9716736773649851,
+                "p95_ms": 1.4008363864074145
+              }
+            },
+            "beam_32": {
+              "25": {
+                "success_rate": 0.11,
+                "shortest_rate": 0.11,
+                "mean_expanded": 23.715833333333336,
+                "mean_candidates_scored": 614.8916666666667,
+                "median_ms": 1.2010205537080765,
+                "p95_ms": 2.175004454329609
+              },
+              "50": {
+                "success_rate": 0.21416666666666664,
+                "shortest_rate": 0.21416666666666664,
+                "mean_expanded": 44.630833333333335,
+                "mean_candidates_scored": 1207.0916666666667,
+                "median_ms": 2.5540973680714765,
+                "p95_ms": 4.113893474762638
+              },
+              "100": {
+                "success_rate": 0.37000000000000005,
+                "shortest_rate": 0.32750000000000007,
+                "mean_expanded": 80.29666666666667,
+                "mean_candidates_scored": 2352.900833333333,
+                "median_ms": 5.42945150906841,
+                "p95_ms": 7.921104598790407
+              },
+              "200": {
+                "success_rate": 0.565,
+                "shortest_rate": 0.4025,
+                "mean_expanded": 129.45,
+                "mean_candidates_scored": 4010.365,
+                "median_ms": 8.376361336559057,
+                "p95_ms": 15.070114160577452
+              },
+              "500": {
+                "success_rate": 0.595,
+                "shortest_rate": 0.4025,
+                "mean_expanded": 254.365,
+                "mean_candidates_scored": 8059.25,
+                "median_ms": 8.376361336559057,
+                "p95_ms": 39.99813720583915
+              }
+            }
+          }
+        },
+        "M2_minus_M1": {
+          "mean_budget_success": {
+            "difference": -0.02972222222222222,
+            "ci95": [
+              -0.045277777777777785,
+              -0.01611111111111111
+            ]
+          },
+          "success_at_100": {
+            "difference": -0.0325,
+            "ci95": [
+              -0.05752083333333333,
+              -0.011666666666666667
+            ]
+          }
+        }
+      },
+      "100000": {
+        "M1": {
+          "seeds": [
+            1601,
+            1602,
+            1603
+          ],
+          "test_objective": 0.4755555555555555,
+          "success100": 0.5741666666666667,
+          "optimal_link_accuracy": 0.45216666666666666,
+          "mean_peak_worker_rss_mib": 360.4270833333333,
+          "versus_cosine": {
+            "mean_budget_success": {
+              "difference": -0.00944444444444444,
+              "ci95": [
+                -0.06084027777777778,
+                0.04250000000000002
+              ]
+            },
+            "success_at_100": {
+              "difference": -0.07333333333333333,
+              "ci95": [
+                -0.1341875,
+                -0.010833333333333334
+              ]
+            }
+          },
+          "strategies": {
+            "best_first": {
+              "25": {
+                "success_rate": 0.3675,
+                "shortest_rate": 0.06333333333333334,
+                "mean_expanded": 20.264166666666664,
+                "mean_candidates_scored": 688.9525,
+                "median_ms": 0.571166630834341,
+                "p95_ms": 0.8111977018415925
+              },
+              "50": {
+                "success_rate": 0.48499999999999993,
+                "shortest_rate": 0.06916666666666667,
+                "mean_expanded": 34.259166666666665,
+                "mean_candidates_scored": 1166.5583333333332,
+                "median_ms": 1.0288748890161514,
+                "p95_ms": 1.5333487652242177
+              },
+              "100": {
+                "success_rate": 0.5741666666666667,
+                "shortest_rate": 0.07916666666666666,
+                "mean_expanded": 57.585,
+                "mean_candidates_scored": 1928.0250000000003,
+                "median_ms": 1.4758265266815822,
+                "p95_ms": 2.8821069126327834
+              },
+              "200": {
+                "success_rate": 0.62,
+                "shortest_rate": 0.08083333333333333,
+                "mean_expanded": 97.61500000000001,
+                "mean_candidates_scored": 3150.73,
+                "median_ms": 1.4758265266815822,
+                "p95_ms": 5.394109478220344
+              },
+              "500": {
+                "success_rate": 0.7091666666666668,
+                "shortest_rate": 0.09749999999999999,
+                "mean_expanded": 195.1966666666667,
+                "mean_candidates_scored": 5894.5125,
+                "median_ms": 1.4758265266815822,
+                "p95_ms": 12.573967796439923
+              }
+            },
+            "greedy": {
+              "25": {
+                "success_rate": 0.2625,
+                "shortest_rate": 0.030833333333333334,
+                "mean_expanded": 16.21166666666667,
+                "mean_candidates_scored": 532.5008333333334,
+                "median_ms": 0.35098645215233165,
+                "p95_ms": 0.49892648433645553
+              },
+              "50": {
+                "success_rate": 0.2625,
+                "shortest_rate": 0.030833333333333334,
+                "mean_expanded": 16.21166666666667,
+                "mean_candidates_scored": 532.5008333333334,
+                "median_ms": 0.35098645215233165,
+                "p95_ms": 0.49892648433645553
+              },
+              "100": {
+                "success_rate": 0.2625,
+                "shortest_rate": 0.030833333333333334,
+                "mean_expanded": 16.21166666666667,
+                "mean_candidates_scored": 532.5008333333334,
+                "median_ms": 0.35098645215233165,
+                "p95_ms": 0.49892648433645553
+              },
+              "200": {
+                "success_rate": 0.2625,
+                "shortest_rate": 0.030833333333333334,
+                "mean_expanded": 16.21166666666667,
+                "mean_candidates_scored": 532.5008333333334,
+                "median_ms": 0.35098645215233165,
+                "p95_ms": 0.49892648433645553
+              },
+              "500": {
+                "success_rate": 0.2625,
+                "shortest_rate": 0.030833333333333334,
+                "mean_expanded": 16.21166666666667,
+                "mean_candidates_scored": 532.5008333333334,
+                "median_ms": 0.35098645215233165,
+                "p95_ms": 0.49892648433645553
+              }
+            },
+            "beam_32": {
+              "25": {
+                "success_rate": 0.10583333333333333,
+                "shortest_rate": 0.10583333333333333,
+                "mean_expanded": 23.742500000000003,
+                "mean_candidates_scored": 622.5408333333334,
+                "median_ms": 0.4301459218064944,
+                "p95_ms": 0.7385713824381428
+              },
+              "50": {
+                "success_rate": 0.21416666666666664,
+                "shortest_rate": 0.21416666666666664,
+                "mean_expanded": 44.7525,
+                "mean_candidates_scored": 1243.4675,
+                "median_ms": 0.9184169272581736,
+                "p95_ms": 1.4574193706115086
+              },
+              "100": {
+                "success_rate": 0.37833333333333335,
+                "shortest_rate": 0.34333333333333327,
+                "mean_expanded": 80.32166666666667,
+                "mean_candidates_scored": 2437.290833333333,
+                "median_ms": 1.9618820709486802,
+                "p95_ms": 2.8962169773876663
+              },
+              "200": {
+                "success_rate": 0.5766666666666665,
+                "shortest_rate": 0.4183333333333334,
+                "mean_expanded": 128.6325,
+                "mean_candidates_scored": 4147.775833333333,
+                "median_ms": 2.986881726731857,
+                "p95_ms": 5.66306876329084
+              },
+              "500": {
+                "success_rate": 0.5908333333333333,
+                "shortest_rate": 0.4183333333333334,
+                "mean_expanded": 253.26250000000002,
+                "mean_candidates_scored": 8362.295833333332,
+                "median_ms": 2.986881726731857,
+                "p95_ms": 14.958969814081987
+              }
+            }
+          }
+        },
+        "M2": {
+          "seeds": [
+            1601,
+            1602,
+            1603
+          ],
+          "test_objective": 0.46222222222222226,
+          "success100": 0.5533333333333333,
+          "optimal_link_accuracy": 0.448,
+          "mean_peak_worker_rss_mib": 361.4010416666667,
+          "versus_cosine": {
+            "mean_budget_success": {
+              "difference": -0.022777777777777772,
+              "ci95": [
+                -0.07388888888888888,
+                0.02861111111111111
+              ]
+            },
+            "success_at_100": {
+              "difference": -0.09416666666666666,
+              "ci95": [
+                -0.15835416666666666,
+                -0.02997916666666659
+              ]
+            }
+          },
+          "strategies": {
+            "best_first": {
+              "25": {
+                "success_rate": 0.3499999999999999,
+                "shortest_rate": 0.05583333333333334,
+                "mean_expanded": 20.62333333333333,
+                "mean_candidates_scored": 695.9691666666668,
+                "median_ms": 1.6400835787256558,
+                "p95_ms": 2.23016426898539
+              },
+              "50": {
+                "success_rate": 0.48333333333333334,
+                "shortest_rate": 0.065,
+                "mean_expanded": 34.8525,
+                "mean_candidates_scored": 1176.3133333333335,
+                "median_ms": 2.971701634426912,
+                "p95_ms": 4.299534888317186
+              },
+              "100": {
+                "success_rate": 0.5533333333333333,
+                "shortest_rate": 0.075,
+                "mean_expanded": 58.85333333333333,
+                "mean_candidates_scored": 1970.5791666666667,
+                "median_ms": 3.9901179261505604,
+                "p95_ms": 8.251477048421899
+              },
+              "200": {
+                "success_rate": 0.6116666666666667,
+                "shortest_rate": 0.07916666666666666,
+                "mean_expanded": 100.0175,
+                "mean_candidates_scored": 3239.0933333333337,
+                "median_ms": 3.9901179261505604,
+                "p95_ms": 15.368463890627021
+              },
+              "500": {
+                "success_rate": 0.7158333333333333,
+                "shortest_rate": 0.09249999999999999,
+                "mean_expanded": 198.93500000000003,
+                "mean_candidates_scored": 6017.555,
+                "median_ms": 3.9901179261505604,
+                "p95_ms": 35.462494334205985
+              }
+            },
+            "greedy": {
+              "25": {
+                "success_rate": 0.25333333333333335,
+                "shortest_rate": 0.029166666666666664,
+                "mean_expanded": 16.374166666666664,
+                "mean_candidates_scored": 532.665,
+                "median_ms": 1.1064374508957069,
+                "p95_ms": 1.5404228897144392
+              },
+              "50": {
+                "success_rate": 0.25333333333333335,
+                "shortest_rate": 0.029166666666666664,
+                "mean_expanded": 16.374166666666664,
+                "mean_candidates_scored": 532.665,
+                "median_ms": 1.1064374508957069,
+                "p95_ms": 1.5404228897144392
+              },
+              "100": {
+                "success_rate": 0.25333333333333335,
+                "shortest_rate": 0.029166666666666664,
+                "mean_expanded": 16.374166666666664,
+                "mean_candidates_scored": 532.665,
+                "median_ms": 1.1064374508957069,
+                "p95_ms": 1.5404228897144392
+              },
+              "200": {
+                "success_rate": 0.25333333333333335,
+                "shortest_rate": 0.029166666666666664,
+                "mean_expanded": 16.374166666666664,
+                "mean_candidates_scored": 532.665,
+                "median_ms": 1.1064374508957069,
+                "p95_ms": 1.5404228897144392
+              },
+              "500": {
+                "success_rate": 0.25333333333333335,
+                "shortest_rate": 0.029166666666666664,
+                "mean_expanded": 16.374166666666664,
+                "mean_candidates_scored": 532.665,
+                "median_ms": 1.1064374508957069,
+                "p95_ms": 1.5404228897144392
+              }
+            },
+            "beam_32": {
+              "25": {
+                "success_rate": 0.105,
+                "shortest_rate": 0.105,
+                "mean_expanded": 23.77,
+                "mean_candidates_scored": 622.8741666666666,
+                "median_ms": 1.2792018242180347,
+                "p95_ms": 2.27028375181059
+              },
+              "50": {
+                "success_rate": 0.21083333333333332,
+                "shortest_rate": 0.21083333333333332,
+                "mean_expanded": 44.79916666666666,
+                "mean_candidates_scored": 1240.8266666666666,
+                "median_ms": 2.713611504683892,
+                "p95_ms": 4.369630261013904
+              },
+              "100": {
+                "success_rate": 0.375,
+                "shortest_rate": 0.34,
+                "mean_expanded": 80.42666666666666,
+                "mean_candidates_scored": 2434.5400000000004,
+                "median_ms": 5.747861073662837,
+                "p95_ms": 8.402763990064459
+              },
+              "200": {
+                "success_rate": 0.5716666666666667,
+                "shortest_rate": 0.4158333333333333,
+                "mean_expanded": 129.55416666666665,
+                "mean_candidates_scored": 4165.0125,
+                "median_ms": 8.847499887148539,
+                "p95_ms": 16.30859019545217
+              },
+              "500": {
+                "success_rate": 0.5883333333333333,
+                "shortest_rate": 0.4158333333333333,
+                "mean_expanded": 255.21083333333334,
+                "mean_candidates_scored": 8407.776666666667,
+                "median_ms": 8.847499887148539,
+                "p95_ms": 42.44474445780117
+              }
+            }
+          }
+        },
+        "M2_minus_M1": {
+          "mean_budget_success": {
+            "difference": -0.013333333333333334,
+            "ci95": [
+              -0.029722222222222226,
+              0.003333333333333336
+            ]
+          },
+          "success_at_100": {
+            "difference": -0.020833333333333332,
+            "ci95": [
+              -0.04416666666666667,
+              -0.0016666666666666668
+            ]
+          }
+        }
+      },
+      "300000": {
+        "M1": {
+          "seeds": [
+            1601,
+            1602,
+            1603
+          ],
+          "test_objective": 0.4091666666666666,
+          "success100": 0.5033333333333334,
+          "optimal_link_accuracy": 0.46249999999999997,
+          "mean_peak_worker_rss_mib": 359.4583333333333,
+          "versus_cosine": {
+            "mean_budget_success": {
+              "difference": -0.07583333333333334,
+              "ci95": [
+                -0.12972916666666662,
+                -0.017499999999999998
+              ]
+            },
+            "success_at_100": {
+              "difference": -0.14416666666666667,
+              "ci95": [
+                -0.20833333333333334,
+                -0.07831249999999992
+              ]
+            }
+          },
+          "strategies": {
+            "best_first": {
+              "25": {
+                "success_rate": 0.30083333333333334,
+                "shortest_rate": 0.0525,
+                "mean_expanded": 21.2325,
+                "mean_candidates_scored": 750.5933333333332,
+                "median_ms": 0.6071116464833418,
+                "p95_ms": 0.8573375331858791
+              },
+              "50": {
+                "success_rate": 0.42333333333333334,
+                "shortest_rate": 0.06083333333333333,
+                "mean_expanded": 36.79416666666666,
+                "mean_candidates_scored": 1302.8783333333333,
+                "median_ms": 1.1426042765378952,
+                "p95_ms": 1.6311386444916323
+              },
+              "100": {
+                "success_rate": 0.5033333333333334,
+                "shortest_rate": 0.06166666666666667,
+                "mean_expanded": 63.81666666666666,
+                "mean_candidates_scored": 2222.835833333333,
+                "median_ms": 2.103388619919618,
+                "p95_ms": 3.0563881155103445
+              },
+              "200": {
+                "success_rate": 0.5975,
+                "shortest_rate": 0.07166666666666667,
+                "mean_expanded": 108.02583333333332,
+                "mean_candidates_scored": 3639.6066666666666,
+                "median_ms": 2.5633680634200573,
+                "p95_ms": 5.725726330031949
+              },
+              "500": {
+                "success_rate": 0.6766666666666667,
+                "shortest_rate": 0.08749999999999998,
+                "mean_expanded": 216.14083333333335,
+                "mean_candidates_scored": 6816.089999999999,
+                "median_ms": 2.5633680634200573,
+                "p95_ms": 13.501949763546387
+              }
+            },
+            "greedy": {
+              "25": {
+                "success_rate": 0.19000000000000003,
+                "shortest_rate": 0.030833333333333334,
+                "mean_expanded": 16.95,
+                "mean_candidates_scored": 587.895,
+                "median_ms": 0.3741947002708912,
+                "p95_ms": 0.523712361852328
+              },
+              "50": {
+                "success_rate": 0.19000000000000003,
+                "shortest_rate": 0.030833333333333334,
+                "mean_expanded": 16.95,
+                "mean_candidates_scored": 587.895,
+                "median_ms": 0.3741947002708912,
+                "p95_ms": 0.523712361852328
+              },
+              "100": {
+                "success_rate": 0.19000000000000003,
+                "shortest_rate": 0.030833333333333334,
+                "mean_expanded": 16.95,
+                "mean_candidates_scored": 587.895,
+                "median_ms": 0.3741947002708912,
+                "p95_ms": 0.523712361852328
+              },
+              "200": {
+                "success_rate": 0.19000000000000003,
+                "shortest_rate": 0.030833333333333334,
+                "mean_expanded": 16.95,
+                "mean_candidates_scored": 587.895,
+                "median_ms": 0.3741947002708912,
+                "p95_ms": 0.523712361852328
+              },
+              "500": {
+                "success_rate": 0.19000000000000003,
+                "shortest_rate": 0.030833333333333334,
+                "mean_expanded": 16.95,
+                "mean_candidates_scored": 587.895,
+                "median_ms": 0.3741947002708912,
+                "p95_ms": 0.523712361852328
+              }
+            },
+            "beam_32": {
+              "25": {
+                "success_rate": 0.09000000000000001,
+                "shortest_rate": 0.09000000000000001,
+                "mean_expanded": 23.860833333333332,
+                "mean_candidates_scored": 634.975,
+                "median_ms": 0.4507290820280711,
+                "p95_ms": 0.7820859861870604
+              },
+              "50": {
+                "success_rate": 0.19083333333333333,
+                "shortest_rate": 0.19083333333333333,
+                "mean_expanded": 45.21583333333333,
+                "mean_candidates_scored": 1284.825,
+                "median_ms": 0.9525831167896589,
+                "p95_ms": 1.5439408365637057
+              },
+              "100": {
+                "success_rate": 0.34833333333333333,
+                "shortest_rate": 0.31,
+                "mean_expanded": 81.91583333333334,
+                "mean_candidates_scored": 2572.1533333333336,
+                "median_ms": 2.0789861058195434,
+                "p95_ms": 3.1014453464498124
+              },
+              "200": {
+                "success_rate": 0.5166666666666667,
+                "shortest_rate": 0.3725,
+                "mean_expanded": 135.7425,
+                "mean_candidates_scored": 4547.18,
+                "median_ms": 3.9935622674723468,
+                "p95_ms": 6.041326606646179
+              },
+              "500": {
+                "success_rate": 0.5375,
+                "shortest_rate": 0.3725,
+                "mean_expanded": 276.96250000000003,
+                "mean_candidates_scored": 9567.750833333334,
+                "median_ms": 4.388381882260243,
+                "p95_ms": 15.713863959535951
+              }
+            }
+          }
+        },
+        "M2": {
+          "seeds": [
+            1601,
+            1602,
+            1603
+          ],
+          "test_objective": 0.44749999999999995,
+          "success100": 0.5650000000000001,
+          "optimal_link_accuracy": 0.41933333333333334,
+          "mean_peak_worker_rss_mib": 365.6510416666667,
+          "versus_cosine": {
+            "mean_budget_success": {
+              "difference": -0.03749999999999999,
+              "ci95": [
+                -0.07333333333333333,
+                -0.0013888888888888861
+              ]
+            },
+            "success_at_100": {
+              "difference": -0.0825,
+              "ci95": [
+                -0.12666666666666668,
+                -0.03916666666666667
+              ]
+            }
+          },
+          "strategies": {
+            "best_first": {
+              "25": {
+                "success_rate": 0.3125,
+                "shortest_rate": 0.06916666666666667,
+                "mean_expanded": 21.186666666666667,
+                "mean_candidates_scored": 681.0,
+                "median_ms": 1.5243403613567352,
+                "p95_ms": 2.2036958485841747
+              },
+              "50": {
+                "success_rate": 0.465,
+                "shortest_rate": 0.06999999999999999,
+                "mean_expanded": 36.31249999999999,
+                "mean_candidates_scored": 1169.5733333333335,
+                "median_ms": 2.847368208070596,
+                "p95_ms": 4.146059711153309
+              },
+              "100": {
+                "success_rate": 0.5650000000000001,
+                "shortest_rate": 0.07416666666666667,
+                "mean_expanded": 60.09583333333334,
+                "mean_candidates_scored": 1917.8991666666668,
+                "median_ms": 4.794847530623277,
+                "p95_ms": 7.787244099502762
+              },
+              "200": {
+                "success_rate": 0.6275000000000001,
+                "shortest_rate": 0.08333333333333333,
+                "mean_expanded": 99.76166666666666,
+                "mean_candidates_scored": 3113.9275000000002,
+                "median_ms": 4.976305800179641,
+                "p95_ms": 14.686241823559001
+              },
+              "500": {
+                "success_rate": 0.7075,
+                "shortest_rate": 0.09416666666666666,
+                "mean_expanded": 199.41083333333333,
+                "mean_candidates_scored": 5817.556666666666,
+                "median_ms": 4.976305800179641,
+                "p95_ms": 34.36519031723339
+              }
+            },
+            "greedy": {
+              "25": {
+                "success_rate": 0.21166666666666667,
+                "shortest_rate": 0.03416666666666667,
+                "mean_expanded": 15.611666666666665,
+                "mean_candidates_scored": 501.3825,
+                "median_ms": 0.9986666652063528,
+                "p95_ms": 1.4885979238897555
+              },
+              "50": {
+                "success_rate": 0.21166666666666667,
+                "shortest_rate": 0.03416666666666667,
+                "mean_expanded": 15.611666666666665,
+                "mean_candidates_scored": 501.3825,
+                "median_ms": 0.9986666652063528,
+                "p95_ms": 1.4885979238897555
+              },
+              "100": {
+                "success_rate": 0.21166666666666667,
+                "shortest_rate": 0.03416666666666667,
+                "mean_expanded": 15.611666666666665,
+                "mean_candidates_scored": 501.3825,
+                "median_ms": 0.9986666652063528,
+                "p95_ms": 1.4885979238897555
+              },
+              "200": {
+                "success_rate": 0.21166666666666667,
+                "shortest_rate": 0.03416666666666667,
+                "mean_expanded": 15.611666666666665,
+                "mean_candidates_scored": 501.3825,
+                "median_ms": 0.9986666652063528,
+                "p95_ms": 1.4885979238897555
+              },
+              "500": {
+                "success_rate": 0.21166666666666667,
+                "shortest_rate": 0.03416666666666667,
+                "mean_expanded": 15.611666666666665,
+                "mean_candidates_scored": 501.3825,
+                "median_ms": 0.9986666652063528,
+                "p95_ms": 1.4885979238897555
+              }
+            },
+            "beam_32": {
+              "25": {
+                "success_rate": 0.1025,
+                "shortest_rate": 0.1025,
+                "mean_expanded": 23.705833333333334,
+                "mean_candidates_scored": 597.5408333333334,
+                "median_ms": 1.2404721540709336,
+                "p95_ms": 2.3666478693485256
+              },
+              "50": {
+                "success_rate": 0.2025,
+                "shortest_rate": 0.20166666666666666,
+                "mean_expanded": 44.939166666666665,
+                "mean_candidates_scored": 1183.2541666666666,
+                "median_ms": 2.634846760580937,
+                "p95_ms": 4.573585356896122
+              },
+              "100": {
+                "success_rate": 0.3658333333333334,
+                "shortest_rate": 0.32583333333333336,
+                "mean_expanded": 81.03750000000001,
+                "mean_candidates_scored": 2301.909166666667,
+                "median_ms": 5.505624848107497,
+                "p95_ms": 8.476204564794896
+              },
+              "200": {
+                "success_rate": 0.5675,
+                "shortest_rate": 0.3941666666666667,
+                "mean_expanded": 131.35416666666666,
+                "mean_candidates_scored": 4038.4499999999994,
+                "median_ms": 9.53249322871367,
+                "p95_ms": 16.672105419759944
+              },
+              "500": {
+                "success_rate": 0.6091666666666667,
+                "shortest_rate": 0.3941666666666667,
+                "mean_expanded": 253.59,
+                "mean_candidates_scored": 8208.026666666667,
+                "median_ms": 9.830653046568235,
+                "p95_ms": 42.28352216693261
+              }
+            }
+          }
+        },
+        "M2_minus_M1": {
+          "mean_budget_success": {
+            "difference": 0.03833333333333333,
+            "ci95": [
+              -0.00027777777777778136,
+              0.07445138888888894
+            ]
+          },
+          "success_at_100": {
+            "difference": 0.06166666666666667,
+            "ci95": [
+              0.019166666666666665,
+              0.10416666666666667
+            ]
+          }
+        }
+      }
+    },
+    "checkpoint_count": 24,
+    "new_embeddings": 0,
+    "neural_training": true,
+    "independent_graph_transfer": false
+  }
+}

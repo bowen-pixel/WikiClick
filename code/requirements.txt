@@ -1,0 +1,10 @@
+Wikipedia-API==0.16.0
+httpx==0.28.1
+networkx==3.7
+torch==2.11.0
+numpy==2.5.4
+scipy==1.18.1
+matplotlib==3.11.2
+sentence-transformers==6.3.0
+transformers==5.22.2
+huggingface-hub==2.4.0

@@ -1,0 +1,110 @@
+[
+  {
+    "id": "LC01",
+    "file": "learning_curves/LC01_distance_baseline.png",
+    "local_source": "figures/raw/baseline/training_curves.png",
+    "source_sha256": "aa57ba0561011b2f32223f0d4142a19a93a74666005b26783a3ed1f8d14045c9",
+    "scope": "Original distance regression; dataset panels retain their original labels",
+    "public_implementation": "code/wikiclick_core/model/neural/train.py",
+    "modified_pixels": false
+  },
+  {
+    "id": "LC02",
+    "file": "learning_curves/LC02_sha256_vs_embeddinggemma_1000.png",
+    "local_source": "figures/raw/title_feature_comparison/learning_curves_1000.png",
+    "source_sha256": "4ae435bc2481171f1b350bcf8b51e1a865e93298b17d9238727536515cf6918b",
+    "scope": "Matched title-feature comparison, 1,000 articles; validation/train MAE",
+    "public_implementation": "code/wikiclick_core/model/title_feature/embeddinggemma.py",
+    "modified_pixels": false
+  },
+  {
+    "id": "LC03",
+    "file": "learning_curves/LC03_next_link_validation_1000.png",
+    "local_source": "figures/next_link/ranking_1000/validation_curves.png",
+    "source_sha256": "6c1320d126e017a810b35264b14be3dd5dc94bf06a6d0f199ac44d9e6c195ba1",
+    "scope": "Next-link ranking, 1,000 articles; original per-seed validation histories",
+    "public_implementation": "code/wikiclick_core/model/next_link/train.py",
+    "modified_pixels": false
+  },
+  {
+    "id": "LF01",
+    "file": "loss_functions/LF01_smooth_l1_illustration.png",
+    "local_source": "figures/raw/baseline/loss_function.png",
+    "source_sha256": "17801be594c618f022b1fd26537b9078e5c335cb50fc15585b29d0b136b0de7a",
+    "scope": "Mathematical Smooth L1 shape; NOT a measured optimization landscape",
+    "public_implementation": "code/wikiclick_core/model/neural/train.py",
+    "modified_pixels": false
+  },
+  {
+    "id": "NV01",
+    "file": "navigation/NV01_next_link_goal_success_1000.png",
+    "local_source": "figures/next_link/ranking_1000/route_success.png",
+    "source_sha256": "f289dd9ab12fb4c1e610b085d5c1164ea008e5918dd2b91901b3686efbe4eb1c",
+    "scope": "Held-out goal completion, 1,000-node graph",
+    "public_implementation": "code/wikiclick_core/model/next_link/scoring.py",
+    "modified_pixels": false
+  },
+  {
+    "id": "NV02",
+    "file": "navigation/NV02_next_link_shortest_routes_1000.png",
+    "local_source": "figures/next_link/ranking_1000/optimal_routes.png",
+    "source_sha256": "3a32f2ffa7d60ebd24bd86007c3c05db87411cc482fd953a87ce33dac5408dd3",
+    "scope": "Held-out shortest routes, 1,000-node graph",
+    "public_implementation": "code/wikiclick_core/model/navigator/saved.py",
+    "modified_pixels": false
+  },
+  {
+    "id": "NV03",
+    "file": "navigation/NV03_branching_goal_success_million.png",
+    "local_source": "figures/next_link/ranking_million/branching_success.png",
+    "source_sha256": "9de7365fa412e2082868a6ce07e324d49f23403833bcfeb152eaa4c75f928d37",
+    "scope": "Historical hashed text/category model; NOT the live EmbeddingGemma model",
+    "public_implementation": "code/wikiclick_core/model/navigator/offline_search.py",
+    "modified_pixels": false
+  },
+  {
+    "id": "NV04",
+    "file": "navigation/NV04_branching_shortest_routes_million.png",
+    "local_source": "figures/next_link/ranking_million/branching_optimal.png",
+    "source_sha256": "6818de9ed0fd6a5dab42bd2bd251fbbf1192cafb56d8231fbdda27548b4ea671",
+    "scope": "Historical million-node graph; shortest-route rate under matched budgets",
+    "public_implementation": "code/wikiclick_core/model/navigator/offline_search.py",
+    "modified_pixels": false
+  },
+  {
+    "id": "EV01",
+    "file": "evolutionary/EV01_architecture_search_100_journeys.png",
+    "local_source": "figures/evolution/evolution_100/search_dashboard.png",
+    "source_sha256": "0d04393ae3652404849c935c02745b414ba8734c6e7a4a5313881b2cb943ccb1",
+    "scope": "12 candidates per arm, 100 held-out journeys; evolution vs random control",
+    "public_implementation": "code/wikiclick_core/model/evolutionary/architecture_search.py",
+    "modified_pixels": false
+  },
+  {
+    "id": "EV02",
+    "file": "evolutionary/EV02_selected_residual_architecture.png",
+    "local_source": "figures/evolution/evolution_100/selected_architecture.png",
+    "source_sha256": "c62941b8c472b71402ec6643c6b620673d1bf94e1a65fa3aef16fc9a7077bcb3",
+    "scope": "Selected residual architecture schematic; not a measured learning curve",
+    "public_implementation": "code/wikiclick_core/model/evolutionary/architecture_search.py",
+    "modified_pixels": false
+  },
+  {
+    "id": "RW01",
+    "file": "random_walk/RW01_offline_navigation_scaling.png",
+    "local_source": "codes/models/navigation/experiments/navigation_scaling_10a/figures/scaling.png",
+    "source_sha256": "e67ac00882092c5404822977eb8d3598d41757c1876088afe77fa2a97a5e43e1",
+    "scope": "Offline 10A scaling; selected corpus D1 shortest states, not live random-walk deployment",
+    "public_implementation": "code/wikiclick_core/model/heuristic/random_walk.py",
+    "modified_pixels": false
+  },
+  {
+    "id": "RW02",
+    "file": "random_walk/RW02_offline_ranking_curves.png",
+    "local_source": "codes/models/navigation/experiments/navigation_scaling_10a/figures/ranking_curves.png",
+    "source_sha256": "d9b412df5f55ef3148431001a17883caa7c54400adce36d34eedbd5e7abd5357",
+    "scope": "Offline 10A neural ranking curves; all experimental controls remain local",
+    "public_implementation": "code/wikiclick_core/model/next_link/residual_ranker.py",
+    "modified_pixels": false
+  }
+]

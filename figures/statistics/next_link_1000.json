@@ -1,0 +1,96 @@
+{
+  "local_source": "models/next_link/ranking_1000/aggregate.json",
+  "source_sha256": "0874af3a7982400a8dcce1d967947a931e9b98f54876a5cfb8856207d1939cf8",
+  "results": {
+    "metrics": {
+      "raw": {
+        "next_link_accuracy": 0.7086666666666667,
+        "route_success": 0.9153333333333333,
+        "optimal_route_rate": 0.5116666666666667,
+        "median_latency_ms_mean_across_seeds": 0.477993239959081
+      },
+      "title_rank": {
+        "next_link_accuracy": 0.794,
+        "route_success": 0.985,
+        "optimal_route_rate": 0.6616666666666666,
+        "median_latency_ms_mean_across_seeds": 0.3652779075006644
+      },
+      "semantic_rank": {
+        "next_link_accuracy": 0.8066666666666668,
+        "route_success": 0.9856666666666666,
+        "optimal_route_rate": 0.6813333333333333,
+        "median_latency_ms_mean_across_seeds": 0.5429725473125776
+      },
+      "continued": {
+        "next_link_accuracy": 0.8066666666666668,
+        "route_success": 0.9856666666666666,
+        "optimal_route_rate": 0.6813333333333333,
+        "median_latency_ms_mean_across_seeds": 0.5562156438827515
+      },
+      "corrected": {
+        "next_link_accuracy": 0.8066666666666668,
+        "route_success": 0.9856666666666666,
+        "optimal_route_rate": 0.6813333333333333,
+        "median_latency_ms_mean_across_seeds": 0.549152959138155
+      }
+    },
+    "paired_route_success_gains": {
+      "corrected_vs_raw": {
+        "gain_percentage_points": 7.033333333333333,
+        "conditional_95_percent_interval": [
+          3.2333333333333334,
+          10.801666666666659
+        ],
+        "destination_clusters": 100
+      },
+      "corrected_vs_continued": {
+        "gain_percentage_points": 0.0,
+        "conditional_95_percent_interval": [
+          0.0,
+          0.0
+        ],
+        "destination_clusters": 100
+      },
+      "semantic_vs_title": {
+        "gain_percentage_points": 0.06666666666666667,
+        "conditional_95_percent_interval": [
+          -0.9333333333333333,
+          1.0666666666666667
+        ],
+        "destination_clusters": 100
+      }
+    },
+    "selected_correction_checkpoints": {
+      "207": {
+        "continued": {
+          "selected_epoch": 0,
+          "selected_weight_change_l2": 0.0
+        },
+        "corrected": {
+          "selected_epoch": 0,
+          "selected_weight_change_l2": 0.0
+        }
+      },
+      "208": {
+        "continued": {
+          "selected_epoch": 0,
+          "selected_weight_change_l2": 0.0
+        },
+        "corrected": {
+          "selected_epoch": 0,
+          "selected_weight_change_l2": 0.0
+        }
+      },
+      "209": {
+        "continued": {
+          "selected_epoch": 0,
+          "selected_weight_change_l2": 0.0
+        },
+        "corrected": {
+          "selected_epoch": 0,
+          "selected_weight_change_l2": 0.0
+        }
+      }
+    }
+  }
+}

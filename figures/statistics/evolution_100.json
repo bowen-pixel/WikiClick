@@ -1,0 +1,2875 @@
+{
+  "local_source": "models/evolution/evolution_100/results.json",
+  "source_sha256": "c4b8cb9cb5af6e7907e3e60049afc68127bd9eee55c53cdce34de1b9159719ff",
+  "results": {
+    "graph_id": "sha256:c9a5fcd48d1d387efd844aa7f4bac1b9eb0f1f876c0918024d15aa53461a10f7",
+    "nodes": 1000,
+    "edges": 54404,
+    "seed": 1203,
+    "samples": 100,
+    "training_decisions": 8000,
+    "validation_decisions": 1000,
+    "population": 4,
+    "generations": 3,
+    "epochs_per_candidate": 3,
+    "baseline": {
+      "id": "baseline",
+      "config": null,
+      "selected_epoch": 0,
+      "validation_rank": {
+        "loss": 2.6604251458346844,
+        "optimal_next_link_accuracy": 0.752,
+        "decisions": 1000
+      },
+      "validation_routes": {
+        "queries": 100,
+        "successes": 99,
+        "optimal_routes": 68,
+        "success_rate": 0.99,
+        "optimal_rate": 0.68,
+        "mean_extra_clicks_successes_only": 1.0404040404040404,
+        "median_ms": 0.5532288923859596
+      },
+      "parameters": 51394
+    },
+    "search": {
+      "evolution": {
+        "selected": {
+          "config": {
+            "features": "both",
+            "width": 64,
+            "depth": 2,
+            "activation": "relu"
+          },
+          "selected_epoch": 2,
+          "trainable_parameters": 69825,
+          "history": [
+            {
+              "epoch": 0,
+              "train_loss": null,
+              "validation_rank": {
+                "loss": 2.6604251458346844,
+                "optimal_next_link_accuracy": 0.752,
+                "decisions": 1000
+              },
+              "validation_routes": {
+                "queries": 100,
+                "successes": 99,
+                "optimal_routes": 68,
+                "success_rate": 0.99,
+                "optimal_rate": 0.68,
+                "mean_extra_clicks_successes_only": 1.0404040404040404,
+                "median_ms": 1.5473542734980583
+              },
+              "parameters": 121219
+            },
+            {
+              "epoch": 1,
+              "train_loss": 2.448502251148224,
+              "validation_rank": {
+                "loss": 2.66129973295331,
+                "optimal_next_link_accuracy": 0.75,
+                "decisions": 1000
+              },
+              "validation_routes": {
+                "queries": 100,
+                "successes": 99,
+                "optimal_routes": 68,
+                "success_rate": 0.99,
+                "optimal_rate": 0.68,
+                "mean_extra_clicks_successes_only": 0.9797979797979798,
+                "median_ms": 1.526291947811842
+              },
+              "parameters": 121219
+            },
+            {
+              "epoch": 2,
+              "train_loss": 2.4387185354232788,
+              "validation_rank": {
+                "loss": 2.6554726113677023,
+                "optimal_next_link_accuracy": 0.753,
+                "decisions": 1000
+              },
+              "validation_routes": {
+                "queries": 100,
+                "successes": 100,
+                "optimal_routes": 69,
+                "success_rate": 1.0,
+                "optimal_rate": 0.69,
+                "mean_extra_clicks_successes_only": 0.99,
+                "median_ms": 1.750000286847353
+              },
+              "parameters": 121219
+            },
+            {
+              "epoch": 3,
+              "train_loss": 2.373892656326294,
+              "validation_rank": {
+                "loss": 2.626145615041256,
+                "optimal_next_link_accuracy": 0.77,
+                "decisions": 1000
+              },
+              "validation_routes": {
+                "queries": 100,
+                "successes": 99,
+                "optimal_routes": 66,
+                "success_rate": 0.99,
+                "optimal_rate": 0.66,
+                "mean_extra_clicks_successes_only": 0.9292929292929293,
+                "median_ms": 1.2802290730178356
+              },
+              "parameters": 121219
+            }
+          ],
+          "validation_rank": {
+            "loss": 2.6554726113677023,
+            "optimal_next_link_accuracy": 0.753,
+            "decisions": 1000
+          },
+          "validation_routes": {
+            "queries": 100,
+            "successes": 100,
+            "optimal_routes": 69,
+            "success_rate": 1.0,
+            "optimal_rate": 0.69,
+            "mean_extra_clicks_successes_only": 0.99,
+            "median_ms": 1.750000286847353
+          },
+          "parameters": 121219,
+          "id": "evolution_09",
+          "generation": 2,
+          "parent": "evolution_07"
+        },
+        "candidates": [
+          {
+            "config": {
+              "features": "semantic",
+              "width": 16,
+              "depth": 1,
+              "activation": "gelu"
+            },
+            "selected_epoch": 3,
+            "trainable_parameters": 8225,
+            "history": [
+              {
+                "epoch": 0,
+                "train_loss": null,
+                "validation_rank": {
+                  "loss": 2.6604251458346844,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0404040404040404,
+                  "median_ms": 0.7674582302570343
+                },
+                "parameters": 59619
+              },
+              {
+                "epoch": 1,
+                "train_loss": 2.4487264070510864,
+                "validation_rank": {
+                  "loss": 2.6604746688604353,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0303030303030303,
+                  "median_ms": 0.8930624462664127
+                },
+                "parameters": 59619
+              },
+              {
+                "epoch": 2,
+                "train_loss": 2.448400046825409,
+                "validation_rank": {
+                  "loss": 2.6610686291754244,
+                  "optimal_next_link_accuracy": 0.749,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 68,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.13,
+                  "median_ms": 0.9138546884059906
+                },
+                "parameters": 59619
+              },
+              {
+                "epoch": 3,
+                "train_loss": 2.447431645870209,
+                "validation_rank": {
+                  "loss": 2.6618188205957414,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 69,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.69,
+                  "mean_extra_clicks_successes_only": 1.17,
+                  "median_ms": 0.9224792011082172
+                },
+                "parameters": 59619
+              }
+            ],
+            "validation_rank": {
+              "loss": 2.6618188205957414,
+              "optimal_next_link_accuracy": 0.752,
+              "decisions": 1000
+            },
+            "validation_routes": {
+              "queries": 100,
+              "successes": 100,
+              "optimal_routes": 69,
+              "success_rate": 1.0,
+              "optimal_rate": 0.69,
+              "mean_extra_clicks_successes_only": 1.17,
+              "median_ms": 0.9224792011082172
+            },
+            "parameters": 59619,
+            "id": "evolution_00",
+            "generation": 0,
+            "parent": null
+          },
+          {
+            "config": {
+              "features": "both",
+              "width": 16,
+              "depth": 1,
+              "activation": "relu"
+            },
+            "selected_epoch": 3,
+            "trainable_parameters": 16417,
+            "history": [
+              {
+                "epoch": 0,
+                "train_loss": null,
+                "validation_rank": {
+                  "loss": 2.6604251458346844,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0404040404040404,
+                  "median_ms": 1.2570000253617764
+                },
+                "parameters": 67811
+              },
+              {
+                "epoch": 1,
+                "train_loss": 2.4486701235771178,
+                "validation_rank": {
+                  "loss": 2.6607258520424364,
+                  "optimal_next_link_accuracy": 0.751,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0404040404040404,
+                  "median_ms": 1.3584797270596027
+                },
+                "parameters": 67811
+              },
+              {
+                "epoch": 2,
+                "train_loss": 2.4473473987579344,
+                "validation_rank": {
+                  "loss": 2.660819870680571,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 68,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.08,
+                  "median_ms": 1.2783962301909924
+                },
+                "parameters": 67811
+              },
+              {
+                "epoch": 3,
+                "train_loss": 2.443472830295563,
+                "validation_rank": {
+                  "loss": 2.6597252962887286,
+                  "optimal_next_link_accuracy": 0.756,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 69,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.69,
+                  "mean_extra_clicks_successes_only": 1.11,
+                  "median_ms": 1.2422297149896622
+                },
+                "parameters": 67811
+              }
+            ],
+            "validation_rank": {
+              "loss": 2.6597252962887286,
+              "optimal_next_link_accuracy": 0.756,
+              "decisions": 1000
+            },
+            "validation_routes": {
+              "queries": 100,
+              "successes": 100,
+              "optimal_routes": 69,
+              "success_rate": 1.0,
+              "optimal_rate": 0.69,
+              "mean_extra_clicks_successes_only": 1.11,
+              "median_ms": 1.2422297149896622
+            },
+            "parameters": 67811,
+            "id": "evolution_01",
+            "generation": 0,
+            "parent": null
+          },
+          {
+            "config": {
+              "features": "title",
+              "width": 64,
+              "depth": 2,
+              "activation": "gelu"
+            },
+            "selected_epoch": 0,
+            "trainable_parameters": 37057,
+            "history": [
+              {
+                "epoch": 0,
+                "train_loss": null,
+                "validation_rank": {
+                  "loss": 2.6604251458346844,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0404040404040404,
+                  "median_ms": 1.1067292653024197
+                },
+                "parameters": 88451
+              },
+              {
+                "epoch": 1,
+                "train_loss": 2.448697774887085,
+                "validation_rank": {
+                  "loss": 2.6609400140941144,
+                  "optimal_next_link_accuracy": 0.751,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0101010101010102,
+                  "median_ms": 1.1980836279690266
+                },
+                "parameters": 88451
+              },
+              {
+                "epoch": 2,
+                "train_loss": 2.4480448570251463,
+                "validation_rank": {
+                  "loss": 2.6624459843933583,
+                  "optimal_next_link_accuracy": 0.746,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 67,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.67,
+                  "mean_extra_clicks_successes_only": 0.9797979797979798,
+                  "median_ms": 1.0663126595318317
+                },
+                "parameters": 88451
+              },
+              {
+                "epoch": 3,
+                "train_loss": 2.447339946746826,
+                "validation_rank": {
+                  "loss": 2.663350844502449,
+                  "optimal_next_link_accuracy": 0.75,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 0.898989898989899,
+                  "median_ms": 0.9315209463238716
+                },
+                "parameters": 88451
+              }
+            ],
+            "validation_rank": {
+              "loss": 2.6604251458346844,
+              "optimal_next_link_accuracy": 0.752,
+              "decisions": 1000
+            },
+            "validation_routes": {
+              "queries": 100,
+              "successes": 99,
+              "optimal_routes": 68,
+              "success_rate": 0.99,
+              "optimal_rate": 0.68,
+              "mean_extra_clicks_successes_only": 1.0404040404040404,
+              "median_ms": 1.1067292653024197
+            },
+            "parameters": 88451,
+            "id": "evolution_02",
+            "generation": 0,
+            "parent": null
+          },
+          {
+            "config": {
+              "features": "semantic",
+              "width": 32,
+              "depth": 2,
+              "activation": "relu"
+            },
+            "selected_epoch": 3,
+            "trainable_parameters": 17505,
+            "history": [
+              {
+                "epoch": 0,
+                "train_loss": null,
+                "validation_rank": {
+                  "loss": 2.6604251458346844,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0404040404040404,
+                  "median_ms": 1.0504364036023617
+                },
+                "parameters": 68899
+              },
+              {
+                "epoch": 1,
+                "train_loss": 2.448679913043976,
+                "validation_rank": {
+                  "loss": 2.6605764823257925,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0303030303030303,
+                  "median_ms": 0.9318748489022255
+                },
+                "parameters": 68899
+              },
+              {
+                "epoch": 2,
+                "train_loss": 2.4453998489379885,
+                "validation_rank": {
+                  "loss": 2.657630147486925,
+                  "optimal_next_link_accuracy": 0.756,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 0.9191919191919192,
+                  "median_ms": 1.0674167424440384
+                },
+                "parameters": 68899
+              },
+              {
+                "epoch": 3,
+                "train_loss": 2.4277434673309326,
+                "validation_rank": {
+                  "loss": 2.649831371754408,
+                  "optimal_next_link_accuracy": 0.772,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 68,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.01,
+                  "median_ms": 0.947312917560339
+                },
+                "parameters": 68899
+              }
+            ],
+            "validation_rank": {
+              "loss": 2.649831371754408,
+              "optimal_next_link_accuracy": 0.772,
+              "decisions": 1000
+            },
+            "validation_routes": {
+              "queries": 100,
+              "successes": 100,
+              "optimal_routes": 68,
+              "success_rate": 1.0,
+              "optimal_rate": 0.68,
+              "mean_extra_clicks_successes_only": 1.01,
+              "median_ms": 0.947312917560339
+            },
+            "parameters": 68899,
+            "id": "evolution_03",
+            "generation": 0,
+            "parent": null
+          },
+          {
+            "config": {
+              "features": "semantic",
+              "width": 64,
+              "depth": 1,
+              "activation": "gelu"
+            },
+            "selected_epoch": 2,
+            "trainable_parameters": 32897,
+            "history": [
+              {
+                "epoch": 0,
+                "train_loss": null,
+                "validation_rank": {
+                  "loss": 2.6604251458346844,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0404040404040404,
+                  "median_ms": 1.2912498787045479
+                },
+                "parameters": 84291
+              },
+              {
+                "epoch": 1,
+                "train_loss": 2.4486968054771423,
+                "validation_rank": {
+                  "loss": 2.660578148752451,
+                  "optimal_next_link_accuracy": 0.753,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0,
+                  "median_ms": 0.9521041065454483
+                },
+                "parameters": 84291
+              },
+              {
+                "epoch": 2,
+                "train_loss": 2.4479631004333497,
+                "validation_rank": {
+                  "loss": 2.661345420628786,
+                  "optimal_next_link_accuracy": 0.753,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 69,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.69,
+                  "mean_extra_clicks_successes_only": 1.04,
+                  "median_ms": 1.0700207203626633
+                },
+                "parameters": 84291
+              },
+              {
+                "epoch": 3,
+                "train_loss": 2.4463814544677733,
+                "validation_rank": {
+                  "loss": 2.661678419172764,
+                  "optimal_next_link_accuracy": 0.758,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 69,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.69,
+                  "mean_extra_clicks_successes_only": 1.15,
+                  "median_ms": 1.0790210217237473
+                },
+                "parameters": 84291
+              }
+            ],
+            "validation_rank": {
+              "loss": 2.661345420628786,
+              "optimal_next_link_accuracy": 0.753,
+              "decisions": 1000
+            },
+            "validation_routes": {
+              "queries": 100,
+              "successes": 100,
+              "optimal_routes": 69,
+              "success_rate": 1.0,
+              "optimal_rate": 0.69,
+              "mean_extra_clicks_successes_only": 1.04,
+              "median_ms": 1.0700207203626633
+            },
+            "parameters": 84291,
+            "id": "evolution_04",
+            "generation": 1,
+            "parent": "evolution_00"
+          },
+          {
+            "config": {
+              "features": "both",
+              "width": 32,
+              "depth": 2,
+              "activation": "relu"
+            },
+            "selected_epoch": 2,
+            "trainable_parameters": 33889,
+            "history": [
+              {
+                "epoch": 0,
+                "train_loss": null,
+                "validation_rank": {
+                  "loss": 2.6604251458346844,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0404040404040404,
+                  "median_ms": 1.3992087915539742
+                },
+                "parameters": 85283
+              },
+              {
+                "epoch": 1,
+                "train_loss": 2.4485850009918213,
+                "validation_rank": {
+                  "loss": 2.661140640556812,
+                  "optimal_next_link_accuracy": 0.75,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0,
+                  "median_ms": 1.253375317901373
+                },
+                "parameters": 85283
+              },
+              {
+                "epoch": 2,
+                "train_loss": 2.4461203441619874,
+                "validation_rank": {
+                  "loss": 2.6608776643276215,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 69,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.69,
+                  "mean_extra_clicks_successes_only": 1.04,
+                  "median_ms": 1.4436673372983932
+                },
+                "parameters": 85283
+              },
+              {
+                "epoch": 3,
+                "train_loss": 2.4319465689659117,
+                "validation_rank": {
+                  "loss": 2.653676405325532,
+                  "optimal_next_link_accuracy": 0.751,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 0.9191919191919192,
+                  "median_ms": 1.3868967071175575
+                },
+                "parameters": 85283
+              }
+            ],
+            "validation_rank": {
+              "loss": 2.6608776643276215,
+              "optimal_next_link_accuracy": 0.752,
+              "decisions": 1000
+            },
+            "validation_routes": {
+              "queries": 100,
+              "successes": 100,
+              "optimal_routes": 69,
+              "success_rate": 1.0,
+              "optimal_rate": 0.69,
+              "mean_extra_clicks_successes_only": 1.04,
+              "median_ms": 1.4436673372983932
+            },
+            "parameters": 85283,
+            "id": "evolution_05",
+            "generation": 1,
+            "parent": "evolution_03"
+          },
+          {
+            "config": {
+              "features": "both",
+              "width": 16,
+              "depth": 2,
+              "activation": "relu"
+            },
+            "selected_epoch": 3,
+            "trainable_parameters": 16689,
+            "history": [
+              {
+                "epoch": 0,
+                "train_loss": null,
+                "validation_rank": {
+                  "loss": 2.6604251458346844,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0404040404040404,
+                  "median_ms": 1.4649797230958939
+                },
+                "parameters": 68083
+              },
+              {
+                "epoch": 1,
+                "train_loss": 2.4487236647605894,
+                "validation_rank": {
+                  "loss": 2.6605468308031557,
+                  "optimal_next_link_accuracy": 0.751,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0303030303030303,
+                  "median_ms": 1.367062795907259
+                },
+                "parameters": 68083
+              },
+              {
+                "epoch": 2,
+                "train_loss": 2.4476678700447083,
+                "validation_rank": {
+                  "loss": 2.6624440678656103,
+                  "optimal_next_link_accuracy": 0.75,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 68,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.13,
+                  "median_ms": 1.367687713354826
+                },
+                "parameters": 68083
+              },
+              {
+                "epoch": 3,
+                "train_loss": 2.4426319422721865,
+                "validation_rank": {
+                  "loss": 2.6601837955117227,
+                  "optimal_next_link_accuracy": 0.757,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 69,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.69,
+                  "mean_extra_clicks_successes_only": 1.02,
+                  "median_ms": 1.482563093304634
+                },
+                "parameters": 68083
+              }
+            ],
+            "validation_rank": {
+              "loss": 2.6601837955117227,
+              "optimal_next_link_accuracy": 0.757,
+              "decisions": 1000
+            },
+            "validation_routes": {
+              "queries": 100,
+              "successes": 100,
+              "optimal_routes": 69,
+              "success_rate": 1.0,
+              "optimal_rate": 0.69,
+              "mean_extra_clicks_successes_only": 1.02,
+              "median_ms": 1.482563093304634
+            },
+            "parameters": 68083,
+            "id": "evolution_06",
+            "generation": 1,
+            "parent": "evolution_01"
+          },
+          {
+            "config": {
+              "features": "both",
+              "width": 64,
+              "depth": 1,
+              "activation": "relu"
+            },
+            "selected_epoch": 3,
+            "trainable_parameters": 65665,
+            "history": [
+              {
+                "epoch": 0,
+                "train_loss": null,
+                "validation_rank": {
+                  "loss": 2.6604251458346844,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0404040404040404,
+                  "median_ms": 1.7908336594700813
+                },
+                "parameters": 117059
+              },
+              {
+                "epoch": 1,
+                "train_loss": 2.448489812374115,
+                "validation_rank": {
+                  "loss": 2.660836488187313,
+                  "optimal_next_link_accuracy": 0.75,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 0.9494949494949495,
+                  "median_ms": 1.302999909967184
+                },
+                "parameters": 117059
+              },
+              {
+                "epoch": 2,
+                "train_loss": 2.4447081689834596,
+                "validation_rank": {
+                  "loss": 2.6594643464684484,
+                  "optimal_next_link_accuracy": 0.754,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 69,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.69,
+                  "mean_extra_clicks_successes_only": 1.08,
+                  "median_ms": 1.4673122204840183
+                },
+                "parameters": 117059
+              },
+              {
+                "epoch": 3,
+                "train_loss": 2.4324883489608764,
+                "validation_rank": {
+                  "loss": 2.6556216562688353,
+                  "optimal_next_link_accuracy": 0.755,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 69,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.69,
+                  "mean_extra_clicks_successes_only": 1.05,
+                  "median_ms": 1.5116664581000805
+                },
+                "parameters": 117059
+              }
+            ],
+            "validation_rank": {
+              "loss": 2.6556216562688353,
+              "optimal_next_link_accuracy": 0.755,
+              "decisions": 1000
+            },
+            "validation_routes": {
+              "queries": 100,
+              "successes": 100,
+              "optimal_routes": 69,
+              "success_rate": 1.0,
+              "optimal_rate": 0.69,
+              "mean_extra_clicks_successes_only": 1.05,
+              "median_ms": 1.5116664581000805
+            },
+            "parameters": 117059,
+            "id": "evolution_07",
+            "generation": 1,
+            "parent": "evolution_01"
+          },
+          {
+            "config": {
+              "features": "semantic",
+              "width": 16,
+              "depth": 1,
+              "activation": "relu"
+            },
+            "selected_epoch": 3,
+            "trainable_parameters": 8225,
+            "history": [
+              {
+                "epoch": 0,
+                "train_loss": null,
+                "validation_rank": {
+                  "loss": 2.6604251458346844,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0404040404040404,
+                  "median_ms": 1.0298541747033596
+                },
+                "parameters": 59619
+              },
+              {
+                "epoch": 1,
+                "train_loss": 2.4486972641944886,
+                "validation_rank": {
+                  "loss": 2.660451784223318,
+                  "optimal_next_link_accuracy": 0.753,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0,
+                  "median_ms": 0.9885206818580627
+                },
+                "parameters": 59619
+              },
+              {
+                "epoch": 2,
+                "train_loss": 2.4478730998039246,
+                "validation_rank": {
+                  "loss": 2.6607198519110677,
+                  "optimal_next_link_accuracy": 0.751,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 69,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.69,
+                  "mean_extra_clicks_successes_only": 1.12,
+                  "median_ms": 0.9492496028542519
+                },
+                "parameters": 59619
+              },
+              {
+                "epoch": 3,
+                "train_loss": 2.445036584854126,
+                "validation_rank": {
+                  "loss": 2.659888938754797,
+                  "optimal_next_link_accuracy": 0.755,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 69,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.69,
+                  "mean_extra_clicks_successes_only": 1.21,
+                  "median_ms": 1.016104593873024
+                },
+                "parameters": 59619
+              }
+            ],
+            "validation_rank": {
+              "loss": 2.659888938754797,
+              "optimal_next_link_accuracy": 0.755,
+              "decisions": 1000
+            },
+            "validation_routes": {
+              "queries": 100,
+              "successes": 100,
+              "optimal_routes": 69,
+              "success_rate": 1.0,
+              "optimal_rate": 0.69,
+              "mean_extra_clicks_successes_only": 1.21,
+              "median_ms": 1.016104593873024
+            },
+            "parameters": 59619,
+            "id": "evolution_08",
+            "generation": 2,
+            "parent": "evolution_01"
+          },
+          {
+            "config": {
+              "features": "both",
+              "width": 64,
+              "depth": 2,
+              "activation": "relu"
+            },
+            "selected_epoch": 2,
+            "trainable_parameters": 69825,
+            "history": [
+              {
+                "epoch": 0,
+                "train_loss": null,
+                "validation_rank": {
+                  "loss": 2.6604251458346844,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0404040404040404,
+                  "median_ms": 1.5473542734980583
+                },
+                "parameters": 121219
+              },
+              {
+                "epoch": 1,
+                "train_loss": 2.448502251148224,
+                "validation_rank": {
+                  "loss": 2.66129973295331,
+                  "optimal_next_link_accuracy": 0.75,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 0.9797979797979798,
+                  "median_ms": 1.526291947811842
+                },
+                "parameters": 121219
+              },
+              {
+                "epoch": 2,
+                "train_loss": 2.4387185354232788,
+                "validation_rank": {
+                  "loss": 2.6554726113677023,
+                  "optimal_next_link_accuracy": 0.753,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 69,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.69,
+                  "mean_extra_clicks_successes_only": 0.99,
+                  "median_ms": 1.750000286847353
+                },
+                "parameters": 121219
+              },
+              {
+                "epoch": 3,
+                "train_loss": 2.373892656326294,
+                "validation_rank": {
+                  "loss": 2.626145615041256,
+                  "optimal_next_link_accuracy": 0.77,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 66,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.66,
+                  "mean_extra_clicks_successes_only": 0.9292929292929293,
+                  "median_ms": 1.2802290730178356
+                },
+                "parameters": 121219
+              }
+            ],
+            "validation_rank": {
+              "loss": 2.6554726113677023,
+              "optimal_next_link_accuracy": 0.753,
+              "decisions": 1000
+            },
+            "validation_routes": {
+              "queries": 100,
+              "successes": 100,
+              "optimal_routes": 69,
+              "success_rate": 1.0,
+              "optimal_rate": 0.69,
+              "mean_extra_clicks_successes_only": 0.99,
+              "median_ms": 1.750000286847353
+            },
+            "parameters": 121219,
+            "id": "evolution_09",
+            "generation": 2,
+            "parent": "evolution_07"
+          },
+          {
+            "config": {
+              "features": "both",
+              "width": 32,
+              "depth": 1,
+              "activation": "relu"
+            },
+            "selected_epoch": 3,
+            "trainable_parameters": 32833,
+            "history": [
+              {
+                "epoch": 0,
+                "train_loss": null,
+                "validation_rank": {
+                  "loss": 2.6604251458346844,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0404040404040404,
+                  "median_ms": 1.228374894708395
+                },
+                "parameters": 84227
+              },
+              {
+                "epoch": 1,
+                "train_loss": 2.4485959148406984,
+                "validation_rank": {
+                  "loss": 2.66079487195611,
+                  "optimal_next_link_accuracy": 0.751,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 0.9595959595959596,
+                  "median_ms": 1.3379580341279507
+                },
+                "parameters": 84227
+              },
+              {
+                "epoch": 2,
+                "train_loss": 2.446390278816223,
+                "validation_rank": {
+                  "loss": 2.660409466654062,
+                  "optimal_next_link_accuracy": 0.753,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 69,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.69,
+                  "mean_extra_clicks_successes_only": 0.9090909090909091,
+                  "median_ms": 1.1821454390883446
+                },
+                "parameters": 84227
+              },
+              {
+                "epoch": 3,
+                "train_loss": 2.440635594844818,
+                "validation_rank": {
+                  "loss": 2.6593934525847436,
+                  "optimal_next_link_accuracy": 0.753,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 68,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.09,
+                  "median_ms": 1.2717084027826786
+                },
+                "parameters": 84227
+              }
+            ],
+            "validation_rank": {
+              "loss": 2.6593934525847436,
+              "optimal_next_link_accuracy": 0.753,
+              "decisions": 1000
+            },
+            "validation_routes": {
+              "queries": 100,
+              "successes": 100,
+              "optimal_routes": 68,
+              "success_rate": 1.0,
+              "optimal_rate": 0.68,
+              "mean_extra_clicks_successes_only": 1.09,
+              "median_ms": 1.2717084027826786
+            },
+            "parameters": 84227,
+            "id": "evolution_10",
+            "generation": 2,
+            "parent": "evolution_07"
+          },
+          {
+            "config": {
+              "features": "title",
+              "width": 16,
+              "depth": 1,
+              "activation": "relu"
+            },
+            "selected_epoch": 0,
+            "trainable_parameters": 8225,
+            "history": [
+              {
+                "epoch": 0,
+                "train_loss": null,
+                "validation_rank": {
+                  "loss": 2.6604251458346844,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0404040404040404,
+                  "median_ms": 0.9566661901772022
+                },
+                "parameters": 59619
+              },
+              {
+                "epoch": 1,
+                "train_loss": 2.448708225250244,
+                "validation_rank": {
+                  "loss": 2.6605716784000397,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0303030303030303,
+                  "median_ms": 1.0552918538451195
+                },
+                "parameters": 59619
+              },
+              {
+                "epoch": 2,
+                "train_loss": 2.4481238050460816,
+                "validation_rank": {
+                  "loss": 2.661327403753996,
+                  "optimal_next_link_accuracy": 0.748,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0,
+                  "median_ms": 0.9803543798625469
+                },
+                "parameters": 59619
+              },
+              {
+                "epoch": 3,
+                "train_loss": 2.4467112889289857,
+                "validation_rank": {
+                  "loss": 2.661927459537983,
+                  "optimal_next_link_accuracy": 0.749,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 67,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.67,
+                  "mean_extra_clicks_successes_only": 0.9292929292929293,
+                  "median_ms": 1.0710619390010834
+                },
+                "parameters": 59619
+              }
+            ],
+            "validation_rank": {
+              "loss": 2.6604251458346844,
+              "optimal_next_link_accuracy": 0.752,
+              "decisions": 1000
+            },
+            "validation_routes": {
+              "queries": 100,
+              "successes": 99,
+              "optimal_routes": 68,
+              "success_rate": 0.99,
+              "optimal_rate": 0.68,
+              "mean_extra_clicks_successes_only": 1.0404040404040404,
+              "median_ms": 0.9566661901772022
+            },
+            "parameters": 59619,
+            "id": "evolution_11",
+            "generation": 2,
+            "parent": "evolution_01"
+          }
+        ]
+      },
+      "random": {
+        "selected": {
+          "config": {
+            "features": "both",
+            "width": 16,
+            "depth": 1,
+            "activation": "relu"
+          },
+          "selected_epoch": 3,
+          "trainable_parameters": 16417,
+          "history": [
+            {
+              "epoch": 0,
+              "train_loss": null,
+              "validation_rank": {
+                "loss": 2.6604251458346844,
+                "optimal_next_link_accuracy": 0.752,
+                "decisions": 1000
+              },
+              "validation_routes": {
+                "queries": 100,
+                "successes": 99,
+                "optimal_routes": 68,
+                "success_rate": 0.99,
+                "optimal_rate": 0.68,
+                "mean_extra_clicks_successes_only": 1.0404040404040404,
+                "median_ms": 1.33229186758399
+              },
+              "parameters": 67811
+            },
+            {
+              "epoch": 1,
+              "train_loss": 2.4486701235771178,
+              "validation_rank": {
+                "loss": 2.6607258520424364,
+                "optimal_next_link_accuracy": 0.751,
+                "decisions": 1000
+              },
+              "validation_routes": {
+                "queries": 100,
+                "successes": 99,
+                "optimal_routes": 68,
+                "success_rate": 0.99,
+                "optimal_rate": 0.68,
+                "mean_extra_clicks_successes_only": 1.0404040404040404,
+                "median_ms": 1.332499086856842
+              },
+              "parameters": 67811
+            },
+            {
+              "epoch": 2,
+              "train_loss": 2.4473473987579344,
+              "validation_rank": {
+                "loss": 2.660819870680571,
+                "optimal_next_link_accuracy": 0.752,
+                "decisions": 1000
+              },
+              "validation_routes": {
+                "queries": 100,
+                "successes": 100,
+                "optimal_routes": 68,
+                "success_rate": 1.0,
+                "optimal_rate": 0.68,
+                "mean_extra_clicks_successes_only": 1.08,
+                "median_ms": 1.4434373006224632
+              },
+              "parameters": 67811
+            },
+            {
+              "epoch": 3,
+              "train_loss": 2.443472830295563,
+              "validation_rank": {
+                "loss": 2.6597252962887286,
+                "optimal_next_link_accuracy": 0.756,
+                "decisions": 1000
+              },
+              "validation_routes": {
+                "queries": 100,
+                "successes": 100,
+                "optimal_routes": 69,
+                "success_rate": 1.0,
+                "optimal_rate": 0.69,
+                "mean_extra_clicks_successes_only": 1.11,
+                "median_ms": 1.2436662800610065
+              },
+              "parameters": 67811
+            }
+          ],
+          "validation_rank": {
+            "loss": 2.6597252962887286,
+            "optimal_next_link_accuracy": 0.756,
+            "decisions": 1000
+          },
+          "validation_routes": {
+            "queries": 100,
+            "successes": 100,
+            "optimal_routes": 69,
+            "success_rate": 1.0,
+            "optimal_rate": 0.69,
+            "mean_extra_clicks_successes_only": 1.11,
+            "median_ms": 1.2436662800610065
+          },
+          "parameters": 67811,
+          "id": "random_01",
+          "generation": 0,
+          "parent": null
+        },
+        "candidates": [
+          {
+            "config": {
+              "features": "semantic",
+              "width": 16,
+              "depth": 1,
+              "activation": "gelu"
+            },
+            "selected_epoch": 3,
+            "trainable_parameters": 8225,
+            "history": [
+              {
+                "epoch": 0,
+                "train_loss": null,
+                "validation_rank": {
+                  "loss": 2.6604251458346844,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0404040404040404,
+                  "median_ms": 1.0441462509334087
+                },
+                "parameters": 59619
+              },
+              {
+                "epoch": 1,
+                "train_loss": 2.4487264070510864,
+                "validation_rank": {
+                  "loss": 2.6604746688604353,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0303030303030303,
+                  "median_ms": 1.1015008203685284
+                },
+                "parameters": 59619
+              },
+              {
+                "epoch": 2,
+                "train_loss": 2.448400046825409,
+                "validation_rank": {
+                  "loss": 2.6610686291754244,
+                  "optimal_next_link_accuracy": 0.749,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 68,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.13,
+                  "median_ms": 1.0723336599767208
+                },
+                "parameters": 59619
+              },
+              {
+                "epoch": 3,
+                "train_loss": 2.447431645870209,
+                "validation_rank": {
+                  "loss": 2.6618188205957414,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 69,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.69,
+                  "mean_extra_clicks_successes_only": 1.17,
+                  "median_ms": 1.156812533736229
+                },
+                "parameters": 59619
+              }
+            ],
+            "validation_rank": {
+              "loss": 2.6618188205957414,
+              "optimal_next_link_accuracy": 0.752,
+              "decisions": 1000
+            },
+            "validation_routes": {
+              "queries": 100,
+              "successes": 100,
+              "optimal_routes": 69,
+              "success_rate": 1.0,
+              "optimal_rate": 0.69,
+              "mean_extra_clicks_successes_only": 1.17,
+              "median_ms": 1.156812533736229
+            },
+            "parameters": 59619,
+            "id": "random_00",
+            "generation": 0,
+            "parent": null
+          },
+          {
+            "config": {
+              "features": "both",
+              "width": 16,
+              "depth": 1,
+              "activation": "relu"
+            },
+            "selected_epoch": 3,
+            "trainable_parameters": 16417,
+            "history": [
+              {
+                "epoch": 0,
+                "train_loss": null,
+                "validation_rank": {
+                  "loss": 2.6604251458346844,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0404040404040404,
+                  "median_ms": 1.33229186758399
+                },
+                "parameters": 67811
+              },
+              {
+                "epoch": 1,
+                "train_loss": 2.4486701235771178,
+                "validation_rank": {
+                  "loss": 2.6607258520424364,
+                  "optimal_next_link_accuracy": 0.751,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0404040404040404,
+                  "median_ms": 1.332499086856842
+                },
+                "parameters": 67811
+              },
+              {
+                "epoch": 2,
+                "train_loss": 2.4473473987579344,
+                "validation_rank": {
+                  "loss": 2.660819870680571,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 68,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.08,
+                  "median_ms": 1.4434373006224632
+                },
+                "parameters": 67811
+              },
+              {
+                "epoch": 3,
+                "train_loss": 2.443472830295563,
+                "validation_rank": {
+                  "loss": 2.6597252962887286,
+                  "optimal_next_link_accuracy": 0.756,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 69,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.69,
+                  "mean_extra_clicks_successes_only": 1.11,
+                  "median_ms": 1.2436662800610065
+                },
+                "parameters": 67811
+              }
+            ],
+            "validation_rank": {
+              "loss": 2.6597252962887286,
+              "optimal_next_link_accuracy": 0.756,
+              "decisions": 1000
+            },
+            "validation_routes": {
+              "queries": 100,
+              "successes": 100,
+              "optimal_routes": 69,
+              "success_rate": 1.0,
+              "optimal_rate": 0.69,
+              "mean_extra_clicks_successes_only": 1.11,
+              "median_ms": 1.2436662800610065
+            },
+            "parameters": 67811,
+            "id": "random_01",
+            "generation": 0,
+            "parent": null
+          },
+          {
+            "config": {
+              "features": "title",
+              "width": 64,
+              "depth": 2,
+              "activation": "gelu"
+            },
+            "selected_epoch": 0,
+            "trainable_parameters": 37057,
+            "history": [
+              {
+                "epoch": 0,
+                "train_loss": null,
+                "validation_rank": {
+                  "loss": 2.6604251458346844,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0404040404040404,
+                  "median_ms": 0.8991039358079433
+                },
+                "parameters": 88451
+              },
+              {
+                "epoch": 1,
+                "train_loss": 2.448697774887085,
+                "validation_rank": {
+                  "loss": 2.6609400140941144,
+                  "optimal_next_link_accuracy": 0.751,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0101010101010102,
+                  "median_ms": 1.1616451665759087
+                },
+                "parameters": 88451
+              },
+              {
+                "epoch": 2,
+                "train_loss": 2.4480448570251463,
+                "validation_rank": {
+                  "loss": 2.6624459843933583,
+                  "optimal_next_link_accuracy": 0.746,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 67,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.67,
+                  "mean_extra_clicks_successes_only": 0.9797979797979798,
+                  "median_ms": 1.4636456035077572
+                },
+                "parameters": 88451
+              },
+              {
+                "epoch": 3,
+                "train_loss": 2.447339946746826,
+                "validation_rank": {
+                  "loss": 2.663350844502449,
+                  "optimal_next_link_accuracy": 0.75,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 0.898989898989899,
+                  "median_ms": 0.9519164450466633
+                },
+                "parameters": 88451
+              }
+            ],
+            "validation_rank": {
+              "loss": 2.6604251458346844,
+              "optimal_next_link_accuracy": 0.752,
+              "decisions": 1000
+            },
+            "validation_routes": {
+              "queries": 100,
+              "successes": 99,
+              "optimal_routes": 68,
+              "success_rate": 0.99,
+              "optimal_rate": 0.68,
+              "mean_extra_clicks_successes_only": 1.0404040404040404,
+              "median_ms": 0.8991039358079433
+            },
+            "parameters": 88451,
+            "id": "random_02",
+            "generation": 0,
+            "parent": null
+          },
+          {
+            "config": {
+              "features": "semantic",
+              "width": 32,
+              "depth": 2,
+              "activation": "relu"
+            },
+            "selected_epoch": 3,
+            "trainable_parameters": 17505,
+            "history": [
+              {
+                "epoch": 0,
+                "train_loss": null,
+                "validation_rank": {
+                  "loss": 2.6604251458346844,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0404040404040404,
+                  "median_ms": 0.8645416237413883
+                },
+                "parameters": 68899
+              },
+              {
+                "epoch": 1,
+                "train_loss": 2.448679913043976,
+                "validation_rank": {
+                  "loss": 2.6605764823257925,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0303030303030303,
+                  "median_ms": 0.9330622851848602
+                },
+                "parameters": 68899
+              },
+              {
+                "epoch": 2,
+                "train_loss": 2.4453998489379885,
+                "validation_rank": {
+                  "loss": 2.657630147486925,
+                  "optimal_next_link_accuracy": 0.756,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 0.9191919191919192,
+                  "median_ms": 0.9137918241322041
+                },
+                "parameters": 68899
+              },
+              {
+                "epoch": 3,
+                "train_loss": 2.4277434673309326,
+                "validation_rank": {
+                  "loss": 2.649831371754408,
+                  "optimal_next_link_accuracy": 0.772,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 68,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.01,
+                  "median_ms": 0.9202077053487301
+                },
+                "parameters": 68899
+              }
+            ],
+            "validation_rank": {
+              "loss": 2.649831371754408,
+              "optimal_next_link_accuracy": 0.772,
+              "decisions": 1000
+            },
+            "validation_routes": {
+              "queries": 100,
+              "successes": 100,
+              "optimal_routes": 68,
+              "success_rate": 1.0,
+              "optimal_rate": 0.68,
+              "mean_extra_clicks_successes_only": 1.01,
+              "median_ms": 0.9202077053487301
+            },
+            "parameters": 68899,
+            "id": "random_03",
+            "generation": 0,
+            "parent": null
+          },
+          {
+            "config": {
+              "features": "both",
+              "width": 16,
+              "depth": 2,
+              "activation": "relu"
+            },
+            "selected_epoch": 3,
+            "trainable_parameters": 16689,
+            "history": [
+              {
+                "epoch": 0,
+                "train_loss": null,
+                "validation_rank": {
+                  "loss": 2.6604251458346844,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0404040404040404,
+                  "median_ms": 1.311291940510273
+                },
+                "parameters": 68083
+              },
+              {
+                "epoch": 1,
+                "train_loss": 2.4487236647605894,
+                "validation_rank": {
+                  "loss": 2.6605468308031557,
+                  "optimal_next_link_accuracy": 0.751,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0303030303030303,
+                  "median_ms": 1.3193339109420776
+                },
+                "parameters": 68083
+              },
+              {
+                "epoch": 2,
+                "train_loss": 2.4476678700447083,
+                "validation_rank": {
+                  "loss": 2.6624440678656103,
+                  "optimal_next_link_accuracy": 0.75,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 68,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.13,
+                  "median_ms": 1.461708452552557
+                },
+                "parameters": 68083
+              },
+              {
+                "epoch": 3,
+                "train_loss": 2.4426319422721865,
+                "validation_rank": {
+                  "loss": 2.6601837955117227,
+                  "optimal_next_link_accuracy": 0.757,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 69,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.69,
+                  "mean_extra_clicks_successes_only": 1.02,
+                  "median_ms": 1.4888327568769455
+                },
+                "parameters": 68083
+              }
+            ],
+            "validation_rank": {
+              "loss": 2.6601837955117227,
+              "optimal_next_link_accuracy": 0.757,
+              "decisions": 1000
+            },
+            "validation_routes": {
+              "queries": 100,
+              "successes": 100,
+              "optimal_routes": 69,
+              "success_rate": 1.0,
+              "optimal_rate": 0.69,
+              "mean_extra_clicks_successes_only": 1.02,
+              "median_ms": 1.4888327568769455
+            },
+            "parameters": 68083,
+            "id": "random_04",
+            "generation": 1,
+            "parent": null
+          },
+          {
+            "config": {
+              "features": "semantic",
+              "width": 32,
+              "depth": 1,
+              "activation": "gelu"
+            },
+            "selected_epoch": 3,
+            "trainable_parameters": 16449,
+            "history": [
+              {
+                "epoch": 0,
+                "train_loss": null,
+                "validation_rank": {
+                  "loss": 2.6604251458346844,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0404040404040404,
+                  "median_ms": 1.0704994201660156
+                },
+                "parameters": 67843
+              },
+              {
+                "epoch": 1,
+                "train_loss": 2.4487204246520995,
+                "validation_rank": {
+                  "loss": 2.660539324015379,
+                  "optimal_next_link_accuracy": 0.753,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0303030303030303,
+                  "median_ms": 0.9969794191420078
+                },
+                "parameters": 67843
+              },
+              {
+                "epoch": 2,
+                "train_loss": 2.448204785823822,
+                "validation_rank": {
+                  "loss": 2.661490894943476,
+                  "optimal_next_link_accuracy": 0.751,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 68,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.08,
+                  "median_ms": 1.0409164242446423
+                },
+                "parameters": 67843
+              },
+              {
+                "epoch": 3,
+                "train_loss": 2.4469528975486754,
+                "validation_rank": {
+                  "loss": 2.662257845669985,
+                  "optimal_next_link_accuracy": 0.755,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 69,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.69,
+                  "mean_extra_clicks_successes_only": 1.17,
+                  "median_ms": 0.9874375537037849
+                },
+                "parameters": 67843
+              }
+            ],
+            "validation_rank": {
+              "loss": 2.662257845669985,
+              "optimal_next_link_accuracy": 0.755,
+              "decisions": 1000
+            },
+            "validation_routes": {
+              "queries": 100,
+              "successes": 100,
+              "optimal_routes": 69,
+              "success_rate": 1.0,
+              "optimal_rate": 0.69,
+              "mean_extra_clicks_successes_only": 1.17,
+              "median_ms": 0.9874375537037849
+            },
+            "parameters": 67843,
+            "id": "random_05",
+            "generation": 1,
+            "parent": null
+          },
+          {
+            "config": {
+              "features": "both",
+              "width": 32,
+              "depth": 2,
+              "activation": "relu"
+            },
+            "selected_epoch": 2,
+            "trainable_parameters": 33889,
+            "history": [
+              {
+                "epoch": 0,
+                "train_loss": null,
+                "validation_rank": {
+                  "loss": 2.6604251458346844,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0404040404040404,
+                  "median_ms": 1.3338751159608364
+                },
+                "parameters": 85283
+              },
+              {
+                "epoch": 1,
+                "train_loss": 2.4485850009918213,
+                "validation_rank": {
+                  "loss": 2.661140640556812,
+                  "optimal_next_link_accuracy": 0.75,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0,
+                  "median_ms": 1.5464164316654205
+                },
+                "parameters": 85283
+              },
+              {
+                "epoch": 2,
+                "train_loss": 2.4461203441619874,
+                "validation_rank": {
+                  "loss": 2.6608776643276215,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 69,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.69,
+                  "mean_extra_clicks_successes_only": 1.04,
+                  "median_ms": 1.3798750005662441
+                },
+                "parameters": 85283
+              },
+              {
+                "epoch": 3,
+                "train_loss": 2.4319465689659117,
+                "validation_rank": {
+                  "loss": 2.653676405325532,
+                  "optimal_next_link_accuracy": 0.751,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 0.9191919191919192,
+                  "median_ms": 1.5091663226485252
+                },
+                "parameters": 85283
+              }
+            ],
+            "validation_rank": {
+              "loss": 2.6608776643276215,
+              "optimal_next_link_accuracy": 0.752,
+              "decisions": 1000
+            },
+            "validation_routes": {
+              "queries": 100,
+              "successes": 100,
+              "optimal_routes": 69,
+              "success_rate": 1.0,
+              "optimal_rate": 0.69,
+              "mean_extra_clicks_successes_only": 1.04,
+              "median_ms": 1.3798750005662441
+            },
+            "parameters": 85283,
+            "id": "random_06",
+            "generation": 1,
+            "parent": null
+          },
+          {
+            "config": {
+              "features": "semantic",
+              "width": 64,
+              "depth": 1,
+              "activation": "gelu"
+            },
+            "selected_epoch": 2,
+            "trainable_parameters": 32897,
+            "history": [
+              {
+                "epoch": 0,
+                "train_loss": null,
+                "validation_rank": {
+                  "loss": 2.6604251458346844,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0404040404040404,
+                  "median_ms": 1.1047497391700745
+                },
+                "parameters": 84291
+              },
+              {
+                "epoch": 1,
+                "train_loss": 2.4486968054771423,
+                "validation_rank": {
+                  "loss": 2.660578148752451,
+                  "optimal_next_link_accuracy": 0.753,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0,
+                  "median_ms": 1.2757289223372936
+                },
+                "parameters": 84291
+              },
+              {
+                "epoch": 2,
+                "train_loss": 2.4479631004333497,
+                "validation_rank": {
+                  "loss": 2.661345420628786,
+                  "optimal_next_link_accuracy": 0.753,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 69,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.69,
+                  "mean_extra_clicks_successes_only": 1.04,
+                  "median_ms": 1.2135626748204231
+                },
+                "parameters": 84291
+              },
+              {
+                "epoch": 3,
+                "train_loss": 2.4463814544677733,
+                "validation_rank": {
+                  "loss": 2.661678419172764,
+                  "optimal_next_link_accuracy": 0.758,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 69,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.69,
+                  "mean_extra_clicks_successes_only": 1.15,
+                  "median_ms": 1.2535415589809418
+                },
+                "parameters": 84291
+              }
+            ],
+            "validation_rank": {
+              "loss": 2.661345420628786,
+              "optimal_next_link_accuracy": 0.753,
+              "decisions": 1000
+            },
+            "validation_routes": {
+              "queries": 100,
+              "successes": 100,
+              "optimal_routes": 69,
+              "success_rate": 1.0,
+              "optimal_rate": 0.69,
+              "mean_extra_clicks_successes_only": 1.04,
+              "median_ms": 1.2135626748204231
+            },
+            "parameters": 84291,
+            "id": "random_07",
+            "generation": 1,
+            "parent": null
+          },
+          {
+            "config": {
+              "features": "both",
+              "width": 32,
+              "depth": 1,
+              "activation": "gelu"
+            },
+            "selected_epoch": 3,
+            "trainable_parameters": 32833,
+            "history": [
+              {
+                "epoch": 0,
+                "train_loss": null,
+                "validation_rank": {
+                  "loss": 2.6604251458346844,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0404040404040404,
+                  "median_ms": 1.7791669815778732
+                },
+                "parameters": 84227
+              },
+              {
+                "epoch": 1,
+                "train_loss": 2.448674518108368,
+                "validation_rank": {
+                  "loss": 2.6612099522054193,
+                  "optimal_next_link_accuracy": 0.75,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0,
+                  "median_ms": 1.3922289945185184
+                },
+                "parameters": 84227
+              },
+              {
+                "epoch": 2,
+                "train_loss": 2.447723237514496,
+                "validation_rank": {
+                  "loss": 2.663185598373413,
+                  "optimal_next_link_accuracy": 0.75,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 68,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.09,
+                  "median_ms": 1.2778332456946373
+                },
+                "parameters": 84227
+              },
+              {
+                "epoch": 3,
+                "train_loss": 2.446456877231598,
+                "validation_rank": {
+                  "loss": 2.662537330985069,
+                  "optimal_next_link_accuracy": 0.754,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 68,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.1,
+                  "median_ms": 1.3615828938782215
+                },
+                "parameters": 84227
+              }
+            ],
+            "validation_rank": {
+              "loss": 2.662537330985069,
+              "optimal_next_link_accuracy": 0.754,
+              "decisions": 1000
+            },
+            "validation_routes": {
+              "queries": 100,
+              "successes": 100,
+              "optimal_routes": 68,
+              "success_rate": 1.0,
+              "optimal_rate": 0.68,
+              "mean_extra_clicks_successes_only": 1.1,
+              "median_ms": 1.3615828938782215
+            },
+            "parameters": 84227,
+            "id": "random_08",
+            "generation": 2,
+            "parent": null
+          },
+          {
+            "config": {
+              "features": "semantic",
+              "width": 16,
+              "depth": 2,
+              "activation": "gelu"
+            },
+            "selected_epoch": 2,
+            "trainable_parameters": 8497,
+            "history": [
+              {
+                "epoch": 0,
+                "train_loss": null,
+                "validation_rank": {
+                  "loss": 2.6604251458346844,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0404040404040404,
+                  "median_ms": 1.0656248778104782
+                },
+                "parameters": 59891
+              },
+              {
+                "epoch": 1,
+                "train_loss": 2.448734376907349,
+                "validation_rank": {
+                  "loss": 2.6604646911025047,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0303030303030303,
+                  "median_ms": 0.9152498096227646
+                },
+                "parameters": 59891
+              },
+              {
+                "epoch": 2,
+                "train_loss": 2.448303897857666,
+                "validation_rank": {
+                  "loss": 2.6616663827598095,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 68,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.13,
+                  "median_ms": 0.9409789927303791
+                },
+                "parameters": 59891
+              },
+              {
+                "epoch": 3,
+                "train_loss": 2.4465422077178953,
+                "validation_rank": {
+                  "loss": 2.663308274120092,
+                  "optimal_next_link_accuracy": 0.756,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 68,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.12,
+                  "median_ms": 0.9011672809720039
+                },
+                "parameters": 59891
+              }
+            ],
+            "validation_rank": {
+              "loss": 2.6616663827598095,
+              "optimal_next_link_accuracy": 0.752,
+              "decisions": 1000
+            },
+            "validation_routes": {
+              "queries": 100,
+              "successes": 100,
+              "optimal_routes": 68,
+              "success_rate": 1.0,
+              "optimal_rate": 0.68,
+              "mean_extra_clicks_successes_only": 1.13,
+              "median_ms": 0.9409789927303791
+            },
+            "parameters": 59891,
+            "id": "random_09",
+            "generation": 2,
+            "parent": null
+          },
+          {
+            "config": {
+              "features": "both",
+              "width": 16,
+              "depth": 1,
+              "activation": "gelu"
+            },
+            "selected_epoch": 2,
+            "trainable_parameters": 16417,
+            "history": [
+              {
+                "epoch": 0,
+                "train_loss": null,
+                "validation_rank": {
+                  "loss": 2.6604251458346844,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0404040404040404,
+                  "median_ms": 1.2077922001481056
+                },
+                "parameters": 67811
+              },
+              {
+                "epoch": 1,
+                "train_loss": 2.4486963896751406,
+                "validation_rank": {
+                  "loss": 2.660731943279505,
+                  "optimal_next_link_accuracy": 0.751,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0404040404040404,
+                  "median_ms": 1.2145000509917736
+                },
+                "parameters": 67811
+              },
+              {
+                "epoch": 2,
+                "train_loss": 2.4479408535957337,
+                "validation_rank": {
+                  "loss": 2.662048689484596,
+                  "optimal_next_link_accuracy": 0.749,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 68,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.1,
+                  "median_ms": 1.2071449309587479
+                },
+                "parameters": 67811
+              },
+              {
+                "epoch": 3,
+                "train_loss": 2.446798076629639,
+                "validation_rank": {
+                  "loss": 2.662788558036089,
+                  "optimal_next_link_accuracy": 0.753,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 68,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.12,
+                  "median_ms": 1.2485836632549763
+                },
+                "parameters": 67811
+              }
+            ],
+            "validation_rank": {
+              "loss": 2.662048689484596,
+              "optimal_next_link_accuracy": 0.749,
+              "decisions": 1000
+            },
+            "validation_routes": {
+              "queries": 100,
+              "successes": 100,
+              "optimal_routes": 68,
+              "success_rate": 1.0,
+              "optimal_rate": 0.68,
+              "mean_extra_clicks_successes_only": 1.1,
+              "median_ms": 1.2071449309587479
+            },
+            "parameters": 67811,
+            "id": "random_10",
+            "generation": 2,
+            "parent": null
+          },
+          {
+            "config": {
+              "features": "both",
+              "width": 32,
+              "depth": 2,
+              "activation": "gelu"
+            },
+            "selected_epoch": 3,
+            "trainable_parameters": 33889,
+            "history": [
+              {
+                "epoch": 0,
+                "train_loss": null,
+                "validation_rank": {
+                  "loss": 2.6604251458346844,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0404040404040404,
+                  "median_ms": 1.239874865859747
+                },
+                "parameters": 85283
+              },
+              {
+                "epoch": 1,
+                "train_loss": 2.4486983494758605,
+                "validation_rank": {
+                  "loss": 2.660810866475105,
+                  "optimal_next_link_accuracy": 0.752,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 99,
+                  "optimal_routes": 68,
+                  "success_rate": 0.99,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.0404040404040404,
+                  "median_ms": 1.3270629569888115
+                },
+                "parameters": 85283
+              },
+              {
+                "epoch": 2,
+                "train_loss": 2.447542098045349,
+                "validation_rank": {
+                  "loss": 2.6633874546289444,
+                  "optimal_next_link_accuracy": 0.754,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 68,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.68,
+                  "mean_extra_clicks_successes_only": 1.04,
+                  "median_ms": 1.1527291499078274
+                },
+                "parameters": 85283
+              },
+              {
+                "epoch": 3,
+                "train_loss": 2.4452590246200563,
+                "validation_rank": {
+                  "loss": 2.662055680334568,
+                  "optimal_next_link_accuracy": 0.757,
+                  "decisions": 1000
+                },
+                "validation_routes": {
+                  "queries": 100,
+                  "successes": 100,
+                  "optimal_routes": 69,
+                  "success_rate": 1.0,
+                  "optimal_rate": 0.69,
+                  "mean_extra_clicks_successes_only": 1.05,
+                  "median_ms": 1.141770277172327
+                },
+                "parameters": 85283
+              }
+            ],
+            "validation_rank": {
+              "loss": 2.662055680334568,
+              "optimal_next_link_accuracy": 0.757,
+              "decisions": 1000
+            },
+            "validation_routes": {
+              "queries": 100,
+              "successes": 100,
+              "optimal_routes": 69,
+              "success_rate": 1.0,
+              "optimal_rate": 0.69,
+              "mean_extra_clicks_successes_only": 1.05,
+              "median_ms": 1.141770277172327
+            },
+            "parameters": 85283,
+            "id": "random_11",
+            "generation": 2,
+            "parent": null
+          }
+        ]
+      }
+    },
+    "test": {
+      "baseline": {
+        "queries": 100,
+        "successes": 99,
+        "optimal_routes": 76,
+        "success_rate": 0.99,
+        "optimal_rate": 0.76,
+        "mean_extra_clicks_successes_only": 0.7878787878787878,
+        "median_ms": 0.6170826964080334
+      },
+      "evolution": {
+        "queries": 100,
+        "successes": 99,
+        "optimal_routes": 75,
+        "success_rate": 0.99,
+        "optimal_rate": 0.75,
+        "mean_extra_clicks_successes_only": 0.5050505050505051,
+        "median_ms": 1.2206039391458035
+      },
+      "random": {
+        "queries": 100,
+        "successes": 99,
+        "optimal_routes": 74,
+        "success_rate": 0.99,
+        "optimal_rate": 0.74,
+        "mean_extra_clicks_successes_only": 0.6363636363636364,
+        "median_ms": 1.1365627869963646
+      }
+    },
+    "paired_vs_baseline": {
+      "evolution": {
+        "success": {
+          "gain_percentage_points": 0.0,
+          "conditional_95_percent_interval": [
+            0.0,
+            0.0
+          ],
+          "improved_queries": 0,
+          "worsened_queries": 0
+        },
+        "optimal_route": {
+          "gain_percentage_points": -1.0,
+          "conditional_95_percent_interval": [
+            -4.0,
+            2.0
+          ],
+          "improved_queries": 1,
+          "worsened_queries": 2
+        }
+      },
+      "random": {
+        "success": {
+          "gain_percentage_points": 0.0,
+          "conditional_95_percent_interval": [
+            0.0,
+            0.0
+          ],
+          "improved_queries": 0,
+          "worsened_queries": 0
+        },
+        "optimal_route": {
+          "gain_percentage_points": -2.0,
+          "conditional_95_percent_interval": [
+            -5.0,
+            0.0
+          ],
+          "improved_queries": 0,
+          "worsened_queries": 2
+        }
+      }
+    },
+    "elapsed_seconds": 216.65933970920742,
+    "protocol": "Frozen seed-207 semantic ranker; zero-output residual adapters trained on existing train decisions. Tournament parent selection, one-gene mutation, elitist survivor selection; no parent weight inheritance. Random arm has identical candidate/epoch budgets and genotype-dependent training seeds. Epoch and architecture selection lexicographically maximize validation route success, optimal routes, negative ranking loss, negative parameter count. Baseline is eligible for rollback. 20-click navigation, no revisits, shared direct-goal check. One query per test destination. Test source/destination pairs exclude the previous suite, but test destinations were previously evaluated. One graph and one search seed; intervals condition on these models. No live requests or test-time updates."
+  }
+}

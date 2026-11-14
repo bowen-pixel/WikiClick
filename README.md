@@ -1,78 +1,63 @@
 # WikiClick
 
-Find hyperlink routes between Wikipedia articles. BFS provides the exact shortest-path reference within a saved graph; PyTorch models score links to guide navigation and search.
+Find a short hyperlink route between two English Wikipedia articles. Live navigation resolves page URLs through the API, checks short routes, then uses frozen semantic vectors to guide best-first search. Returned links are observed in Wikipedia; global shortest-path optimality is not guaranteed.
 
-The project is consolidated here. There is no longer a second `WikiClick/` project inside this folder. Start with this page and the [comparison overview](reviews/README.md).
-
-Latest inspection: [Model structure and next learning experiments](reviews/planning/LEARNING_IMPROVEMENT_PLAN.md), covering semantic title features, checkpoint selection, hidden layers, epoch budgets, and grouped splits.
-
-## Where things live
-
-| Folder | Contents |
-|---|---|
-| `codes/api/` | Wikipedia API access, JSON collection/validation, dump import, cached semantic features |
-| `codes/search/` | CLI article input, graph loading, BFS, distance analysis, search comparisons |
-| `codes/models/raw/` | Original PyTorch distance model and training |
-| `codes/models/next_link/` | Next-link ranking, text/category refinement, correction experiment, inference |
-| `codes/models/evolution/` | Evolutionary architecture-search experiment |
-| `codes/workflows/` | Larger collection/training workflows and status commands |
-| `codes/plotting/` | Rebuild charts from saved measurements |
-| `data/` | Graph JSON, training JSON/JSONL, sparse arrays, source caches, raw dumps |
-| `models/` | Saved `.pt` weights, feature tensors, training histories, model-specific results and routes |
-| `reviews/` | Approach comparisons, guides, planning, AI-use record, machine-readable comparison reports |
-| `figures/` | Charts and animations grouped by raw, next-link, and evolutionary methods |
-| `logs/` | Collection/training logs and regeneratable runtime caches |
-| `tests/` | API, graph, learning, workflow, and regression tests |
-| `requirements/` | Dependency sets: base, dev, ML, plots, scale |
-| `archive/` | Differing older files and preserved inner-repository history |
-
-Model bundles retain histories, query lists, and results beside their weights so the evidence remains tied to each model. BFS has no learned checkpoint. JSON remains under the dataset or experiment it describes; files were not mixed into one large JSON folder.
-
-## Run it
-
-Use Python 3.13. The existing `.venv` has been consolidated and retained. For a fresh environment:
+[Run it yourself](Deploy.md) · [Mathematics and papers](Foundation%20of%20Models.md) · [Timeline](TIMELINE.md) · [AI contributions](AI_USAGE.md) · [Figure catalogue](figures/README.md)
 
 ```bash
-python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements/scale.txt
+python3.13 -m venv .venv
+.venv/bin/python -m pip install -r code/requirements.txt
+.venv/bin/python code/run.py download-encoder
+.venv/bin/python code/run.py live
 ```
 
-One launcher replaces the scattered top-level Python scripts:
+Paste valid Wikipedia article URLs at the `Source:` and `Target:` prompts. The result shows a candidate shortest path, click count, and each page URL. See **Deploy** for a BFS demo without encoder weights, training commands, and exact download requirements.
 
-```bash
-.venv/bin/python wikiclick.py --help
-.venv/bin/python wikiclick.py bfs --data data/graphs/sample_100/articles.json
-.venv/bin/python wikiclick.py next-link
-.venv/bin/python wikiclick.py next-link --model raw
-.venv/bin/python wikiclick.py next-link --model title_rank
-.venv/bin/python wikiclick.py next-link --model semantic_rank
-.venv/bin/python wikiclick.py next-link --model evolutionary
-.venv/bin/python wikiclick.py million-status
-.venv/bin/python -m pytest -q
+## Public layout
+
+```text
+training_data/training_data.json    consolidated recoverable supervision and provenance
+figures/                           named curves, loss illustration, route charts, statistics
+code/
+  run.py                           command-line entry point
+  requirements.txt                 tested local dependency versions
+  wikiclick_core/
+    API/                           live fetch, BFS, data collection/restoration
+    model/
+      neural/                      distance network and trainer
+      title_feature/               SHA256 and frozen EmbeddingGemma features
+      next_link/                   scoring, losses, negatives, residual ranker, trainer
+      semantic/                    cosine, behavioral cloning, contextual rankers
+      heuristic/                   BFS labels, offline corrections and random walks
+      navigator/                   greedy, beam, best-first and saved-model inference
+      evolutionary/                architecture search with a random-search control
 ```
 
-Each model/navigation command uses saved data and prompts for source and destination titles when needed. The next-link demo supports the saved 1,000-article dataset. `million-status` inspects the completed larger experiment without starting another run. The launcher resolves paths from this project directory even if invoked elsewhere by absolute path.
+The package sits beneath `code/` so it does not shadow Python's standard-library `code` module. Tests, original research drivers, experiments, checkpoints, caches, raw dumps and logs remain on the local device and are excluded from the next Git snapshot. They are not runtime dependencies of the public launcher. The public source is the maintained core; the local `codes/` tree preserves historical experiments and earlier interfaces.
 
-Collection and training are explicit commands:
+## What each layer has achieved
 
-```bash
-.venv/bin/python wikiclick.py api --help
-.venv/bin/python wikiclick.py collect --help
-.venv/bin/python wikiclick.py raw-train --help
-.venv/bin/python wikiclick.py next-link-train --help
-.venv/bin/python wikiclick.py evolve --help
-```
+| Layer | Evidence | Limit |
+|---|---|---|
+| API + BFS | Canonical article IDs, redirect handling, unit-cost directed edges; BFS gives a shortest route in the saved graph | A sampled graph can omit shorter Wikipedia routes |
+| Neural distance | Smooth L1 regression on BFS-derived distances; SHA256/EmbeddingGemma title comparison | Hash vectors do not encode meaning; smaller MAE alone does not establish better routing |
+| Next-link ranking | On the recorded 1,000-node graph, title ranker reached 98.50% of test goals vs raw 91.53%; shortest-route rates 66.17% vs 51.17% | Different training stages; these are graph-relative held-out results, not live-web guarantees |
+| Semantic/context | Original text/category ranker reached 98.57% and shortest routes 68.13% on that graph; later pretrained/context experiments remain separate | Original context features were hashes/category pooling, not EmbeddingGemma; no clear completion gain over title ranking |
+| Heuristic correction | Training-only hard-example resampling and validation rollback are implemented | Correction retained the earlier checkpoint for all three small-graph seeds; no demonstrated improvement; no live weight updates |
+| Navigation | Greedy, beam and best-first; live URL input, API edge checks and two-link probes work | Live success and shortest-path frequency have not been systematically benchmarked |
+| Evolution | Architecture mutation, selection and equal-size random control; 99/100 goals reached by baseline/evolution/random in the pilot | Shortest routes were 76/75/74; evolution did not establish superiority |
+| Offline random walks | Saved RFBC and later scaling training corpora are included in the JSON; sampler and policy primitives are public | Offline work is not an integrated live-fetch acceleration model; later experiment drivers stay local |
 
-Existing `python -m codes....` commands in the detailed guides also work from the project root. Direct execution of files inside `codes/` is replaced by the launcher or `python -m`.
+Figures **LC02**, **LC03**, **NV01–NV04**, **EV01–EV02**, and **RW01–RW02** are indexed with their dataset and model in the [catalogue](figures/README.md). [Recorded small-graph statistics](figures/statistics/next_link_1000.json) accompany the percentages above. Million-node results are a separate benchmark and must not be used as live-navigation accuracy.
 
-## Results and figures
+![NV01: goal completion on the saved 1,000-article graph](figures/navigation/NV01_next_link_goal_success_1000.png)
 
-See the [comparison overview](reviews/README.md), [figure guide](figures/README.md), and [saved-model index](models/README.md).
+## Drawbacks and next steps
 
-Training curves show measured loss over epochs. Route-quality charts show whether navigation reaches the goal, finds a shortest route, and saves time/work. A visually smoother loss curve does not establish better navigation. The evolutionary pilot did not establish an improvement over the existing ranker.
+Live search can fan out to thousands of candidates. API pagination, two-hop checks and introduction downloads run sequentially; frozen embeddings are computed on the CPU. **Network fetching is not CPU inference**: CPU encoding is the expensive local stage. In the inspected FC Barcelona query, 1,047 outgoing articles were fetched in five queries in about 0.9 seconds, before up to 21 bridge checks, 53 introduction batches and candidate encoding. That single measurement is not a latency benchmark.
 
-Distances and shortest-path claims apply to each saved graph, not all Wikipedia. Different graph sizes and query sets are separate experiments. The million-article workflow is complete; this cleanup did not retrain models or change measured outcomes.
+Caches currently last for one live run. The current CPU setup, repeated article encoding, large outgoing-link sets, and query budgets can make longer searches slow or unsuccessful. Default live scoring is semantic cosine **M0**, not the graph-specific corrected next-link checkpoint. Compatible M1/M2 checkpoints are optional local inputs.
 
-## Cleanup record
+Future work: persistent caches; visible phase/timing progress; cheap candidate preselection before expensive text encoding; and adapting the existing offline random-walk policy to guide live fetch decisions. These changes must be tested for latency, success and route-length tradeoffs on unseen endpoint pairs. We do not yet claim “usually shortest,” independent full-Wikipedia generalization, online self-learning, or successful live random-walk deployment.
 
-The [organization record](reviews/organization/README.md) explains the moves, removed duplicates, preserved history, and compatibility changes. Unique older work is archived rather than guessed to be disposable. Raw Wikipedia sources remain available for reproducibility.
+The single JSON contains recoverable source training corpora, explicit validation/test partitions, numerical index mappings and selection evidence. It does not imply every graph article or every available row received an optimizer update. Exact historical minibatch replay and full million-node graph restoration remain limited by saved artifacts; see [data coverage](training_data/README.md).

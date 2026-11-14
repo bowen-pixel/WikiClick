@@ -1,36 +1,40 @@
-# Python environments and generated files
-.venv/
-venv/
-__pycache__/
-*.py[cod]
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-.coverage
-htmlcov/
-build/
-dist/
-*.egg-info/
+# Public snapshot allowlist. Ignored research files remain on this device.
+/*
+!/.gitignore
+!/README.md
+!/Deploy.md
+!/Foundation of Models.md
+!/TIMELINE.md
+!/AI_USAGE.md
+!/code/
+!/training_data/
+!/figures/
 
-# Secrets and local settings
-.env
-.env.*
-!.env.example
-.DS_Store
-.idea/
-.vscode/
+# Only curated figure categories are public.
+/figures/*
+!/figures/README.md
+!/figures/learning_curves/
+!/figures/loss_functions/
+!/figures/navigation/
+!/figures/evolutionary/
+!/figures/random_walk/
+!/figures/statistics/
 
-# Downloaded data and ML outputs
-data/raw/
-data/cache/
-data/graphs/
-checkpoints/
-runs/
-models/**
-!models/README.md
-logs/**
-!logs/README.md
-archive/repository_history/
-archive/previous_outer/
-*.pt
-*.pth
+# Generated artifacts must not enter any public directory.
+**/__pycache__/
+**/*.py[cod]
+**/.DS_Store
+**/.env
+**/.env.*
+**/.pytest_cache/
+**/.matplotlib/
+**/.mpl-cache/
+**/experiments/
+**/logs/
+**/test_*.py
+**/*_test.py
+**/*.pt
+**/*.pth
+**/*.safetensors
+**/*.partial*
+**/test_tmp/

@@ -1,2 +1,0 @@
--r ml.txt
-matplotlib==3.11.2

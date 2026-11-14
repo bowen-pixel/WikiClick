@@ -1,26 +1,20 @@
-# Figures
+# Figure catalogue
 
-Figures are grouped by the method that produced them. PNG is convenient for viewing; PDF/SVG exports are available where generated. The charts show measured outcomes unless explicitly labeled as a schematic or mathematical loss illustration.
+Identifiers below are used in the root Markdown files. Images were copied without changing pixels or smoothing. Original labels inside images are retained. The machine-readable catalogue records source checksums and the matching public code file. Historical reproduction drivers and full experiment logs stay local.
 
-| Method | Learning/training | Routing/search |
+| ID | Figure | Meaning |
 |---|---|---|
-| Original distance model | [Training curves](raw/baseline/training_curves.png) | [Search comparison](raw/baseline/search_comparison.png) |
-| Larger distance-model fine-tuning | [Fine-tuning curves](raw/training_audit/fine_tuning_curves.png) | [Matched search outcomes](raw/training_audit/matched_search_outcomes.png) |
-| Next-link ranking, 1,000 articles | [Validation curves](next_link/ranking_1000/validation_curves.png) | [Goal completion](next_link/ranking_1000/route_success.png), [shortest routes](next_link/ranking_1000/optimal_routes.png), [paired gains](next_link/ranking_1000/paired_gains.png) |
-| Million-scale next-link ranking | Histories remain in the [model bundles](../models/next_link/ranking_million/) | [Branching completion](next_link/ranking_million/branching_success.png), [shortest routes](next_link/ranking_million/branching_optimal.png) |
-| Evolutionary refinement | [Search and training dashboard](evolution/evolution_100/search_dashboard.png) | [Architecture](evolution/evolution_100/selected_architecture.png), [search animation](evolution/evolution_100/evolution.gif) |
+| LC01 | [LC01_distance_baseline](learning_curves/LC01_distance_baseline.png) | Original distance regression; dataset panels retain their original labels |
+| LC02 | [LC02_sha256_vs_embeddinggemma_1000](learning_curves/LC02_sha256_vs_embeddinggemma_1000.png) | Matched title-feature comparison, 1,000 articles; validation/train MAE |
+| LC03 | [LC03_next_link_validation_1000](learning_curves/LC03_next_link_validation_1000.png) | Next-link ranking, 1,000 articles; original per-seed validation histories |
+| LF01 | [LF01_smooth_l1_illustration](loss_functions/LF01_smooth_l1_illustration.png) | Mathematical Smooth L1 shape; NOT a measured optimization landscape |
+| NV01 | [NV01_next_link_goal_success_1000](navigation/NV01_next_link_goal_success_1000.png) | Held-out goal completion, 1,000-node graph |
+| NV02 | [NV02_next_link_shortest_routes_1000](navigation/NV02_next_link_shortest_routes_1000.png) | Held-out shortest routes, 1,000-node graph |
+| NV03 | [NV03_branching_goal_success_million](navigation/NV03_branching_goal_success_million.png) | Historical hashed text/category model; NOT the live EmbeddingGemma model |
+| NV04 | [NV04_branching_shortest_routes_million](navigation/NV04_branching_shortest_routes_million.png) | Historical million-node graph; shortest-route rate under matched budgets |
+| EV01 | [EV01_architecture_search_100_journeys](evolutionary/EV01_architecture_search_100_journeys.png) | 12 candidates per arm, 100 held-out journeys; evolution vs random control |
+| EV02 | [EV02_selected_residual_architecture](evolutionary/EV02_selected_residual_architecture.png) | Selected residual architecture schematic; not a measured learning curve |
+| RW01 | [RW01_offline_navigation_scaling](random_walk/RW01_offline_navigation_scaling.png) | Offline 10A scaling; selected corpus D1 shortest states, not live random-walk deployment |
+| RW02 | [RW02_offline_ranking_curves](random_walk/RW02_offline_ranking_curves.png) | Offline 10A neural ranking curves; all experimental controls remain local |
 
-Additional raw-model comparisons live in `raw/large_frozen/`, `raw/large_trained/`, and `raw/fresh_million/`. Earlier differing chart versions are retained in `history/`.
-
-From the project root, rebuild without retraining:
-
-```bash
-.venv/bin/python wikiclick.py plot-raw
-.venv/bin/python wikiclick.py plot-next-link
-.venv/bin/python wikiclick.py plot-million
-.venv/bin/python wikiclick.py plot-evolution
-```
-
-`plot-audit` also recomputes the saved models' distance errors on cached labels. The plotting commands write to this figure tree and their corresponding comparison reviews; they do not choose new model weights.
-
-Smoother curves are not automatically better. Validation loss and navigation results answer different questions. We retain the measured curves rather than smoothing away differences or presenting a fabricated loss surface.
+[Source checksums and code map](statistics/figure_catalog.json). [1,000-node statistics](statistics/next_link_1000.json), [title features](statistics/title_feature_comparison.json), [evolution](statistics/evolution_100.json), [offline scaling](statistics/navigation_scaling_10a.json). These experiments use different graphs, inputs and budgets; their percentages are not directly interchangeable.

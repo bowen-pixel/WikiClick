@@ -1,9 +1,0 @@
-{
-  "state": "complete",
-  "started_at": "2026-11-10T06:46:02.884833+00:00",
-  "finished_at": "2026-11-10T07:10:09.838668+00:00",
-  "model_weights_updated": true,
-  "checkpoint": "models/raw/model_large_trained/best.pt",
-  "metrics": "models/raw/model_large_trained/metrics.json",
-  "diagrams": "figures/raw/large_trained"
-}

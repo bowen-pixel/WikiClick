@@ -1,0 +1,22 @@
+{
+  "local_source": "models/raw/title_feature_comparison/summary.json",
+  "source_sha256": "a3d87d7f62fbb2d6130e8813202ac8bfa2fa976ad6980f1d2c0c4b1b60fb23a7",
+  "results": [
+    {
+      "dataset": "data/graphs/sample_100",
+      "nodes": 100,
+      "sha256_test_mae": 0.5237952647907436,
+      "semantic_test_mae": 0.4273524736786161,
+      "relative_mae_reduction_percent": 18.41230679140568,
+      "constant_test_mae": 0.8528555830319723
+    },
+    {
+      "dataset": "data/graphs/ranking_1000",
+      "nodes": 1000,
+      "sha256_test_mae": 0.4319908081054688,
+      "semantic_test_mae": 0.4102307755364312,
+      "relative_mae_reduction_percent": 5.037151754331994,
+      "constant_test_mae": 0.5695061087608337
+    }
+  ]
+}

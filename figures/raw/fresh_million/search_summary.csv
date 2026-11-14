@@ -1,4 +1,0 @@
-method,queries,successes,success_rate,optimal_route_rate_all_queries,mean_extra_clicks_successes_only,mean_expanded_all_queries,median_seconds_all_queries
-bfs,100,3,0.03,0.03,0,195.06,0.0015653334558010101
-text,100,15,0.15,0.05,4.8,178.54,1.029252749402076
-neural,100,7,0.07,0.03,7.285714285714286,190.94,1.0727933123707771
