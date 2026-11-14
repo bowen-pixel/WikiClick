@@ -1,6 +1,9 @@
 # Deploy
 
-Run commands from the cloned WikiClick repository. Python 3.13 and an internet connection are used for live Wikipedia navigation. This is a terminal application; no hosted web service or GitHub Pages deployment is configured.
+Run commands from the cloned WikiClick repository. 
+
+Requires Python 3.13 and an internet connection are used for live Wikipedia navigation. 
+This is a terminal application; no hosted web service or GitHub Pages deployment is configured.
 
 ## 1. Install
 
